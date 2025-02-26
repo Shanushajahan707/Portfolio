@@ -1,0 +1,20 @@
+<section #skillsSection class="flex flex-col items-center min-h-screen w-full py-10 bg-gray-800 text-white">
+    <h2 class="text-3xl font-bold mb-6 text-center">My <span class="text-cyan-400">Skills</span></h2>
+
+    <div *ngFor="let skill of skills" class="w-full max-w-md md:max-w-lg lg:max-w-xl flex flex-col items-center mb-6" 
+         data-aos="fade-down" data-aos-duration="1400">
+        <!-- Skill Label -->
+        <span class="text-sm md:text-base font-semibold mb-2">{{ skill.label }} ({{ skill.percentage }}%)</span>
+
+        <!-- Technologies Used -->
+        <span class="text-xs md:text-sm text-gray-400 text-center mb-2">{{ skill.technologies }}</span>
+
+        <!-- Progress Bar -->
+        <div class="w-full h-10 bg-white/10 rounded-full overflow-hidden">
+            <div class="h-full bg-[rgb(0,238,255)] rounded-full shadow-md transition-all duration-3000 ease-in-out"
+                 [ngClass]="{ 'animate-progress': skill.animated }"
+                 [style.width]="skill.animated ? skill.percentage + '%' : '0%'">
+            </div>
+        </div>
+    </div>
+</section>

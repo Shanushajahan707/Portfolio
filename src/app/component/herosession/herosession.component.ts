@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrl: './herosession.component.css'
 })
 export class HerosessionComponent {
-
+  pdflocation:string="Resume.pdf"
 }
