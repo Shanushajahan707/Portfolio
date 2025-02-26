@@ -1,127 +1,25 @@
-<section class="text-center py-12 bg-gray-700 text-white">
+<section class="text-center py-12 bg-gray-700 text-white" id="project">
     <h2 class="text-4xl font-extrabold">My <span class="text-cyan-400">Projects</span></h2>
-
-    <div class="grid gap-6 px-4 py-12 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-
-        <!-- Live Streaming Platform -->
-        <div class="group perspective w-80 h-52 mx-auto">
-            <div class="relative w-full h-full preserve-3d duration-700 transform group-hover:rotate-y-180">
-                <div class="absolute w-full h-full backface-hidden rotate-y-0">
-                    <img src="capturelive.png" alt="Live Streaming Platform" class="h-full w-full object-cover rounded-lg">
-                    <h3 class="absolute bottom-2 left-0 right-0 text-center text-lg font-bold bg-gray-900/75 text-white p-2 rounded-b-lg">
-                        Live Streaming Platform
-                    </h3>
-                </div>
-                <div class="absolute w-full h-full bg-gray-800 text-white p-6 flex flex-col items-center justify-center rounded-lg rotate-y-180 backface-hidden">
-                    <h3 class="text-xl font-bold">Live Streaming Platform</h3>
-                    <p class="text-gray-400 text-sm text-center">A one-to-many live streaming platform using WebRTC, Angular 17, and Node.js.</p>
-                    <div class="flex gap-4 mt-4">
-                        <a  target="_blank"    href="https://capturelive-shanushajahan707s-projects.vercel.app/" class="bg-cyan-400 text-gray-900 px-4 py-2 rounded-lg font-semibold hover:bg-cyan-300 transition">Live Demo</a>
-                        <a   target="_blank"   href="https://github.com/Shanushajahan707/Live-Stream-Frontend" class="bg-gray-700 text-white px-4 py-2 rounded-lg font-semibold hover:bg-gray-600 transition">GitHub</a>
-                    </div>
-                </div>
+  
+    <div class="grid gap-6 md:px-4 py-12 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+      <div *ngFor="let project of projects" class="group perspective w-80 h-52 mx-auto" data-aos="zoom-in" data-aos-duration="1600">
+        <div class="relative w-full h-full preserve-3d duration-700 transform group-hover:rotate-y-180">
+          <div class="absolute w-full h-full backface-hidden rotate-y-0">
+            <img [src]="project.image" [alt]="project.title" class="h-full w-full object-cover rounded-lg">
+            <h3 class="absolute bottom-2 left-0 right-0 text-center text-lg font-bold bg-gray-900/75 text-white p-2 rounded-b-lg">
+              {{ project.title }}
+            </h3>
+          </div>
+          <div class="absolute w-full h-full bg-gray-800 text-white p-6 flex flex-col items-center justify-center rounded-lg rotate-y-180 backface-hidden">
+            <h3 class="text-xl font-bold">{{ project.title }}</h3>
+            <p class="text-gray-400 text-sm text-center">{{ project.description }}</p>
+            <div class="flex gap-4 mt-4">
+              <a *ngIf="project.liveDemo" target="_blank" [href]="project.liveDemo" class="bg-cyan-400 text-gray-900 px-4 py-2 rounded-lg font-semibold hover:bg-cyan-300 transition">Live Demo</a>
+              <a target="_blank" [href]="project.github" class="bg-gray-700 text-white px-4 py-2 rounded-lg font-semibold hover:bg-gray-600 transition">GitHub</a>
             </div>
+          </div>
         </div>
-
-        <!-- Mean Auth App -->
-        <div class="group perspective w-80 h-52 mx-auto">
-            <div class="relative w-full h-full preserve-3d duration-700 transform group-hover:rotate-y-180">
-                <div class="absolute w-full h-full backface-hidden rotate-y-0">
-                    <img src="meanauth.png" alt="MEAN Auth App" class="h-full w-full object-cover rounded-lg">
-                    <h3 class="absolute bottom-2 left-0 right-0 text-center text-lg font-bold bg-gray-900/75 text-white p-2 rounded-b-lg">
-                        MEAN Auth App
-                    </h3>
-                </div>
-                <div class="absolute w-full h-full bg-gray-800 text-white p-6 flex flex-col items-center justify-center rounded-lg rotate-y-180 backface-hidden">
-                    <h3 class="text-xl font-bold">MEAN Auth App</h3>
-                    <p class="text-gray-400 text-sm text-center">A secure authentication system with JWT, Angular Router, and Ngrx Toolkit.</p>
-                    <div class="flex gap-4 mt-4">
-                        <!-- <a href="#" class="bg-cyan-400 text-gray-900 px-4 py-2 rounded-lg font-semibold hover:bg-cyan-300 transition">Live Demo</a> -->
-                        <a  target="_blank"  href="https://github.com/Shanushajahan707/Mean-Auth-App" class="bg-gray-700 text-white px-4 py-2 rounded-lg font-semibold hover:bg-gray-600 transition">GitHub</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- E-Commerce Platform -->
-        <div class="group perspective w-80 h-52 mx-auto">
-            <div class="relative w-full h-full preserve-3d duration-700 transform group-hover:rotate-y-180">
-                <div class="absolute w-full h-full backface-hidden rotate-y-0">
-                    <img src="ecart.png" alt="E-Commerce Platform" class="h-full w-full object-cover rounded-lg">
-                    <h3 class="absolute bottom-2 left-0 right-0 text-center text-lg font-bold bg-gray-900/75 text-white p-2 rounded-b-lg">
-                        E-Commerce Platform
-                    </h3>
-                </div>
-                <div class="absolute w-full h-full bg-gray-800 text-white p-6 flex flex-col items-center justify-center rounded-lg rotate-y-180 backface-hidden">
-                    <h3 class="text-xl font-bold">E-Commerce Platform</h3>
-                    <p class="text-gray-400 text-sm text-center">A dynamic e-commerce site with OTP authentication and payment integration.</p>
-                    <div class="flex gap-4 mt-4">
-                        <a target="_blank"   href="https://onlineecart.onrender.com" class="bg-cyan-400 text-gray-900 px-4 py-2 rounded-lg font-semibold hover:bg-cyan-300 transition">Live Demo</a>
-                        <a target="_blank"   href="https://github.com/Shanushajahan707/Ecommerce-Ecart" class="bg-gray-700 text-white px-4 py-2 rounded-lg font-semibold hover:bg-gray-600 transition">GitHub</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Weather App -->
-        <div class="group perspective w-80 h-52 mx-auto">
-            <div class="relative w-full h-full preserve-3d duration-700 transform group-hover:rotate-y-180">
-                <div class="absolute w-full h-full backface-hidden rotate-y-0">
-                    <img src="weather_touch.png" alt="Weather App" class="h-full w-full object-cover rounded-lg">
-                    <h3 class="absolute bottom-2 left-0 right-0 text-center text-lg font-bold bg-gray-900/75 text-white p-2 rounded-b-lg">
-                        Weather App
-                    </h3>
-                </div>
-                <div class="absolute w-full h-full bg-gray-800 text-white p-6 flex flex-col items-center justify-center rounded-lg rotate-y-180 backface-hidden">
-                    <h3 class="text-xl font-bold">Weather App</h3>
-                    <p class="text-gray-400 text-sm text-center">A real-time weather application using OpenWeather API and Angular.</p>
-                    <div class="flex gap-4 mt-4">
-                        <a  target="_blank"  href="https://weathertouch-shanushajahan707s-projects.vercel.app/" class="bg-cyan-400 text-gray-900 px-4 py-2 rounded-lg font-semibold hover:bg-cyan-300 transition">Live Demo</a>
-                        <a  target="_blank"  href="https://github.com/Shanushajahan707/Weather-App-Frontend" class="bg-gray-700 text-white px-4 py-2 rounded-lg font-semibold hover:bg-gray-600 transition">GitHub</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-          <!-- Netflix Clone -->
-          <div class="group perspective w-80 h-52 mx-auto">
-            <div class="relative w-full h-full preserve-3d duration-700 transform group-hover:rotate-y-180">
-                <div class="absolute w-full h-full backface-hidden rotate-y-0">
-                    <img src="netflix_clone.png" alt="Netflix Clone" class="h-full w-full object-cover rounded-lg">
-                    <h3 class="absolute bottom-2 left-0 right-0 text-center text-lg font-bold bg-gray-900/75 text-white p-2 rounded-b-lg">
-                        Netflix Clone
-                    </h3>
-                </div>
-                <div class="absolute w-full h-full bg-gray-800 text-white p-6 flex flex-col items-center justify-center rounded-lg rotate-y-180 backface-hidden">
-                    <h3 class="text-xl font-bold">Netflix Clone</h3>
-                    <p class="text-gray-400 text-sm text-center">A Netflix-like streaming platform built using Angular.</p>
-                    <div class="flex gap-4 mt-4">
-                        <!-- <a target="_blank"   href="#" class="bg-cyan-400 text-gray-900 px-4 py-2 rounded-lg font-semibold hover:bg-cyan-300 transition">Live Demo</a> -->
-                        <a  target="_blank"  href="https://github.com/Shanushajahan707/Netflix-Clone-Angular" class="bg-gray-700 text-white px-4 py-2 rounded-lg font-semibold hover:bg-gray-600 transition">GitHub</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Welfare Organization Management System -->
-        <div class="group perspective w-80 h-52 mx-auto">
-            <div class="relative w-full h-full preserve-3d duration-700 transform group-hover:rotate-y-180">
-                <div class="absolute w-full h-full backface-hidden rotate-y-0">
-                    <img src="welfare_organization_mgnt.png" alt="Welfare Organization Management System" class="h-full w-full object-cover rounded-lg">
-                    <h3 class="absolute bottom-2 left-0 right-0 text-center text-lg font-bold bg-gray-900/75 text-white p-2 rounded-b-lg">
-                        Welfare Organization System
-                    </h3>
-                </div>
-                <div class="absolute w-full h-full bg-gray-800 text-white p-6 flex flex-col items-center justify-center rounded-lg rotate-y-180 backface-hidden">
-                    <h3 class="text-xl font-bold">Welfare Organization System</h3>
-                    <p class="text-gray-400 text-sm text-center">A management system for welfare organizations in Kerala.</p>
-                    <div class="flex gap-4 mt-4">
-                        <a  target="_blank"  href="#" class="bg-cyan-400 text-gray-900 px-4 py-2 rounded-lg font-semibold hover:bg-cyan-300 transition">Live Demo</a>
-                        <a  target="_blank"  href="https://github.com/Shanushajahan707/Welfare_organization_management_system.git" class="bg-gray-700 text-white px-4 py-2 rounded-lg font-semibold hover:bg-gray-600 transition">GitHub</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
+      </div>
     </div>
-</section>
+  </section>
+  
