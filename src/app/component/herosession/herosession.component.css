@@ -1,0 +1,31 @@
+.typing-container {
+    font-size: 1.25rem; /* text-xl */
+    margin-top: 0.5rem; /* mt-2 */
+    display: flex;
+    align-items: center;
+}
+
+.typing-text {
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 2px solid rgb(0, 238, 255); /* Cursor effect */
+    display: inline-block;
+    color: rgb(0, 238, 255);
+    font-weight: bold;
+    text-wrap: nowrap;
+    width: 19ch;
+    animation: typing 4s steps(19) infinite alternate-reverse;
+}
+
+@keyframes typing {
+   from{
+    width: 0ch;
+   }
+}
+
+
+
+@keyframes blink {
+    0%, 100% { border-color: rgb(0, 238, 255); }
+    50% { border-color: transparent; }
+}
