@@ -12,7 +12,7 @@ export class MyprojectsComponent {
         title: "Live Streaming Platform",
         image: "capturelive.png",
         description: "A one-to-many live streaming platform using WebRTC, Angular 17, and Node.js.",
-        liveDemo: "https://capturelive-shanushajahan707s-projects.vercel.app/",
+        liveDemo: "https://capture-live.vercel.app/",
         github: "https://github.com/Shanushajahan707/Live-Stream-Frontend"
     },
     {
@@ -33,7 +33,7 @@ export class MyprojectsComponent {
         title: "Weather App",
         image: "weather_touch.png",
         description: "A real-time weather application using OpenWeather API and Angular.",
-        liveDemo: "https://weathertouch-shanushajahan707s-projects.vercel.app/",
+        liveDemo: "https://weather-touch.vercel.app/login",
         github: "https://github.com/Shanushajahan707/Weather-App-Frontend"
     },
     {
