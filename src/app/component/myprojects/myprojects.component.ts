@@ -10,7 +10,7 @@ export class MyprojectsComponent {
   projects = [
     {
       title: 'Belles Avenue',
-      image: 'bellesavenue.png',
+      image: '/bellesavenue.png',
       description:
         'Belles Avenue, a fashion and beauty shop. Built with Angular, Tailwind CSS, and integrated with a digital billing system.',
       liveDemo: 'https://bellesavenue.vercel.app',
@@ -18,7 +18,7 @@ export class MyprojectsComponent {
     },
     {
       title: 'Live Streaming Platform',
-      image: 'capturelive.png',
+      image: '/capturelive.png',
       description:
         'A one-to-many live streaming platform using WebRTC, Angular 17, and Node.js.',
       liveDemo: 'https://capture-live.vercel.app/',
@@ -26,7 +26,7 @@ export class MyprojectsComponent {
     },
     {
       title: 'MEAN Auth App',
-      image: 'meanauth.png',
+      image: '/meanauth.png',
       description:
         'A secure authentication system with JWT, Angular Router, and Ngrx Toolkit.',
       liveDemo: '',
@@ -34,7 +34,7 @@ export class MyprojectsComponent {
     },
     {
       title: 'E-Commerce Platform',
-      image: 'ecart.png',
+      image: '/ecart.png',
       description:
         'A dynamic e-commerce site with OTP authentication and payment integration.',
       liveDemo: 'https://onlineecart.onrender.com',
@@ -42,7 +42,7 @@ export class MyprojectsComponent {
     },
     {
       title: 'Weather App',
-      image: 'weather_touch.png',
+      image: '/weather_touch.png',
       description:
         'A real-time weather application using OpenWeather API and Angular.',
       liveDemo: 'https://weather-touch.vercel.app/login',
@@ -50,14 +50,14 @@ export class MyprojectsComponent {
     },
     {
       title: 'Netflix Clone',
-      image: 'netflix_clone.png',
+      image: '/netflix_clone.png',
       description: 'A Netflix-like streaming platform built using Angular.',
       liveDemo: '',
       github: 'https://github.com/Shanushajahan707/Netflix-Clone-Angular',
     },
     {
       title: 'Welfare Organization System',
-      image: 'welfare_organization_mgnt.png',
+      image: '/welfare_organization_mgnt.png',
       description: 'A management system for welfare organizations in Kerala.',
       liveDemo: '',
       github:

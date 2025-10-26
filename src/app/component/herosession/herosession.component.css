@@ -1,31 +1,472 @@
+/* Hero Section - Professional Left-Aligned Design */
+.hero-section {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/hero_image.webp');
+  background-size: cover;
+  background-position: center right;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right,
+      rgba(15, 23, 42, 0.7) 0%,
+      rgba(30, 41, 59, 0.5) 40%,
+      rgba(51, 65, 85, 0.3) 70%,
+      transparent 100%);
+  z-index: 2;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  padding: 1rem 1.1rem;
+}
+
+.hero-text-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Typography */
+.hero-greeting {
+  margin-bottom: 0.5rem;
+}
+
+.hero-greeting p {
+  font-size: 1rem;
+  font-weight: 300;
+  color: #cbd5e1;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.hero-name {
+  margin-bottom: 1rem;
+}
+
+.hero-name h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin: 0;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.hero-name span {
+  color: #06b6d4;
+  display: block;
+  margin-top: 0.25rem;
+}
+
+.hero-title {
+  margin-bottom: 1.5rem;
+}
+
 .typing-container {
-    font-size: 1.25rem; /* text-xl */
-    margin-top: 0.5rem; /* mt-2 */
-    display: flex;
-    align-items: center;
+  font-size: 1.125rem;
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+
+.typing-container span:first-child {
+  display: block;
+  margin-bottom: 0.25rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 300;
 }
 
 .typing-text {
-    overflow: hidden;
-    white-space: nowrap;
-    border-right: 2px solid rgb(0, 238, 255); /* Cursor effect */
-    display: inline-block;
-    color: rgb(0, 238, 255);
-    font-weight: bold;
-    text-wrap: nowrap;
-    width: 19ch;
-    animation: typing 4s steps(19) infinite alternate-reverse;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3px solid #06b6d4;
+  display: inline-block;
+  color: #06b6d4;
+  font-weight: 600;
+  text-wrap: nowrap;
+  width: 19ch;
+  animation: typing 4s steps(19) infinite alternate-reverse, blink 1s infinite;
+  background: linear-gradient(90deg, #06b6d4, #0891b2);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 100%;
+  animation: typing 4s steps(19) infinite alternate-reverse,
+    blink 1s infinite,
+    gradientShift 3s ease-in-out infinite;
+  text-shadow: 0 0 10px rgba(6, 182, 212, 0.2);
 }
 
+.hero-description {
+  margin-bottom: 2.5rem;
+  max-width: 500px;
+}
+
+.hero-description p {
+  font-size: 1rem;
+  font-weight: 300;
+  color: #cbd5e1;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Enhanced Social Links - Modern Design with Advanced Effects */
+.social-links {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.1rem;
+}
+
+.social-link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border: 2px solid rgba(6, 182, 212, 0.4);
+  border-radius: 50%;
+  color: #06b6d4;
+  text-decoration: none;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  background: linear-gradient(135deg,
+      rgba(6, 182, 212, 0.1) 0%,
+      rgba(6, 182, 212, 0.05) 50%,
+      transparent 100%);
+  backdrop-filter: blur(20px);
+  box-shadow:
+    0 4px 15px rgba(6, 182, 212, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+}
+
+.social-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent);
+  transition: left 0.6s ease;
+}
+
+.social-link:hover::before {
+  left: 100%;
+}
+
+.social-link:hover {
+  background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);
+  color: #0f172a;
+  border-color: #06b6d4;
+  transform: translateY(-4px) scale(1.1);
+  box-shadow:
+    0 15px 35px rgba(6, 182, 212, 0.4),
+    0 5px 15px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.social-link:active {
+  transform: translateY(-2px) scale(1.05);
+  transition: all 0.1s ease;
+}
+
+.social-link i {
+  font-size: 1.25rem;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  z-index: 2;
+}
+
+.social-link:hover i {
+  transform: scale(1.2) rotate(15deg);
+  text-shadow: 0 0 20px rgba(15, 23, 42, 0.3);
+}
+
+/* Individual social platform hover effects */
+.social-link[href*="github"]:hover {
+  background: linear-gradient(135deg, #333 0%, #24292e 100%);
+  border-color: #333;
+  box-shadow:
+    0 15px 35px rgba(51, 51, 51, 0.4),
+    0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.social-link[href*="linkedin"]:hover {
+  background: linear-gradient(135deg, #0077b5 0%, #005885 100%);
+  border-color: #0077b5;
+  box-shadow:
+    0 15px 35px rgba(0, 119, 181, 0.4),
+    0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Focus states for accessibility */
+.social-link:focus {
+  outline: 2px solid #06b6d4;
+  outline-offset: 2px;
+  background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);
+  color: #0f172a;
+  border-color: #06b6d4;
+}
+
+.social-link:focus-visible {
+  outline: 3px solid rgba(6, 182, 212, 0.6);
+  outline-offset: 3px;
+}
+
+/* Enhanced CTA Button - Modern Download CV Design */
+.cta-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 2.5rem;
+  background: linear-gradient(135deg, #06b6d4 0%, #0891b2 50%, #0e7490 100%);
+  color: #0f172a;
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow:
+    0 8px 25px rgba(6, 182, 212, 0.3),
+    0 4px 10px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+}
+
+.cta-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(255, 255, 255, 0.3),
+      transparent);
+  transition: left 0.7s ease;
+}
+
+.cta-button:hover::before {
+  left: 100%;
+}
+
+.cta-button:hover {
+  background: linear-gradient(135deg, #0891b2 0%, #06b6d4 50%, #0e7490 100%);
+  transform: translateY(-4px) scale(1.05);
+  box-shadow:
+    0 15px 40px rgba(6, 182, 212, 0.4),
+    0 8px 20px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.cta-button:active {
+  transform: translateY(-2px) scale(1.02);
+  transition: all 0.1s ease;
+}
+
+.cta-button span {
+  position: relative;
+  z-index: 2;
+}
+
+.cta-button i {
+  font-size: 1rem;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  z-index: 2;
+}
+
+.cta-button:hover i {
+  transform: translateY(2px) rotate(15deg);
+  text-shadow: 0 0 10px rgba(15, 23, 42, 0.2);
+}
+
+/* Enhanced glow effect */
+@keyframes button-glow {
+
+  0%,
+  100% {
+    box-shadow:
+      0 8px 25px rgba(6, 182, 212, 0.3),
+      0 4px 10px rgba(0, 0, 0, 0.1),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  }
+
+  50% {
+    box-shadow:
+      0 8px 25px rgba(6, 182, 212, 0.5),
+      0 4px 10px rgba(0, 0, 0, 0.15),
+      inset 0 1px 0 rgba(255, 255, 255, 0.3),
+      0 0 30px rgba(6, 182, 212, 0.2);
+  }
+}
+
+.cta-button {
+  animation: button-glow 4s ease-in-out infinite;
+}
+
+/* Focus states for accessibility */
+.cta-button:focus {
+  outline: 3px solid rgba(6, 182, 212, 0.7);
+  outline-offset: 3px;
+  background: linear-gradient(135deg, #0891b2 0%, #06b6d4 50%, #0e7490 100%);
+  transform: translateY(-2px) scale(1.02);
+}
+
+.cta-button:focus-visible {
+  outline: 4px solid rgba(6, 182, 212, 0.8);
+  outline-offset: 4px;
+}
+
+/* Scroll Indicator */
+.hero-scroll-indicator {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 10;
+}
+
+.hero-scroll-indicator span {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #06b6d4;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
+
+.hero-scroll-indicator div:last-child {
+  background: linear-gradient(to bottom, #06b6d4, transparent);
+  width: 1px;
+  height: 3rem;
+  margin: 0.5rem 0;
+}
+
+/* Animations */
 @keyframes typing {
-   from{
+  from {
     width: 0ch;
-   }
+  }
+
+  to {
+    width: 19ch;
+  }
 }
-
-
 
 @keyframes blink {
-    0%, 100% { border-color: rgb(0, 238, 255); }
-    50% { border-color: transparent; }
+
+  0%,
+  50% {
+    border-color: #06b6d4;
+  }
+
+  51%,
+  100% {
+    border-color: transparent;
+  }
+}
+
+@keyframes gradientShift {
+
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* AOS Animation Overrides */
+.hero-greeting {
+  animation: fadeInDown 0.8s ease-out 0.2s both;
+}
+
+.hero-name {
+  animation: fadeInRight 1s ease-out 0.4s both;
+}
+
+.hero-title {
+  animation: fadeInRight 1s ease-out 0.6s both;
+}
+
+.hero-description {
+  animation: fadeInRight 1s ease-out 0.8s both;
+}
+
+.hero-actions {
+  animation: fadeInRight 1s ease-out 1s both;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Enhanced animations for social buttons */
+@keyframes pulse-glow {
+
+  0%,
+  100% {
+    box-shadow:
+      0 4px 15px rgba(6, 182, 212, 0.1),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
+
+  50% {
+    box-shadow:
+      0 4px 15px rgba(6, 182, 212, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2),
+      0 0 20px rgba(6, 182, 212, 0.1);
+  }
+}
+
+.social-link {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+.social-link:hover {
+  animation: none;
 }

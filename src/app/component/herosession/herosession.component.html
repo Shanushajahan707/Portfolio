@@ -1,75 +1,88 @@
-<section class="relative w-full h-screen pt-24 p-3 md:p-3" id="home">
-  <!-- Background Image -->
-  <div
-    class="absolute  inset-0 bg-cover bg-center"
-    style="
-      background-image: url('hero_image.webp');
-    "
-    aria-hidden="true"
-  >
-    <!-- Dark Gradient Overlay on the Left Side -->
-    <div
-      class="absolute inset-0 bg-gradient-to-r from-black/70 to-transparent"
-    ></div>
-  </div>
+<section class="hero-section relative w-full h-screen flex items-center overflow-hidden" id="home">
+  <!-- Background Image with Overlay -->
+  <div class="hero-background absolute inset-0 bg-cover bg-center bg-no-repeat"></div>
+  <div class="hero-overlay absolute inset-0 bg-gradient-to-r from-slate-900/70 via-slate-800/50 to-transparent"></div>
 
-  <!-- Content -->
-  <div
-    class="relative space-y-2  z-10 flex  flex-col justify-center  h-full md:pl-10 text-white max-w-xl transition"
-  >
-    <h1
-      class="md:text-5xl text-3xl font-bold"
-      data-aos="fade-down"
-      data-aos-duration="1000"
-    >
-      Hello, It's Me 
-    </h1>
-    <h2
-      class="md:text-6xl text-5xl font-bold"
-      data-aos="fade-right"
-      data-aos-duration="1200"
-    >
-      Shanu Shajahan
-    </h2>
-    <p class="mt-2 typing-container text-base md:text-3xl" data-aos="fade-up" data-aos-duration="1400">
-      I'm a <span class="typing-text mx-3 text-base md:text-3xl font-bold">Fullstack Developer</span>
-  </p>
-    <p class="mt-4" data-aos="zoom-in" data-aos-duration="1600">
-      Experienced in MEAN stack and building scalable applications.
-    </p>
+  <!-- Content Container - Left Aligned -->
+  <div class="hero-content relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-5 lg:px-5">
+    <div class="hero-text-container max-w-2xl">
 
-    <!-- Social Icons -->
-    <div
-      class="flex mt-6  "
-      data-aos="fade-up"
-      data-aos-duration="1800"
-    >
-      <a
-      target="_blank"
-        href="https://github.com/Shanushajahan707"
-        class="w-10 h-10  flex items-center justify-center rounded-full border border-[rgb(0,238,255)] text-[rgb(0,238,255)] hover:bg-[rgb(0,238,255)] hover:text-black transition"
-      >
-        <i class="fab fa-github"></i>
-      </a>
-      <a
-        href="https://www.linkedin.com/in/shanushajahan/"
-        target="_blank"
-        class="w-10 ml-5 md:ml-5  h-10 flex items-center justify-center rounded-full border border-[rgb(0,238,255)] text-[rgb(0,238,255)] hover:bg-[rgb(0,238,255)] hover:text-black transition"
-      >
-        <i class="fab fa-linkedin-in"></i>
-      </a>
-      
-      <!-- Download CV Button -->
-      <!-- Download CV Button with Glow Effect -->
+      <!-- Greeting -->
+      <div class="hero-greeting mb-4" data-aos="fade-down" data-aos-duration="800">
+        <p class="text-lg md:text-xl text-gray-300 font-light tracking-wider uppercase">
+          Hello, I'm
+        </p>
+      </div>
+
+      <!-- Name -->
+      <div class="hero-name mb-3" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200">
+        <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight">
+          Shanu
+          <span class="block text-cyan-400 mt-1">Shajahan</span>
+        </h1>
+      </div>
+
+      <!-- Title with typing animation -->
+      <div class="hero-title mb-4" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="400">
+        <div class="typing-container text-lg sm:text-xl md:text-2xl text-gray-200">
+          <span class="block mb-2 text-white/90">I'm a</span>
+          <span class="typing-text font-semibold text-cyan-400">Fullstack Developer</span>
+        </div>
+      </div>
+
+      <!-- Description -->
+      <div class="hero-description mb-6 max-w-xl" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="600">
+        <p class="text-base sm:text-lg md:text-xl text-gray-300 leading-relaxed font-light">
+          I craft exceptional digital experiences using modern technologies like
+          <span class="text-cyan-400 font-medium">Angular</span>,
+          <span class="text-cyan-400 font-medium">Node.js</span>, and
+          <span class="text-cyan-400 font-medium">TypeScript</span>.
+        </p>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="hero-actions flex flex-col sm:flex-row items-start gap-6" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="800">
+
+        <!-- Social Links -->
+        <div class="social-links flex items-center gap-4" role="group" aria-label="Social Media Links">
+          <a href="https://github.com/Shanushajahan707"
+             target="_blank"
+             rel="noopener noreferrer"
+             class="social-link"
+             aria-label="Visit my GitHub profile"
+             title="GitHub Profile">
+            <i class="fab fa-github text-lg" aria-hidden="true"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/shanushajahan/"
+             target="_blank"
+             rel="noopener noreferrer"
+             class="social-link"
+             aria-label="Connect with me on LinkedIn"
+             title="LinkedIn Profile">
+            <i class="fab fa-linkedin-in text-lg" aria-hidden="true"></i>
+          </a>
+          <a href="mailto:shanushajahan707@gmail.com"
+             class="social-link"
+             aria-label="Send me an email"
+             title="Email Contact">
+            <i class="fas fa-envelope text-lg" aria-hidden="true"></i>
+          </a>
+        </div>
+
+        <!-- CTA Button -->
+        <a href="{{pdflocation}}"
+           download
+           class="cta-button"
+           aria-label="Download my CV/Resume"
+           title="Download CV"
+           role="button">
+          <span>Download CV</span>
+          <i class="fas fa-download" aria-hidden="true"></i>
+        </a>
+      </div>
     </div>
-    <a
-      href="{{pdflocation}}"
-      download
-      class="mt-2 w-1/2 inline-block px-6 py-3 bg-[rgb(0,238,255)] text-black font-bold rounded-full hover:bg-[rgb(0,180,220)] transition shadow-[0_0_15px_rgb(0,238,255)] "
-      data-aos="fade-down"
-      data-aos-duration="1000"
-    >
-      Download CV
-    </a>
   </div>
+
+ 
+  
 </section>
