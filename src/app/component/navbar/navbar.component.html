@@ -1,85 +1,167 @@
-<nav class="navbar fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out" [ngClass]="{'navbar-scrolled': isScrolled}">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex items-center justify-between h-16">
+<nav class="navbar fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out"
+     [ngClass]="{'navbar-scrolled': isScrolled}">
 
-      <!-- Logo -->
-      <div class="flex-shrink-0 flex items-center">
-        <a href="#home" class="text-2xl font-bold text-white hover:text-cyan-400 transition-colors duration-300">
-          Port<span class="text-cyan-400">Folio</span>
+  <!-- Background decorative elements -->
+  <div class="absolute inset-0 opacity-30">
+    <div class="absolute top-0 left-1/4 w-32 h-32 bg-cyan-400/5 rounded-full blur-2xl"></div>
+    <div class="absolute top-0 right-1/4 w-24 h-24 bg-blue-400/5 rounded-full blur-2xl"></div>
+  </div>
+
+  <div class="relative max-w-7xl  mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-20">
+
+      <!-- Enhanced Logo -->
+      <div class="flex-shrink-0 flex items-center group">
+        <a (click)="scrollToSection('#home')" class="flex items-center space-x-2 text-3xl font-bold transition-all duration-300">
+          <div class="w-10 h-10 bg-gradient-to-br from-cyan-400 to-blue-400 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg group-hover:shadow-cyan-400/30">
+            <i class="fas fa-code text-gray-900 text-lg"></i>
+          </div>
+          <span class="text-white group-hover:text-cyan-400 transition-colors duration-300">
+            Port<span class="text-cyan-400">Folio</span>
+          </span>
         </a>
       </div>
 
-      <!-- Desktop Navigation -->
-      <div class="hidden md:block">
-        <div class="ml-10 flex items-baseline space-x-8">
-          <a href="#home"
-             class="nav-link text-gray-300 hover:text-cyan-400 hover:bg-white/10 px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 relative group">
-            Home
-            <span class="absolute inset-x-0 bottom-0 h-0.5 bg-cyan-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
-          </a>
-          <a href="#about"
-             class="nav-link text-gray-300 hover:text-cyan-400 hover:bg-white/10 px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 relative group">
-            About
-            <span class="absolute inset-x-0 bottom-0 h-0.5 bg-cyan-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
-          </a>
-          <a href="#project"
-             class="nav-link text-gray-300 hover:text-cyan-400 hover:bg-white/10 px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 relative group">
-            Projects
-            <span class="absolute inset-x-0 bottom-0 h-0.5 bg-cyan-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
-          </a>
-          <a href="#connect"
-             class="nav-link text-gray-300 hover:text-cyan-400 hover:bg-white/10 px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 relative group">
-            Contact
-            <span class="absolute inset-x-0 bottom-0 h-0.5 bg-cyan-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
-          </a>
-        </div>
+      <!-- Desktop Navigation (Large screens only) -->
+      <div class="hidden lg:flex items-center space-x-1">
+        <a (click)="scrollToSection('#home')"
+           class="nav-link relative text-gray-300 hover:text-cyan-400 px-4 py-3 rounded-xl text-sm font-medium transition-all duration-300 group overflow-hidden">
+          <span class="relative z-10 flex items-center space-x-2">
+            <i class="fas fa-home text-xs"></i>
+            <span>Home</span>
+          </span>
+          <div class="absolute inset-0 bg-gradient-to-r from-cyan-400/10 to-blue-400/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
+          <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-blue-400 group-hover:w-full transition-all duration-300"></span>
+        </a>
+
+        <a (click)="scrollToSection('#about')"
+           class="nav-link relative text-gray-300 hover:text-cyan-400 px-4 py-3 rounded-xl text-sm font-medium transition-all duration-300 group overflow-hidden">
+          <span class="relative z-10 flex items-center space-x-2">
+            <i class="fas fa-user text-xs"></i>
+            <span>About</span>
+          </span>
+          <div class="absolute inset-0 bg-gradient-to-r from-cyan-400/10 to-blue-400/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
+          <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-blue-400 group-hover:w-full transition-all duration-300"></span>
+        </a>
+
+        <a (click)="scrollToSection('#projects')"
+           class="nav-link relative text-gray-300 hover:text-cyan-400 px-4 py-3 rounded-xl text-sm font-medium transition-all duration-300 group overflow-hidden">
+          <span class="relative z-10 flex items-center space-x-2">
+            <i class="fas fa-project-diagram text-xs"></i>
+            <span>Projects</span>
+          </span>
+          <div class="absolute inset-0 bg-gradient-to-r from-cyan-400/10 to-blue-400/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
+          <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-blue-400 group-hover:w-full transition-all duration-300"></span>
+        </a>
+
+        <a (click)="scrollToSection('#skills')"
+           class="nav-link relative text-gray-300 hover:text-cyan-400 px-4 py-3 rounded-xl text-sm font-medium transition-all duration-300 group overflow-hidden">
+          <span class="relative z-10 flex items-center space-x-2">
+            <i class="fas fa-cog text-xs"></i>
+            <span>Skills</span>
+          </span>
+          <div class="absolute inset-0 bg-gradient-to-r from-cyan-400/10 to-blue-400/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
+          <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-blue-400 group-hover:w-full transition-all duration-300"></span>
+        </a>
       </div>
 
-      <!-- Mobile menu button -->
-      <div class="md:hidden">
+      <!-- Mobile menu button (Small and Medium screens only) -->
+      <div class="lg:hidden">
         <button (click)="toggleMobileMenu()"
-                class="mobile-menu-button inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-cyan-400 transition-colors duration-300"
-                [ngClass]="{'bg-gray-700': isMobileMenuOpen}">
+                class="mobile-menu-button relative inline-flex items-center justify-center p-3 rounded-xl text-gray-400 hover:text-white hover:bg-gray-700/50 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-cyan-400 transition-all duration-300 backdrop-blur-sm border border-gray-600/30"
+                [ngClass]="{'bg-gray-700/50 border-cyan-400/30': isMobileMenuOpen}">
           <span class="sr-only">Open main menu</span>
-          <!-- Hamburger icon -->
-          <svg class="block h-6 w-6" [ngClass]="{'hidden': isMobileMenuOpen, 'block': !isMobileMenuOpen}" stroke="currentColor" fill="none" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-          <!-- Close icon -->
-          <svg class="block h-6 w-6" [ngClass]="{'block': isMobileMenuOpen, 'hidden': !isMobileMenuOpen}" stroke="currentColor" fill="none" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-          </svg>
+
+          <!-- Animated hamburger lines -->
+          <div class="relative w-6 h-5">
+            <span class="absolute top-0 left-0 w-full h-0.5 bg-current transform transition-all duration-300"
+                  [ngClass]="{'rotate-45 top-1/2 -translate-y-1/2': isMobileMenuOpen}"></span>
+            <span class="absolute top-1/2 left-0 w-full h-0.5 bg-current transform -translate-y-1/2 transition-all duration-300"
+                  [ngClass]="{'opacity-0': isMobileMenuOpen}"></span>
+            <span class="absolute bottom-0 left-0 w-full h-0.5 bg-current transform transition-all duration-300"
+                  [ngClass]="{'-rotate-45 bottom-1/2 translate-y-1/2': isMobileMenuOpen}"></span>
+          </div>
         </button>
       </div>
     </div>
   </div>
 
   <!-- Mobile menu overlay -->
-  <div class="mobile-menu md:hidden" [ngClass]="{'mobile-menu-open': isMobileMenuOpen, 'mobile-menu-closed': !isMobileMenuOpen}">
-    <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-gray-900/95 backdrop-blur-lg border-t border-gray-700">
-      <a href="#home"
-         (click)="closeMobileMenu()"
-         class="mobile-nav-link text-gray-300 hover:text-cyan-400 hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition-all duration-300">
-        Home
-      </a>
-      <a href="#about"
-         (click)="closeMobileMenu()"
-         class="mobile-nav-link text-gray-300 hover:text-cyan-400 hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition-all duration-300">
-        About
-      </a>
-      <a href="#project"
-         (click)="closeMobileMenu()"
-         class="mobile-nav-link text-gray-300 hover:text-cyan-400 hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition-all duration-300">
-        Projects
-      </a>
-      <a href="#connect"
-         (click)="closeMobileMenu()"
-         class="mobile-nav-link text-gray-300 hover:text-cyan-400 hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition-all duration-300">
-        Contact
-      </a>
+  <div class="mobile-menu lg:hidden"
+       [ngClass]="{'mobile-menu-open': isMobileMenuOpen}">
+
+    <!-- Background with blur -->
+    <div class="absolute inset-0 bg-gray-900/95 backdrop-blur-xl border-t border-gray-700/50"></div>
+
+    <div class="relative px-4 py-6 space-y-2">
+      <!-- Mobile Navigation Links -->
+      <div class="space-y-1">
+        <a (click)="scrollToSection('#home'); closeMobileMenu()"
+           class="mobile-nav-link flex items-center space-x-4 px-4 py-3 rounded-xl text-gray-300 hover:text-cyan-400 hover:bg-cyan-400/10 transition-all duration-300 group border border-transparent hover:border-cyan-400/30">
+          <div class="w-8 h-8 bg-gradient-to-br from-cyan-400/20 to-blue-400/20 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+            <i class="fas fa-home text-cyan-400 text-sm"></i>
+          </div>
+          <div>
+            <div class="font-medium">Home</div>
+            <div class="text-xs text-gray-500">Welcome section</div>
+          </div>
+        </a>
+
+        <a (click)="scrollToSection('#about'); closeMobileMenu()"
+           class="mobile-nav-link flex items-center space-x-4 px-4 py-3 rounded-xl text-gray-300 hover:text-cyan-400 hover:bg-cyan-400/10 transition-all duration-300 group border border-transparent hover:border-cyan-400/30">
+          <div class="w-8 h-8 bg-gradient-to-br from-cyan-400/20 to-blue-400/20 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+            <i class="fas fa-user text-cyan-400 text-sm"></i>
+          </div>
+          <div>
+            <div class="font-medium">About</div>
+            <div class="text-xs text-gray-500">My story</div>
+          </div>
+        </a>
+
+        <a (click)="scrollToSection('#project'); closeMobileMenu()"
+           class="mobile-nav-link flex items-center space-x-4 px-4 py-3 rounded-xl text-gray-300 hover:text-cyan-400 hover:bg-cyan-400/10 transition-all duration-300 group border border-transparent hover:border-cyan-400/30">
+          <div class="w-8 h-8 bg-gradient-to-br from-cyan-400/20 to-blue-400/20 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+            <i class="fas fa-project-diagram text-cyan-400 text-sm"></i>
+          </div>
+          <div>
+            <div class="font-medium">Projects</div>
+            <div class="text-xs text-gray-500">My work</div>
+          </div>
+        </a>
+
+        <a (click)="scrollToSection('#skills'); closeMobileMenu()"
+           class="mobile-nav-link flex items-center space-x-4 px-4 py-3 rounded-xl text-gray-300 hover:text-cyan-400 hover:bg-cyan-400/10 transition-all duration-300 group border border-transparent hover:border-cyan-400/30">
+          <div class="w-8 h-8 bg-gradient-to-br from-cyan-400/20 to-blue-400/20 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+            <i class="fas fa-cog text-cyan-400 text-sm"></i>
+          </div>
+          <div>
+            <div class="font-medium">Skills</div>
+            <div class="text-xs text-gray-500">Technologies</div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Mobile Social Links Only -->
+      <div class="pt-4 border-t border-gray-700/50">
+        <!-- Social Media Quick Links -->
+        <div class="flex justify-center space-x-4">
+          <a href="https://www.facebook.com/shanu.shajahan.336/"
+             target="_blank"
+             class="w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-500 rounded-lg flex items-center justify-center text-white hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-blue-400/30">
+            <i class="fab fa-facebook-f text-sm"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/shanushajahan/"
+             target="_blank"
+             class="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-400 rounded-lg flex items-center justify-center text-white hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-blue-400/30">
+            <i class="fab fa-linkedin-in text-sm"></i>
+          </a>
+          <a href="https://www.instagram.com/____shxnu/"
+             target="_blank"
+             class="w-10 h-10 bg-gradient-to-br from-pink-500 via-red-500 to-yellow-500 rounded-lg flex items-center justify-center text-white hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-pink-400/30">
+            <i class="fab fa-instagram text-sm"></i>
+          </a>
+        </div>
+      </div>
     </div>
   </div>
 </nav>
-
-<!-- Spacer for fixed navbar -->
-<div class="h-16"></div>
