@@ -2,52 +2,98 @@
     position: sticky;
     top: 0;
     width: 100%;
-    z-index: 1000; /* Ensure it stays above other elements */
-    background-color: white; /* Add a background to prevent content from overlapping */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow */
+    z-index: 40;
+    /* Removed background and shadow as navbar now handles this */
 }
 
-
+/* Enhanced cursor styles */
 #custom-cursor {
   position: fixed;
   top: 0;
   left: 0;
   width: 20px;
   height: 20px;
-  background-color: rgba(0, 238, 255, 0.7);
+  background: radial-gradient(circle, rgba(6, 182, 212, 0.8) 0%, rgba(6, 182, 212, 0.4) 70%, transparent 100%);
   border-radius: 50%;
   pointer-events: none;
   z-index: 9999;
   transform: translate(-50%, -50%);
-  transition: background-color 0.3s ease;
-  mix-blend-mode: difference; 
+  transition: all 0.1s ease-out;
+  backdrop-filter: blur(2px);
+  box-shadow: 0 0 20px rgba(6, 182, 212, 0.3);
 }
 
+/* Scroll to top button enhancements */
 .scroll-top {
   opacity: 0;
-  transform: scale(0);
+  transform: scale(0) rotate(180deg);
   pointer-events: none;
-  transition: opacity 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(6, 182, 212, 0.3);
+  background: rgba(6, 182, 212, 0.9);
+  color: white;
 }
 
 .scroll-top.visible {
   opacity: 1;
   pointer-events: auto;
-  animation: popIn 0.4s ease forwards;
+  transform: scale(1) rotate(0deg);
 }
 
-@keyframes popIn {
-  0% {
-    transform: scale(0);
+.scroll-top:hover {
+  transform: scale(1.1) rotate(0deg);
+  box-shadow: 0 0 25px rgba(6, 182, 212, 0.5);
+  background: rgba(6, 182, 212, 1);
+}
+
+.scroll-top i {
+  transition: transform 0.3s ease;
+}
+
+.scroll-top:hover i {
+  transform: translateY(-2px);
+}
+
+/* Page transition animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
   }
-  60% {
-    transform: scale(1.2);
-  }
-  80% {
-    transform: scale(0.95);
-  }
-  100% {
-    transform: scale(1);
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
+app-herosession,
+app-about,
+app-myprojects,
+app-skills,
+app-footer {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+/* Smooth page loading */
+* {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar for the entire app */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.3);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(6, 182, 212, 0.6);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(6, 182, 212, 0.8);
+}

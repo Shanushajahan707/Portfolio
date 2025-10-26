@@ -1,33 +1,85 @@
-<div class="bg-gray-800 w-full py-4 px-6 fixed top-0 left-0 z-50 shadow-md">
-  <div class="max-w-7xl mx-auto flex items-center justify-between">
-    
-    <!-- Logo -->
-    <div class="flex items-center">
-      <h2 class="text-white text-2xl font-semibold">
-        Port<span class="text-[rgb(0,238,255)]">Folio</span>
-      </h2>
-    </div>
+<nav class="navbar fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out" [ngClass]="{'navbar-scrolled': isScrolled}">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
 
-    <!-- Hamburger (mobile) -->
-    <input type="checkbox" id="menu-toggle" class="hidden peer">
-    <label for="menu-toggle" class="sm:hidden cursor-pointer">
-      <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-          d="M4 6h16M4 12h16m-7 6h7"></path>
-      </svg>
-    </label>
+      <!-- Logo -->
+      <div class="flex-shrink-0 flex items-center">
+        <a href="#home" class="text-2xl font-bold text-white hover:text-cyan-400 transition-colors duration-300">
+          Port<span class="text-cyan-400">Folio</span>
+        </a>
+      </div>
 
-    <!-- Navigation Menu -->
-    <div
-      class="hidden peer-checked:flex sm:flex flex-col sm:flex-row sm:items-center absolute sm:static top-full left-0 w-full sm:w-auto bg-gray-800 sm:bg-transparent py-4 sm:py-0 sm:gap-10 gap-4 animate-slideDown sm:animate-none">
-      <a href="#home"
-        class="text-white text-lg transition hover:scale-110 hover:text-[rgb(0,238,255)] duration-300 ease-in-out animate-slideInRight">Home</a>
-      <a href="#about"
-        class="text-white text-lg transition hover:scale-110 hover:text-[rgb(0,238,255)] duration-300 ease-in-out animate-slideInRight">About</a>
-      <a href="#project"
-        class="text-white text-lg transition hover:scale-110 hover:text-[rgb(0,238,255)] duration-300 ease-in-out animate-slideInRight">Project</a>
-      <a href="#connect"
-        class="text-white text-lg transition hover:scale-110 hover:text-[rgb(0,238,255)] duration-300 ease-in-out animate-slideInRight">Connect</a>
+      <!-- Desktop Navigation -->
+      <div class="hidden md:block">
+        <div class="ml-10 flex items-baseline space-x-8">
+          <a href="#home"
+             class="nav-link text-gray-300 hover:text-cyan-400 hover:bg-white/10 px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 relative group">
+            Home
+            <span class="absolute inset-x-0 bottom-0 h-0.5 bg-cyan-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+          </a>
+          <a href="#about"
+             class="nav-link text-gray-300 hover:text-cyan-400 hover:bg-white/10 px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 relative group">
+            About
+            <span class="absolute inset-x-0 bottom-0 h-0.5 bg-cyan-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+          </a>
+          <a href="#project"
+             class="nav-link text-gray-300 hover:text-cyan-400 hover:bg-white/10 px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 relative group">
+            Projects
+            <span class="absolute inset-x-0 bottom-0 h-0.5 bg-cyan-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+          </a>
+          <a href="#connect"
+             class="nav-link text-gray-300 hover:text-cyan-400 hover:bg-white/10 px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 relative group">
+            Contact
+            <span class="absolute inset-x-0 bottom-0 h-0.5 bg-cyan-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Mobile menu button -->
+      <div class="md:hidden">
+        <button (click)="toggleMobileMenu()"
+                class="mobile-menu-button inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-cyan-400 transition-colors duration-300"
+                [ngClass]="{'bg-gray-700': isMobileMenuOpen}">
+          <span class="sr-only">Open main menu</span>
+          <!-- Hamburger icon -->
+          <svg class="block h-6 w-6" [ngClass]="{'hidden': isMobileMenuOpen, 'block': !isMobileMenuOpen}" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+          <!-- Close icon -->
+          <svg class="block h-6 w-6" [ngClass]="{'block': isMobileMenuOpen, 'hidden': !isMobileMenuOpen}" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
     </div>
   </div>
-</div>
+
+  <!-- Mobile menu overlay -->
+  <div class="mobile-menu md:hidden" [ngClass]="{'mobile-menu-open': isMobileMenuOpen, 'mobile-menu-closed': !isMobileMenuOpen}">
+    <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-gray-900/95 backdrop-blur-lg border-t border-gray-700">
+      <a href="#home"
+         (click)="closeMobileMenu()"
+         class="mobile-nav-link text-gray-300 hover:text-cyan-400 hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition-all duration-300">
+        Home
+      </a>
+      <a href="#about"
+         (click)="closeMobileMenu()"
+         class="mobile-nav-link text-gray-300 hover:text-cyan-400 hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition-all duration-300">
+        About
+      </a>
+      <a href="#project"
+         (click)="closeMobileMenu()"
+         class="mobile-nav-link text-gray-300 hover:text-cyan-400 hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition-all duration-300">
+        Projects
+      </a>
+      <a href="#connect"
+         (click)="closeMobileMenu()"
+         class="mobile-nav-link text-gray-300 hover:text-cyan-400 hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition-all duration-300">
+        Contact
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- Spacer for fixed navbar -->
+<div class="h-16"></div>
