@@ -1,9 +1,260 @@
+/* Enhanced About Section - Modern Professional Design */
+section {
+  position: relative;
+  background: linear-gradient(135deg,
+      #0f172a 0%,
+      #1e293b 25%,
+      #334155 50%,
+      #1e293b 75%,
+      #0f172a 100%);
+  overflow: hidden;
+}
+
+section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:
+    radial-gradient(circle at 20% 50%, rgba(6, 182, 212, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(14, 165, 233, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 40% 80%, rgba(6, 182, 212, 0.06) 0%, transparent 50%);
+  animation: backgroundShift 8s ease-in-out infinite;
+}
+
+section::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(from 0deg,
+      transparent,
+      rgba(6, 182, 212, 0.05),
+      transparent,
+      rgba(14, 165, 233, 0.05),
+      transparent);
+  animation: rotate 20s linear infinite;
+  opacity: 0.3;
+}
+
+/* Enhanced floating animation */
 @keyframes floating {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-15px); }
-    100% { transform: translateY(0px); }
+  0% {
+    transform: translateY(0px) rotate(0deg);
+    filter: drop-shadow(0 0 20px rgba(0, 238, 255, 0.3));
+  }
+
+  33% {
+    transform: translateY(-12px) rotate(1deg);
+    filter: drop-shadow(0 0 30px rgba(0, 238, 255, 0.5));
+  }
+
+  66% {
+    transform: translateY(-8px) rotate(-1deg);
+    filter: drop-shadow(0 0 25px rgba(0, 238, 255, 0.4));
+  }
+
+  100% {
+    transform: translateY(0px) rotate(0deg);
+    filter: drop-shadow(0 0 20px rgba(0, 238, 255, 0.3));
+  }
 }
 
 .animate-floating {
-    animation: floating 3s ease-in-out infinite;
+  animation: floating 4s ease-in-out infinite;
+  transition: all 0.3s ease;
+}
+
+.animate-floating:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 40px rgba(0, 238, 255, 0.6));
+}
+
+/* Background animations */
+@keyframes backgroundShift {
+
+  0%,
+  100% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Enhanced content styling - Mobile-first responsive */
+.about-content {
+  position: relative;
+  z-index: 10;
+  background: rgba(15, 23, 42, 0.3);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(6, 182, 212, 0.2);
+  box-shadow:
+    0 25px 50px rgba(0, 0, 0, 0.3),
+    0 0 0 1px rgba(6, 182, 212, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  transition: all 0.4s ease;
+}
+
+.about-content:hover {
+  border-color: rgba(6, 182, 212, 0.4);
+  box-shadow:
+    0 35px 60px rgba(0, 0, 0, 0.4),
+    0 0 0 1px rgba(6, 182, 212, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* Touch-friendly enhancements for mobile devices (accessibility) */
+@media (hover: none) and (pointer: coarse) {
+  .enhanced-button {
+    min-height: 44px;
+    padding: 0.75rem 1.25rem;
+  }
+
+  .enhanced-button:active {
+    transform: scale(0.96);
+  }
+
+  .about-content {
+    padding: 1rem;
+    margin: 0.5rem;
+  }
+}
+
+
+.about-image img {
+  transition: transform 0.4s ease;
+}
+
+.about-image:hover img {
+  transform: scale(1.05);
+}
+
+/* Enhanced typography - Pure CSS styling (responsive handled by Tailwind) */
+.about-title {
+  background: linear-gradient(135deg, #ffffff 0%, #00eeff 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 100%;
+  animation: gradientShift 3s ease-in-out infinite;
+  text-shadow: 0 0 30px rgba(0, 238, 255, 0.3);
+}
+
+.about-subtitle {
+  color: rgba(6, 182, 212, 0.9);
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  position: relative;
+}
+
+.about-subtitle::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(6, 182, 212, 0.6), transparent);
+  border-radius: 1px;
+}
+
+.about-description {
+  color: #cbd5e1;
+  line-height: 1.6;
+  font-weight: 400;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.about-description strong {
+  color: #00eeff;
+  font-weight: 600;
+  text-shadow: 0 0 10px rgba(0, 238, 255, 0.4);
+}
+
+/* Enhanced Button Styling - Base styles (responsive handled by Tailwind) */
+.enhanced-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  border: 2px solid transparent;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+}
+
+/* Enhanced Button Styles */
+.enhanced-button.primary {
+  background: linear-gradient(135deg, #00eeff 0%, #06b6d4 50%, #0891b2 100%);
+  color: #0f172a;
+  border-color: rgba(0, 238, 255, 0.3);
+  box-shadow:
+    0 8px 25px rgba(0, 238, 255, 0.3),
+    0 4px 10px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.enhanced-button.primary:hover {
+  background: linear-gradient(135deg, #06b6d4 0%, #00eeff 50%, #0891b2 100%);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow:
+    0 15px 40px rgba(0, 238, 255, 0.4),
+    0 8px 20px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  border-color: rgba(0, 238, 255, 0.6);
+}
+
+.enhanced-button.secondary {
+  background: rgba(15, 23, 42, 0.6);
+  color: #00eeff;
+  border-color: rgba(0, 238, 255, 0.4);
+  box-shadow:
+    0 8px 25px rgba(0, 238, 255, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.enhanced-button.secondary:hover {
+  background: rgba(0, 238, 255, 0.1);
+  color: #ffffff;
+  transform: translateY(-3px) scale(1.05);
+  box-shadow:
+    0 15px 40px rgba(0, 238, 255, 0.2),
+    0 8px 20px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  border-color: rgba(0, 238, 255, 0.7);
+}
+
+.enhanced-button:active {
+  transform: translateY(-1px) scale(1.02);
+  transition: all 0.1s ease;
+}
+
+.enhanced-button:focus {
+  outline: 3px solid rgba(0, 238, 255, 0.5);
+  outline-offset: 3px;
 }
