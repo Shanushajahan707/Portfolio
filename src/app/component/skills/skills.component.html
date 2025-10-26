@@ -1,20 +1,129 @@
-<section #skillsSection class="flex flex-col items-center min-h-screen w-full py-10 bg-gray-800 text-white">
-    <h2 class="text-3xl font-bold mb-6 text-center">My <span class="text-cyan-400">Skills</span></h2>
+<section #skillsSection id="skills" class="relative min-h-screen bg-gradient-to-br from-slate-900 via-gray-900 to-slate-800 py-16 sm:py-20 lg:py-24 overflow-hidden">
+  <!-- Background decorative elements -->
+  <div class="absolute inset-0 opacity-30">
+    <div class="absolute top-1/4 left-1/4 w-72 h-72 bg-cyan-400/10 rounded-full blur-3xl animate-pulse"></div>
+    <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-400/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-radial from-purple-400/5 to-transparent rounded-full blur-3xl"></div>
+  </div>
 
-    <div *ngFor="let skill of skills" class="w-full max-w-md md:max-w-lg lg:max-w-xl flex flex-col items-center mb-6" 
-         data-aos="fade-down" data-aos-duration="1400">
-        <!-- Skill Label -->
-        <span class="text-sm md:text-base font-semibold mb-2">{{ skill.label }} ({{ skill.percentage }}%)</span>
-
-        <!-- Technologies Used -->
-        <span class="text-xs md:text-sm text-gray-400 text-center mb-2">{{ skill.technologies }}</span>
-
-        <!-- Progress Bar -->
-        <div class="w-full h-10 bg-white/10 rounded-full overflow-hidden">
-            <div class="h-full bg-[rgb(0,238,255)] rounded-full shadow-md transition-all duration-3000 ease-in-out"
-                 [ngClass]="{ 'animate-progress': skill.animated }"
-                 [style.width]="skill.animated ? skill.percentage + '%' : '0%'">
-            </div>
-        </div>
+  <!-- Section Header -->
+  <div class="relative z-10 text-center mb-12 sm:mb-16 lg:mb-20" data-aos="fade-up" data-aos-duration="1000">
+    <div class="inline-block mb-4">
+      <span class="inline-flex items-center px-4 py-2 rounded-full bg-cyan-400/10 border border-cyan-400/20 text-cyan-400 text-sm font-medium backdrop-blur-sm">
+        <i class="fas fa-code mr-2"></i>
+        Technical Expertise
+      </span>
     </div>
+    <h2 class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6">
+      My <span class="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">Skills</span>
+    </h2>
+    <p class="text-gray-400 text-lg sm:text-xl lg:text-2xl max-w-3xl mx-auto leading-relaxed">
+      A comprehensive toolkit of technologies and frameworks that power my development journey
+    </p>
+  </div>
+
+  <!-- Skills Grid -->
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 sm:gap-8 lg:gap-10" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="200">
+
+      <!-- Skill Card -->
+      <div *ngFor="let skill of skills; let i = index; trackBy: trackBySkill"
+           class="group relative"
+           data-aos="zoom-in"
+           [attr.data-aos-delay]="i * 150"
+           data-aos-duration="800">
+
+        <!-- Main Skill Card Container -->
+        <div class="skill-card relative h-full rounded-2xl sm:rounded-3xl overflow-hidden border border-cyan-400/20 hover:border-cyan-400/40 transition-all duration-500 hover:shadow-2xl hover:shadow-cyan-400/20 hover:-translate-y-2">
+
+          <!-- Skill Header -->
+          <div class="relative p-4 sm:p-6 bg-gradient-to-r from-slate-800 to-gray-800">
+            <div class="flex items-center justify-between mb-3">
+              <h3 class="skill-title text-white font-bold text-sm sm:text-base lg:text-lg transition-colors duration-300">
+                {{ skill.label }}
+              </h3>
+              <div class="flex items-center space-x-2">
+                <span class="skill-percentage font-bold text-sm sm:text-base">{{ skill.percentage }}%</span>
+                <div class="w-2 h-2 bg-cyan-400 rounded-full animate-pulse"></div>
+              </div>
+            </div>
+
+            <!-- Technologies Tags -->
+            <div class="flex flex-wrap gap-1 sm:gap-2">
+              <span *ngFor="let tech of getTechnologies(skill.technologies)"
+                    class="tech-tag inline-flex items-center px-2 py-1 rounded-full text-cyan-400 text-xs font-medium transition-all duration-300">
+                {{ tech }}
+              </span>
+            </div>
+          </div>
+
+          <!-- Progress Section -->
+          <div class="relative p-4 sm:p-6">
+            <!-- Progress Bar Container -->
+            <div class="relative mb-4">
+              <div class="progress-container w-full h-3 sm:h-4 rounded-full overflow-hidden backdrop-blur-sm border border-gray-600/30">
+                <!-- Background Pattern -->
+                <!-- <div class="progress-background absolute inset-0 opacity-50"></div> -->
+
+                <!-- Progress Fill -->
+                <div class="relative h-full rounded-full overflow-hidden">
+                  <!-- Animated Progress Bar -->
+                  <div class="progress-fill absolute inset-0 shadow-lg transition-width duration-300"
+                       [ngClass]="{ 'animate-progress': skill.animated }"
+                       [style.width.%]="skill.animated ? skill.percentage : 0">
+
+                    <!-- Shimmer Effect -->
+                    <div class="progress-shimmer absolute inset-0"></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Percentage Display -->
+              <div class="flex justify-between items-center mt-2">
+                <span class="text-gray-400 text-xs sm:text-sm">Beginner</span>
+                <span class="skill-percentage font-semibold text-xs sm:text-sm">{{ skill.percentage }}%</span>
+                <span class="text-gray-400 text-xs sm:text-sm">Expert</span>
+              </div>
+            </div>
+
+            <!-- Skill Level Badge -->
+            <div class="text-center">
+              <span [ngClass]="getSkillLevelClass(skill.percentage)"
+                    class="skill-badge inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold backdrop-blur-sm border transition-all duration-300">
+                {{ getSkillLevel(skill.percentage) }}
+              </span>
+            </div>
+          </div>
+
+          <!-- Hover Overlay -->
+          <div class="absolute inset-0 bg-gradient-to-t from-cyan-400/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"></div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Skills Summary -->
+    <div class="relative z-10 mt-12 sm:mt-16 lg:mt-20" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
+      <div class="text-center max-w-4xl mx-auto">
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-8">
+          <div class="summary-card text-center p-4 rounded-2xl backdrop-blur-sm border border-cyan-400/20 transition-all duration-400 hover:transform hover:scale-105">
+            <div class="summary-number text-2xl sm:text-3xl lg:text-4xl font-bold mb-2">{{ getTotalSkills() }}</div>
+            <div class="text-gray-400 text-sm sm:text-base">Skill Categories</div>
+          </div>
+          <div class="summary-card text-center p-4 rounded-2xl backdrop-blur-sm border border-cyan-400/20 transition-all duration-400 hover:transform hover:scale-105">
+            <div class="summary-number text-2xl sm:text-3xl lg:text-4xl font-bold mb-2">{{ getTotalTechnologies() }}</div>
+            <div class="text-gray-400 text-sm sm:text-base">Technologies</div>
+          </div>
+          <div class="summary-card text-center p-4 rounded-2xl backdrop-blur-sm border border-cyan-400/20 transition-all duration-400 hover:transform hover:scale-105">
+            <div class="summary-number text-2xl sm:text-3xl lg:text-4xl font-bold mb-2">{{ getAveragePercentage() }}%</div>
+            <div class="text-gray-400 text-sm sm:text-base">Avg Proficiency</div>
+          </div>
+          <div class="summary-card text-center p-4 rounded-2xl backdrop-blur-sm border border-cyan-400/20 transition-all duration-400 hover:transform hover:scale-105">
+            <div class="summary-number text-2xl sm:text-3xl lg:text-4xl font-bold mb-2">{{ getYearsExperience() }}+</div>
+            <div class="text-gray-400 text-sm sm:text-base">Years Experience</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
