@@ -64,4 +64,8 @@ export class MyprojectsComponent {
         'https://github.com/Shanushajahan707/Welfare_organization_management_system.git',
     },
   ];
+
+  trackByProject(index: number, project: any): string {
+    return project.title;
+  }
 }
