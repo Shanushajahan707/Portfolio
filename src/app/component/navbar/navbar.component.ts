@@ -1,10 +1,11 @@
-import { Component, HostListener, OnInit, OnDestroy } from '@angular/core';
+import { Component, HostListener, OnInit, OnDestroy, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
 
 @Component({
   selector: 'app-navbar',
   standalone: false,
   templateUrl: './navbar.component.html',
-  styleUrl: './navbar.component.css'
+  styleUrl: './navbar.component.css',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class NavbarComponent implements OnInit, OnDestroy {
   isScrolled = false;
@@ -12,63 +13,62 @@ export class NavbarComponent implements OnInit, OnDestroy {
   scrollProgress = 0;
   currentSection = 'home';
 
-  private scrollListener?: () => void;
   private resizeListener?: () => void;
+  private sectionObserver?: IntersectionObserver;
+
+  constructor(private cdr: ChangeDetectorRef) {}
 
   ngOnInit() {
-    this.setupScrollProgress();
     this.setupSectionObserver();
     this.setupResizeListener();
   }
 
   ngOnDestroy() {
-    if (this.scrollListener) {
-      window.removeEventListener('scroll', this.scrollListener);
-    }
     if (this.resizeListener) {
       window.removeEventListener('resize', this.resizeListener);
     }
+    if (this.sectionObserver) {
+      this.sectionObserver.disconnect();
+    }
   }
 
-  @HostListener('window:scroll', ['$event'])
+  @HostListener('window:scroll', [])
   onWindowScroll() {
+    const wasScrolled = this.isScrolled;
     this.isScrolled = window.scrollY > 20;
     this.updateScrollProgress();
-    this.updateCurrentSection();
-  }
 
-  private setupScrollProgress() {
-    this.scrollListener = () => {
-      const scrollTop = window.scrollY;
-      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-      this.scrollProgress = (scrollTop / docHeight) * 100;
-
-      // Update CSS custom property for scroll progress indicator
-      document.documentElement.style.setProperty('--scroll-progress', `${this.scrollProgress}%`);
-    };
-
-    window.addEventListener('scroll', this.scrollListener, { passive: true });
+    // Only trigger change detection if state changed
+    if (wasScrolled !== this.isScrolled) {
+      this.cdr.detectChanges();
+    }
   }
 
   private setupSectionObserver() {
     const sections = ['home', 'about', 'projects', 'skills', 'footer'];
 
-    const observer = new IntersectionObserver((entries) => {
+    this.sectionObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
+          const oldSection = this.currentSection;
           this.currentSection = entry.target.id;
           this.updateActiveNavLink();
+
+          // Only trigger change detection if section changed
+          if (oldSection !== this.currentSection) {
+            this.cdr.detectChanges();
+          }
         }
       });
     }, {
-      threshold: 0.5,
-      rootMargin: '-20% 0px -80% 0px'
+      threshold: 0.3,
+      rootMargin: '-10% 0px -70% 0px'
     });
 
     sections.forEach(section => {
       const element = document.getElementById(section);
       if (element) {
-        observer.observe(element);
+        this.sectionObserver!.observe(element);
       }
     });
   }
@@ -93,40 +93,16 @@ export class NavbarComponent implements OnInit, OnDestroy {
     document.documentElement.style.setProperty('--scroll-progress', `${this.scrollProgress}%`);
   }
 
-  private updateCurrentSection() {
-    const sections = ['home', 'about', 'projects', 'skills', 'footer'];
-    let current = '';
-
-    for (const section of sections) {
-      const element = document.getElementById(section);
-      if (element) {
-        const rect = element.getBoundingClientRect();
-        if (rect.top <= 100 && rect.bottom >= 100) {
-          current = section;
-          break;
-        }
-      }
-    }
-
-    if (current && current !== this.currentSection) {
-      this.currentSection = current;
-      this.updateActiveNavLink();
-    }
-  }
-
   private updateActiveNavLink() {
-    // Update active states in both desktop and mobile navigation
-    setTimeout(() => {
-      const navLinks = document.querySelectorAll('.nav-link, .mobile-nav-link');
-      navLinks.forEach(link => {
-        const href = link.getAttribute('href');
-        if (href === `#${this.currentSection}`) {
-          link.classList.add('active');
-        } else {
-          link.classList.remove('active');
-        }
-      });
-    }, 100);
+    const navLinks = document.querySelectorAll('.nav-link, .mobile-nav-link');
+    navLinks.forEach(link => {
+      const href = link.getAttribute('href');
+      if (href === `#${this.currentSection}`) {
+        link.classList.add('active');
+      } else {
+        link.classList.remove('active');
+      }
+    });
   }
 
   toggleMobileMenu() {
@@ -149,12 +125,13 @@ export class NavbarComponent implements OnInit, OnDestroy {
   @HostListener('document:click', ['$event'])
   onDocumentClick(event: Event) {
     const target = event.target as HTMLElement;
-    const mobileMenu = document.querySelector('.mobile-menu');
-    const menuButton = document.querySelector('.mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-navigation');
+    const menuButton = target.closest('button[aria-controls="mobile-navigation"]');
 
     if (this.isMobileMenuOpen &&
-        !mobileMenu?.contains(target) &&
-        !menuButton?.contains(target)) {
+        mobileMenu &&
+        !mobileMenu.contains(target) &&
+        !menuButton) {
       this.closeMobileMenu();
     }
   }

@@ -1,85 +1,414 @@
-<section class="hero-section relative w-full h-screen flex items-center overflow-hidden" id="home">
-  <!-- Background Image with Overlay -->
-  <div class="hero-background absolute inset-0 bg-cover bg-center bg-no-repeat"></div>
-  <div class="hero-overlay absolute inset-0 bg-gradient-to-r from-slate-900/70 via-slate-800/50 to-transparent"></div>
+<section id="home" class="hero-section relative flex min-h-screen w-full items-center overflow-hidden bg-slate-950">
 
-  <!-- Content Container - Left Aligned -->
-  <div class="hero-content relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-5 lg:px-5">
-    <div class="hero-text-container max-w-2xl">
+  <!-- ========================================================= -->
+  <!-- BACKGROUND -->
+  <!-- ========================================================= -->
 
-      <!-- Greeting -->
-      <div class="hero-greeting mb-4" data-aos="fade-down" data-aos-duration="800">
-        <p class="text-lg md:text-xl text-gray-300 font-light tracking-wider uppercase">
+  <div class="
+      hero-background
+      absolute inset-0
+      bg-cover bg-center bg-no-repeat
+      scale-[1.01]
+    " aria-hidden="true"></div>
+
+  <!-- Dark cinematic overlay -->
+  <div class="
+      absolute inset-0
+      bg-gradient-to-r
+      from-slate-950
+      via-slate-950/90
+      via-45%
+      to-slate-950/35
+    " aria-hidden="true"></div>
+
+  <!-- Bottom fade -->
+  <div class="
+      absolute inset-x-0 bottom-0
+      h-40
+      bg-gradient-to-t
+      from-slate-950
+      to-transparent
+    " aria-hidden="true"></div>
+
+  <!-- Ambient cyan glow -->
+  <div class="
+      pointer-events-none
+      absolute
+      left-[8%] top-[35%]
+      h-72 w-72
+      rounded-full
+      bg-cyan-400/[0.05]
+      blur-[40px]
+    " aria-hidden="true"></div>
+
+
+  <!-- ========================================================= -->
+  <!-- CONTENT -->
+  <!-- ========================================================= -->
+
+  <div class="
+      hero-content
+      relative z-10
+      mx-auto w-full max-w-7xl
+      px-5
+      sm:px-6
+      lg:px-8
+    ">
+
+    <div class="
+        hero-text-container
+        max-w-3xl
+        pt-20
+        sm:pt-24
+        lg:pt-16
+      ">
+
+  
+
+      <!-- ===================================================== -->
+      <!-- GREETING -->
+      <!-- ===================================================== -->
+
+      <div class="mb-3" data-aos="fade-right" data-aos-duration="500">
+        <p class="
+            text-sm
+            font-medium
+            uppercase
+            tracking-[0.28em]
+            text-gray-400
+            sm:text-base
+          ">
           Hello, I'm
         </p>
       </div>
 
-      <!-- Name -->
-      <div class="hero-name mb-3" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200">
-        <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight">
+
+      <!-- ===================================================== -->
+      <!-- NAME -->
+      <!-- ===================================================== -->
+
+      <div class="mb-6" data-aos="fade-right" data-aos-duration="600" data-aos-delay="100">
+
+        <h1 class="
+            text-[3.4rem]
+            font-bold
+            leading-[0.95]
+            tracking-[-0.045em]
+            text-white
+            sm:text-6xl
+            md:text-7xl
+            lg:text-[5.8rem]
+            xl:text-[6.5rem]
+          ">
           Shanu
-          <span class="block text-cyan-400 mt-1">Shajahan</span>
+
+          <span class="
+              mt-2
+              block
+              bg-gradient-to-r
+              from-cyan-300
+              via-cyan-400
+              to-blue-400
+              bg-clip-text
+              text-transparent
+            ">
+            Shajahan<span class="text-cyan-400">.</span>
+          </span>
         </h1>
+
       </div>
 
-      <!-- Title with typing animation -->
-      <div class="hero-title mb-4" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="400">
-        <div class="typing-container text-lg sm:text-xl md:text-2xl text-gray-200">
-          <span class="block mb-2 text-white/90">I'm a</span>
-          <span class="typing-text font-semibold text-cyan-400">Fullstack Developer</span>
-        </div>
-      </div>
 
-      <!-- Description -->
-      <div class="hero-description mb-6 max-w-xl" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="600">
-        <p class="text-base sm:text-lg md:text-xl text-gray-300 leading-relaxed font-light">
-          I craft exceptional digital experiences using modern technologies like
-          <span class="text-cyan-400 font-medium">Angular</span>,
-          <span class="text-cyan-400 font-medium">Node.js</span>, and
-          <span class="text-cyan-400 font-medium">TypeScript</span>.
+      <!-- ===================================================== -->
+      <!-- ROLE -->
+      <!-- ===================================================== -->
+
+     <!-- =====================================================
+     ROLE
+====================================================== -->
+
+<div
+  class="mb-6"
+  data-aos="fade-right"
+  data-aos-duration="500"
+  data-aos-delay="200"
+>
+  <div
+    class="flex items-center gap-2 whitespace-nowrap text-base sm:gap-3 sm:text-xl md:text-2xl"
+  >
+    <span class="shrink-0 font-light text-gray-400">
+      I build
+    </span>
+
+    <span
+      class="typing-text min-w-0 shrink-0 font-semibold text-cyan-400"
+    >
+      Fullstack Developer
+    </span>
+  </div>
+</div>
+
+      <!-- ===================================================== -->
+      <!-- DESCRIPTION -->
+      <!-- ===================================================== -->
+
+      <div class="mb-8 max-w-2xl" data-aos="fade-right" data-aos-duration="500" data-aos-delay="300">
+
+        <p class="
+            text-base
+            font-light
+            leading-7
+            text-gray-400
+            sm:text-lg
+            sm:leading-8
+            md:text-xl
+          ">
+          I build modern, scalable web experiences with a focus on
+          <span class="font-medium text-gray-200">
+            clean architecture
+          </span>,
+          thoughtful UX, and reliable engineering.
         </p>
+
       </div>
 
-      <!-- Action Buttons -->
-      <div class="hero-actions flex flex-col sm:flex-row items-start gap-6" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="800">
+
+      <!-- ===================================================== -->
+      <!-- TECHNOLOGY STACK -->
+      <!-- ===================================================== -->
+
+      <div class="mb-9 flex flex-wrap gap-2" data-aos="fade-up" data-aos-duration="500" data-aos-delay="400">
+
+        <span class="
+            rounded-lg
+            border border-cyan-400/10
+            bg-cyan-400/[0.05]
+            px-3 py-1.5
+            text-xs
+            font-medium
+            text-cyan-300
+          ">
+          Angular
+        </span>
+
+        <span class="
+            rounded-lg
+            border border-white/[0.07]
+            bg-white/[0.025]
+            px-3 py-1.5
+            text-xs
+            font-medium
+            text-gray-400
+          ">
+          Node.js
+        </span>
+
+        <span class="
+            rounded-lg
+            border border-white/[0.07]
+            bg-white/[0.025]
+            px-3 py-1.5
+            text-xs
+            font-medium
+            text-gray-400
+          ">
+          TypeScript
+        </span>
+
+        <span class="
+            rounded-lg
+            border border-white/[0.07]
+            bg-white/[0.025]
+            px-3 py-1.5
+            text-xs
+            font-medium
+            text-gray-400
+          ">
+          MongoDB
+        </span>
+
+      </div>
+
+
+      <!-- ===================================================== -->
+      <!-- ACTIONS -->
+      <!-- ===================================================== -->
+
+      <div class="
+          hero-actions
+          flex flex-col
+          gap-5
+          sm:flex-row
+          sm:items-center
+        " data-aos="fade-up" data-aos-duration="500" data-aos-delay="500">
 
         <!-- Social Links -->
-        <div class="social-links flex items-center gap-4" role="group" aria-label="Social Media Links">
-          <a href="https://github.com/Shanushajahan707"
-             target="_blank"
-             rel="noopener noreferrer"
-             class="social-link"
-             aria-label="Visit my GitHub profile"
-             title="GitHub Profile">
-            <i class="fab fa-github text-lg" aria-hidden="true"></i>
+        <div class="social-links flex items-center gap-2" role="group" aria-label="Social media links">
+
+          <!-- GitHub -->
+          <a href="https://github.com/Shanushajahan707" target="_blank" rel="noopener noreferrer" class="
+              social-link
+              flex h-11 w-11
+              items-center justify-center
+              rounded-xl
+              border border-white/[0.08]
+              bg-white/[0.035]
+              text-gray-400
+              backdrop-blur-sm
+              transition-all duration-300
+              hover:-translate-y-1
+              hover:border-white/[0.15]
+              hover:bg-white/[0.08]
+              hover:text-white
+              focus:outline-none
+              focus:ring-2
+              focus:ring-cyan-400/40
+            " aria-label="Visit my GitHub profile" title="GitHub">
+            <i class="fab fa-github text-base" aria-hidden="true"></i>
           </a>
-          <a href="https://www.linkedin.com/in/shanushajahan/"
-             target="_blank"
-             rel="noopener noreferrer"
-             class="social-link"
-             aria-label="Connect with me on LinkedIn"
-             title="LinkedIn Profile">
-            <i class="fab fa-linkedin-in text-lg" aria-hidden="true"></i>
+
+
+          <!-- LinkedIn -->
+          <a href="https://www.linkedin.com/in/shanushajahan/" target="_blank" rel="noopener noreferrer" class="
+              social-link
+              flex h-11 w-11
+              items-center justify-center
+              rounded-xl
+              border border-white/[0.08]
+              bg-white/[0.035]
+              text-gray-400
+              backdrop-blur-sm
+              transition-all duration-300
+              hover:-translate-y-1
+              hover:border-blue-400/20
+              hover:bg-blue-400/[0.08]
+              hover:text-blue-400
+              focus:outline-none
+              focus:ring-2
+              focus:ring-blue-400/40
+            " aria-label="Connect with me on LinkedIn" title="LinkedIn">
+            <i class="fab fa-linkedin-in text-base" aria-hidden="true"></i>
           </a>
-          <a href="mailto:shanushajahan707@gmail.com"
-             class="social-link"
-             aria-label="Send me an email"
-             title="Email Contact">
-            <i class="fas fa-envelope text-lg" aria-hidden="true"></i>
+
+
+          <!-- Email -->
+          <a href="mailto:shanushajahan707@gmail.com" class="
+              social-link
+              flex h-11 w-11
+              items-center justify-center
+              rounded-xl
+              border border-white/[0.08]
+              bg-white/[0.035]
+              text-gray-400
+              backdrop-blur-sm
+              transition-all duration-300
+              hover:-translate-y-1
+              hover:border-cyan-400/20
+              hover:bg-cyan-400/[0.08]
+              hover:text-cyan-400
+              focus:outline-none
+              focus:ring-2
+              focus:ring-cyan-400/40
+            " aria-label="Send me an email" title="Email">
+            <i class="fas fa-envelope text-sm" aria-hidden="true"></i>
           </a>
+
         </div>
 
-        <!-- CTA Button -->
-        <a href="{{pdflocation}}"
-           download
-           class="cta-button"
-           aria-label="Download my CV/Resume"
-           title="Download CV"
-           role="button">
+
+        <!-- Divider -->
+        <div class="
+            hidden h-7 w-px
+            bg-white/[0.08]
+            sm:block
+          " aria-hidden="true"></div>
+
+
+        <!-- CV Button -->
+        <a href="{{pdflocation}}" download class="
+            cta-button
+            group
+            inline-flex
+            h-12
+            items-center
+            justify-center
+            gap-3
+            rounded-xl
+            bg-cyan-400
+            px-5
+            text-sm
+            font-semibold
+            text-slate-950
+            shadow-[0_10px_35px_rgba(34,211,238,0.15)]
+            transition-all duration-300
+            hover:-translate-y-1
+            hover:bg-cyan-300
+            hover:shadow-[0_15px_45px_rgba(34,211,238,0.25)]
+            focus:outline-none
+            focus:ring-2
+            focus:ring-cyan-400/50
+            focus:ring-offset-2
+            focus:ring-offset-slate-950
+          " aria-label="Download my CV" title="Download CV">
+
           <span>Download CV</span>
-          <i class="fas fa-download" aria-hidden="true"></i>
+
+          <i class="
+              fas fa-arrow-down
+              text-xs
+              transition-transform duration-300
+              group-hover:translate-y-0.5
+            " aria-hidden="true"></i>
+
         </a>
+
       </div>
+
     </div>
   </div>
+
+
+  <!-- ========================================================= -->
+  <!-- SCROLL INDICATOR -->
+  <!-- ========================================================= -->
+
+  <div class="
+      absolute
+      bottom-8
+      left-1/2
+      hidden
+      -translate-x-1/2
+      flex-col
+      items-center
+      gap-2
+      text-gray-500
+      sm:flex
+    " data-aos="fade-up" data-aos-duration="600" data-aos-delay="800">
+
+    <span class="
+        text-[9px]
+        font-medium
+        uppercase
+        tracking-[0.3em]
+      ">
+      Scroll
+    </span>
+
+    <div class="
+        flex h-9 w-5
+        justify-center
+        rounded-full
+        border border-white/10
+        p-1
+      ">
+      <span class="
+          h-1.5 w-1
+          animate-bounce
+          rounded-full
+          bg-cyan-400/70
+        "></span>
+    </div>
+
+  </div>
+
 </section>

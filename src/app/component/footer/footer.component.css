@@ -27,25 +27,25 @@
 
 .wave#wave1 {
   background-image: linear-gradient(45deg, rgba(0, 238, 255, 0.3) 0%, transparent 50%);
-  animation: wave1 15s linear infinite;
+  animation: wave1 20s linear infinite;
   bottom: 0;
 }
 
 .wave#wave2 {
   background-image: linear-gradient(-45deg, rgba(6, 182, 212, 0.2) 0%, transparent 50%);
-  animation: wave2 10s linear infinite;
+  animation: wave2 15s linear infinite;
   bottom: 10px;
 }
 
 .wave#wave3 {
   background-image: linear-gradient(45deg, rgba(14, 165, 233, 0.15) 0%, transparent 50%);
-  animation: wave1 12s linear infinite;
+  animation: wave1 18s linear infinite;
   bottom: 20px;
 }
 
 .wave#wave4 {
   background-image: linear-gradient(-45deg, rgba(59, 130, 246, 0.1) 0%, transparent 50%);
-  animation: wave2 8s linear infinite;
+  animation: wave2 12s linear infinite;
   bottom: 30px;
 }
 

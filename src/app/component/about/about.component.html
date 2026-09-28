@@ -1,49 +1,570 @@
-<section id="about" class="relative w-full flex flex-col lg:flex-row items-center justify-center p-3 sm:p-4 lg:p-6 xl:p-8 text-white overflow-hidden">
-  <!-- Background decorative elements -->
-  <div class="absolute inset-0 opacity-30">
-    <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-cyan-400/10 rounded-full blur-3xl"></div>
-    <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-400/10 rounded-full blur-3xl"></div>
+<section
+  id="about"
+  class="
+    relative w-full overflow-hidden
+    bg-slate-950
+    px-5 py-20
+    sm:px-6 sm:py-24
+    lg:px-8 lg:py-28
+  "
+>
+
+  <!-- ========================================================= -->
+  <!-- BACKGROUND -->
+  <!-- ========================================================= -->
+
+  <div
+    class="pointer-events-none absolute inset-0"
+    aria-hidden="true"
+  >
+
+    <div
+      class="
+        absolute
+        -left-32 top-1/4
+        h-96 w-96
+        rounded-full
+        bg-cyan-400/[0.045]
+        blur-[40px]
+      "
+    ></div>
+
+    <div
+      class="
+        absolute
+        -right-40 bottom-0
+        h-[32rem] w-[32rem]
+        rounded-full
+        bg-blue-500/[0.04]
+        blur-[40px]
+      "
+    ></div>
+
   </div>
 
-  <!-- Image Section -->
-  <div class="w-full lg:w-1/3 flex justify-center lg:justify-start mt-3 sm:mt-4 lg:mt-6 relative z-10" data-aos="fade-up" data-aos-duration="2000">
-    <div class="about-image">
-      <img src="/bg.remove.png"
-           alt="Shanu Shajahan - MEAN Stack Developer"
-           class="w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-72 lg:h-72 xl:w-80 xl:h-80 rounded-xl object-cover animate-floating">
+
+  <!-- ========================================================= -->
+  <!-- MAIN CONTAINER -->
+  <!-- ========================================================= -->
+
+  <div
+    class="
+      relative z-10
+      mx-auto
+      flex max-w-7xl
+      flex-col
+      items-center
+      gap-12
+      lg:flex-row
+      lg:items-center
+      lg:gap-20
+    "
+  >
+
+
+    <!-- ======================================================= -->
+    <!-- IMAGE -->
+    <!-- ======================================================= -->
+
+    <div
+      class="
+        relative
+        flex
+        w-full
+        justify-center
+        lg:w-[40%]
+        lg:justify-start
+      "
+      data-aos="fade-right"
+      data-aos-duration="600"
+    >
+
+      <!-- Decorative glow -->
+      <div
+        class="
+          pointer-events-none
+          absolute
+          left-1/2 top-1/2
+          h-64 w-64
+          -translate-x-1/2
+          -translate-y-1/2
+          rounded-full
+          bg-cyan-400/[0.08]
+          blur-[30px]
+          sm:h-80 sm:w-80
+        "
+        aria-hidden="true"
+      ></div>
+
+
+      <!-- Image frame -->
+      <div class="about-image relative">
+
+        <!-- Offset border -->
+        <div
+          class="
+            absolute
+            -inset-2
+            rounded-[2rem]
+            border
+            border-cyan-400/[0.12]
+          "
+          aria-hidden="true"
+        ></div>
+
+        <!-- Main image container -->
+        <div
+          class="
+            relative
+            overflow-hidden
+            rounded-[1.75rem]
+            border border-white/[0.08]
+            bg-white/[0.03]
+            p-2
+            shadow-2xl
+
+          "
+        >
+
+          <img
+            src="/bg.remove.png"
+            alt="Shanu Shajahan - MEAN Stack Developer"
+            loading="lazy"
+            decoding="async"
+            class="
+              h-64 w-64
+              rounded-2xl
+              object-cover
+              object-center
+              sm:h-72 sm:w-72
+              md:h-80 md:w-80
+              lg:h-[23rem] lg:w-[23rem]
+              xl:h-[25rem] xl:w-[25rem]
+              animate-floating
+            "
+          />
+
+          <!-- Image gradient -->
+          <div
+            class="
+              pointer-events-none
+              absolute inset-2
+              rounded-2xl
+              bg-gradient-to-t
+              from-slate-950/20
+              via-transparent
+              to-transparent
+            "
+          ></div>
+
+        </div>
+
+
+        <!-- Small floating label -->
+        <div
+          class="
+            absolute
+            -bottom-5
+            left-1/2
+            -translate-x-1/2
+            whitespace-nowrap
+            rounded-2xl
+            border border-white/[0.08]
+            bg-slate-900/80
+            px-4 py-2.5
+            shadow-xl
+            backdrop-blur-sm
+            sm:left-auto
+            sm:right-0
+            sm:translate-x-0
+          "
+        >
+
+          <div class="flex items-center gap-2">
+
+            <span
+              class="
+                h-2 w-2
+                rounded-full
+                bg-emerald-400
+                shadow-[0_0_10px_rgba(52,211,153,0.5)]
+              "
+            ></span>
+
+            <span
+              class="
+                text-xs
+                font-medium
+                text-gray-300
+              "
+            >
+              Building with code
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
     </div>
-  </div>
 
-  <!-- Content Section -->
-  <div class="w-full lg:w-2/3 px-2 sm:px-4 md:px-6 lg:px-8 text-center lg:text-left flex flex-col items-center lg:items-start relative z-10" data-aos="fade-left" data-aos-duration="1000">
-    <div class="about-content p-5 sm:p-6 md:p-8 lg:p-10 xl:p-12 max-h-[85vh] sm:max-h-[90vh] lg:max-h-[calc(100vh-8rem)] overflow-y-auto rounded-xl">
-      <h1 class="about-title text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-2 sm:mb-3">
-        About <span class="text-cyan-400">Me</span>
-      </h1>
-      <h2 class="about-subtitle text-base sm:text-lg md:text-xl lg:text-2xl font-semibold mb-3 sm:mb-4 lg:mb-5">
-        MEAN Stack Developer
+
+    <!-- ======================================================= -->
+    <!-- CONTENT -->
+    <!-- ======================================================= -->
+
+    <div
+      class="
+        w-full
+        lg:w-[60%]
+      "
+      data-aos="fade-left"
+      data-aos-duration="600"
+    >
+
+      <!-- Section label -->
+      <div class="mb-4">
+
+        <span
+          class="
+            text-xs
+            font-semibold
+            uppercase
+            tracking-[0.25em]
+            text-cyan-400
+          "
+        >
+          About me
+        </span>
+
+      </div>
+
+
+      <!-- Heading -->
+      <h2
+        class="
+          mb-4
+          text-3xl
+          font-bold
+          tracking-tight
+          text-white
+          sm:text-4xl
+          md:text-5xl
+          lg:text-[3.25rem]
+          lg:leading-tight
+        "
+      >
+        Turning ideas into
+        <span
+          class="
+            bg-gradient-to-r
+            from-cyan-300
+            to-blue-400
+            bg-clip-text
+            text-transparent
+          "
+        >
+          real products.
+        </span>
       </h2>
 
-      <!-- Paragraph -->
-      <p class="about-description mt-3 sm:mt-4 md:mt-5 lg:mt-6 text-gray-300 leading-relaxed text-sm sm:text-base text-justify lg:text-left max-w-4xl" data-aos="zoom-in" data-aos-duration="1600">
-        Hi, I am <strong>Shanu Shajahan</strong>, a passionate MEAN Stack Developer with a diploma in Computer Engineering.
-        I specialize in building scalable and efficient web applications using
-        <strong>Angular, Node.js, Express, MongoDB, and TypeScript</strong>. I have hands-on experience with
-        <strong>WebRTC, WebSockets, Clean Architecture</strong>, and other modern development concepts.
-        I have built projects like a <strong>Live Streaming Platform, E-Commerce Platform, and Authentication System</strong>, ensuring high performance and security.
-        My goal is to create innovative solutions that enhance user experience and business efficiency.
-      </p>
 
-      <!-- Enhanced Action Button -->
-      <div class="mt-4 sm:mt-6 lg:mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
-        <a href="#project"
-           class="enhanced-button primary px-4 py-3 sm:px-6 sm:py-4 lg:px-8 lg:py-5 text-sm sm:text-base lg:text-lg">
-          <span>View My Work</span>
-          <i class="fas fa-arrow-right text-sm sm:text-base lg:text-lg" aria-hidden="true"></i>
+      <!-- Subtitle -->
+      <div
+        class="
+          mb-7
+          flex
+          items-center
+          gap-3
+        "
+      >
+
+        <span
+          class="
+            h-px w-8
+            bg-cyan-400
+          "
+        ></span>
+
+        <span
+          class="
+            text-sm
+            font-medium
+            text-gray-400
+            sm:text-base
+          "
+        >
+          MEAN Stack Developer
+        </span>
+
+      </div>
+
+
+      <!-- Description -->
+      <div
+        class="
+          max-w-2xl
+          space-y-4
+        "
+        data-aos="fade-up"
+        data-aos-duration="900"
+        data-aos-delay="200"
+      >
+
+        <p
+          class="
+            text-base
+            font-light
+            leading-7
+            text-gray-400
+            sm:text-lg
+            sm:leading-8
+          "
+        >
+          Hi, I'm
+          <strong class="font-medium text-gray-200">
+            Shanu Shajahan
+          </strong>,
+          a passionate MEAN Stack Developer with a diploma in
+          Computer Engineering.
+        </p>
+
+        <p
+          class="
+            text-base
+            font-light
+            leading-7
+            text-gray-400
+            sm:text-lg
+            sm:leading-8
+          "
+        >
+          I build scalable web applications using
+          <strong class="font-medium text-gray-200">
+            Angular, Node.js, Express, MongoDB, and TypeScript
+          </strong>,
+          with hands-on experience in WebRTC, WebSockets, and
+          Clean Architecture.
+        </p>
+
+        <p
+          class="
+            text-base
+            font-light
+            leading-7
+            text-gray-400
+            sm:text-lg
+            sm:leading-8
+          "
+        >
+          My projects include a live streaming platform,
+          e-commerce platform, and authentication systems,
+          where I focus on creating reliable experiences with
+          clean and maintainable code.
+        </p>
+
+      </div>
+
+
+      <!-- ===================================================== -->
+      <!-- QUICK INFO -->
+      <!-- ===================================================== -->
+
+      <div
+        class="
+          mt-8
+          grid
+          grid-cols-2
+          gap-3
+          sm:grid-cols-4
+        "
+        data-aos="fade-up"
+        data-aos-duration="800"
+        data-aos-delay="300"
+      >
+
+        <!-- Item -->
+        <div
+          class="
+            rounded-2xl
+            border border-white/[0.06]
+            bg-white/[0.025]
+            p-4
+            transition-all duration-300
+            hover:border-cyan-400/20
+            hover:bg-cyan-400/[0.03]
+          "
+        >
+          <div
+            class="
+              mb-1
+              text-xs
+              uppercase
+              tracking-wider
+              text-gray-600
+            "
+          >
+            Stack
+          </div>
+
+          <div class="text-sm font-medium text-gray-200">
+            MEAN
+          </div>
+        </div>
+
+
+        <!-- Item -->
+        <div
+          class="
+            rounded-2xl
+            border border-white/[0.06]
+            bg-white/[0.025]
+            p-4
+            transition-all duration-300
+            hover:border-cyan-400/20
+            hover:bg-cyan-400/[0.03]
+          "
+        >
+          <div
+            class="
+              mb-1
+              text-xs
+              uppercase
+              tracking-wider
+              text-gray-600
+            "
+          >
+            Focus
+          </div>
+
+          <div class="text-sm font-medium text-gray-200">
+            Web Apps
+          </div>
+        </div>
+
+
+        <!-- Item -->
+        <div
+          class="
+            rounded-2xl
+            border border-white/[0.06]
+            bg-white/[0.025]
+            p-4
+            transition-all duration-300
+            hover:border-cyan-400/20
+            hover:bg-cyan-400/[0.03]
+          "
+        >
+          <div
+            class="
+              mb-1
+              text-xs
+              uppercase
+              tracking-wider
+              text-gray-600
+            "
+          >
+            Architecture
+          </div>
+
+          <div class="text-sm font-medium text-gray-200">
+            Clean Code
+          </div>
+        </div>
+
+
+        <!-- Item -->
+        <div
+          class="
+            rounded-2xl
+            border border-white/[0.06]
+            bg-white/[0.025]
+            p-4
+            transition-all duration-300
+            hover:border-cyan-400/20
+            hover:bg-cyan-400/[0.03]
+          "
+        >
+          <div
+            class="
+              mb-1
+              text-xs
+              uppercase
+              tracking-wider
+              text-gray-600
+            "
+          >
+            Passion
+          </div>
+
+          <div class="text-sm font-medium text-gray-200">
+            Problem Solving
+          </div>
+        </div>
+
+      </div>
+
+
+      <!-- ===================================================== -->
+      <!-- ACTION -->
+      <!-- ===================================================== -->
+
+      <div
+        class="mt-9"
+        data-aos="fade-up"
+        data-aos-duration="800"
+        data-aos-delay="400"
+      >
+
+        <a
+          href="#projects"
+          class="
+            group
+            inline-flex
+            h-12
+            items-center
+            justify-center
+            gap-3
+            rounded-xl
+            bg-cyan-400
+            px-6
+            text-sm
+            font-semibold
+            text-slate-950
+            shadow-[0_10px_35px_rgba(34,211,238,0.12)]
+            transition-all duration-300
+            hover:-translate-y-1
+            hover:bg-cyan-300
+            hover:shadow-[0_15px_45px_rgba(34,211,238,0.22)]
+            focus:outline-none
+            focus:ring-2
+            focus:ring-cyan-400/50
+            focus:ring-offset-2
+            focus:ring-offset-slate-950
+          "
+        >
+
+          <span>
+            Explore my work
+          </span>
+
+          <i
+            class="
+              fas fa-arrow-right
+              text-xs
+              transition-transform duration-300
+              group-hover:translate-x-1
+            "
+            aria-hidden="true"
+          ></i>
+
         </a>
 
-      
       </div>
+
     </div>
+
   </div>
+
 </section>

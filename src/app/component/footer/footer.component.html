@@ -1,201 +1,596 @@
-<footer id="footer" class="relative bg-gradient-to-br from-slate-900 via-gray-900 to-slate-800 py-16 sm:py-20 lg:py-24 overflow-hidden">
-  <!-- Background decorative elements -->
-  <div class="absolute inset-0 opacity-30">
-    <div class="absolute top-1/4 left-1/4 w-72 h-72 bg-cyan-400/10 rounded-full blur-3xl animate-pulse"></div>
-    <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-400/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
-    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-radial from-purple-400/5 to-transparent rounded-full blur-3xl"></div>
+<footer
+  id="footer"
+  class="relative overflow-hidden bg-slate-950 px-5 pb-8 pt-20 sm:px-6 sm:pt-24 lg:px-8 lg:pt-28"
+>
+  <!-- =========================================================
+       BACKGROUND
+  ========================================================== -->
+
+  <div class="pointer-events-none absolute inset-0 overflow-hidden">
+
+    <!-- Ambient glows -->
+    <div
+      class="absolute -left-40 top-20 h-[28rem] w-[28rem] rounded-full bg-cyan-500/[0.05] blur-[40px]"
+    ></div>
+
+    <div
+      class="absolute -right-40 bottom-10 h-[32rem] w-[32rem] rounded-full bg-blue-500/[0.05] blur-[40px]"
+    ></div>
+
+    <!-- Subtle grid -->
+    <div
+      class="absolute inset-0 opacity-[0.025]"
+      style="
+        background-image:
+          linear-gradient(rgba(255,255,255,.8) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255,255,255,.8) 1px, transparent 1px);
+        background-size: 48px 48px;
+      "
+    ></div>
+
+    <!-- Bottom fade -->
+    <div
+      class="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-slate-950 to-transparent"
+    ></div>
   </div>
 
-  <!-- Wave animations -->
- 
-  <!-- Main Footer Content -->
-  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <!-- Footer Header -->
-    <div class="text-center mb-12 sm:mb-16" data-aos="fade-up" data-aos-duration="1000">
-      <div class="inline-block mb-4">
-        <span class="inline-flex items-center px-4 py-2 rounded-full bg-cyan-400/10 border border-cyan-400/20 text-cyan-400 text-sm font-medium backdrop-blur-sm">
-          <i class="fas fa-paper-plane mr-2"></i>
+  <!-- =========================================================
+       MAIN CONTENT
+  ========================================================== -->
+
+  <div class="relative z-10 mx-auto max-w-7xl">
+
+    <!-- =======================================================
+         CTA HEADER
+    ======================================================== -->
+
+    <div
+      class="mx-auto mb-16 max-w-3xl text-center sm:mb-20"
+      data-aos="fade-up"
+      data-aos-duration="500"
+    >
+
+      <!-- Eyebrow -->
+      <div class="mb-5">
+        <span
+          class="inline-flex items-center gap-2 rounded-full border border-cyan-400/15 bg-cyan-400/[0.06] px-4 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-cyan-300"
+        >
+          <span class="relative flex h-2 w-2">
+            <span
+              class="absolute inline-flex h-full w-full animate-ping rounded-full bg-cyan-400 opacity-60"
+            ></span>
+
+            <span
+              class="relative inline-flex h-2 w-2 rounded-full bg-cyan-400"
+            ></span>
+          </span>
+
           Get In Touch
         </span>
       </div>
-      <h3 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
-        Let's Build Something <span class="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">Amazing</span>
-      </h3>
-      <p class="text-gray-400 text-lg sm:text-xl max-w-2xl mx-auto leading-relaxed">
-        Ready to bring your ideas to life? Let's collaborate and create something extraordinary together.
+
+      <!-- Heading -->
+      <h2
+        class="text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl"
+      >
+        Let's build something
+        <span
+          class="bg-gradient-to-r from-cyan-300 via-sky-400 to-blue-500 bg-clip-text text-transparent"
+        >
+          meaningful.
+        </span>
+      </h2>
+
+      <p
+        class="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-400 sm:text-lg sm:leading-8"
+      >
+        Have an idea, project, or opportunity in mind?
+        I'm always open to connecting, discussing ideas, and building
+        useful digital products.
       </p>
+
+      <!-- Primary CTA -->
+      <div class="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+
+        <a
+          href="mailto:shanushajahan707@gmail.com"
+          class="group inline-flex items-center justify-center gap-3 rounded-xl bg-cyan-400 px-6 py-3.5 text-sm font-bold text-slate-950 shadow-lg shadow-cyan-500/10 transition-all duration-300 hover:-translate-y-1 hover:bg-cyan-300 hover:shadow-cyan-400/20"
+        >
+          <i class="fas fa-envelope text-sm"></i>
+
+          Email Me
+
+          <i
+            class="fas fa-arrow-right text-xs transition-transform duration-300 group-hover:translate-x-1"
+          ></i>
+        </a>
+
+        <a
+          href="#projects"
+          class="inline-flex items-center justify-center gap-3 rounded-xl border border-white/[0.08] bg-white/[0.03] px-6 py-3.5 text-sm font-semibold text-white backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-cyan-400/20 hover:bg-white/[0.05]"
+        >
+          <i class="fas fa-code text-cyan-400"></i>
+          View My Work
+        </a>
+
+      </div>
     </div>
 
-    <!-- Footer Content Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-12 lg:gap-16 mb-12 sm:mb-16" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="200">
 
-      <!-- Contact Information -->
-      <div class="text-center lg:text-left" data-aos="fade-right" data-aos-delay="300">
-        <div class="inline-block mb-6">
-          <h4 class="text-xl sm:text-2xl font-bold text-cyan-400 mb-4">Contact Me</h4>
-          <div class="w-12 h-1 bg-gradient-to-r from-cyan-400 to-blue-400 rounded-full mx-auto lg:mx-0"></div>
+    <!-- =======================================================
+         MAIN FOOTER GRID
+    ======================================================== -->
+
+    <div
+      class="grid grid-cols-1 gap-6 lg:grid-cols-3"
+      data-aos="fade-up"
+      data-aos-duration="600"
+      data-aos-delay="100"
+    >
+
+      <!-- =====================================================
+           CONTACT
+      ====================================================== -->
+
+      <div
+        class="rounded-3xl border border-white/[0.07] bg-white/[0.025] p-6 backdrop-blur-sm sm:p-8"
+        data-aos="fade-right"
+        data-aos-delay="150"
+      >
+
+        <div class="mb-7">
+          <div class="flex items-center gap-3">
+
+            <div
+              class="flex h-10 w-10 items-center justify-center rounded-xl border border-cyan-400/15 bg-cyan-400/[0.06]"
+            >
+              <i class="fas fa-address-card text-cyan-400"></i>
+            </div>
+
+            <div>
+              <h3 class="text-lg font-semibold text-white">
+                Contact
+              </h3>
+
+              <p class="text-xs text-slate-500">
+                Let's connect
+              </p>
+            </div>
+
+          </div>
         </div>
 
-        <div class="space-y-4 sm:space-y-6">
+
+        <div class="space-y-3">
+
           <!-- Phone -->
-          <div class="flex items-center justify-center lg:justify-start space-x-4 group">
-            <div class="w-12 h-12 bg-gradient-to-br from-cyan-400/20 to-blue-400/20 rounded-full flex items-center justify-center border border-cyan-400/30 group-hover:border-cyan-400/50 transition-all duration-300">
-              <i class="fas fa-phone-alt text-cyan-400 text-lg"></i>
+          <a
+            href="tel:+917592909874"
+            class="group flex items-center gap-4 rounded-2xl border border-white/[0.05] bg-slate-900/50 p-4 transition-all duration-300 hover:border-cyan-400/15 hover:bg-cyan-400/[0.04]"
+          >
+            <div
+              class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-cyan-400/[0.08] text-cyan-400"
+            >
+              <i class="fas fa-phone-alt text-sm"></i>
             </div>
-            <div>
-              <p class="text-gray-400 text-sm">Phone</p>
-              <a href="tel:+917592909874" class="text-white font-semibold hover:text-cyan-400 transition-colors duration-300">
+
+            <div class="min-w-0">
+              <p class="text-[10px] font-semibold uppercase tracking-wider text-slate-500">
+                Phone
+              </p>
+
+              <p
+                class="mt-1 truncate text-sm font-medium text-slate-200 transition-colors group-hover:text-cyan-300"
+              >
                 +91 7592909874
-              </a>
+              </p>
             </div>
-          </div>
+          </a>
+
 
           <!-- Email -->
-          <div class="flex items-center justify-center lg:justify-start space-x-4 group">
-            <div class="w-12 h-12 bg-gradient-to-br from-cyan-400/20 to-blue-400/20 rounded-full flex items-center justify-center border border-cyan-400/30 group-hover:border-cyan-400/50 transition-all duration-300">
-              <i class="fas fa-envelope text-cyan-400 text-lg"></i>
+          <a
+            href="mailto:shanushajahan707@gmail.com"
+            class="group flex items-center gap-4 rounded-2xl border border-white/[0.05] bg-slate-900/50 p-4 transition-all duration-300 hover:border-cyan-400/15 hover:bg-cyan-400/[0.04]"
+          >
+            <div
+              class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-cyan-400/[0.08] text-cyan-400"
+            >
+              <i class="fas fa-envelope text-sm"></i>
             </div>
-            <div>
-              <p class="text-gray-400 text-sm">Email</p>
-              <a href="mailto:shanushajahan707@gmail.com"
-                 class="text-white font-semibold hover:text-cyan-400 transition-colors duration-300">
+
+            <div class="min-w-0">
+              <p class="text-[10px] font-semibold uppercase tracking-wider text-slate-500">
+                Email
+              </p>
+
+              <p
+                class="mt-1 truncate text-sm font-medium text-slate-200 transition-colors group-hover:text-cyan-300"
+              >
                 shanushajahan707&#64;gmail.com
-              </a>
+              </p>
             </div>
-          </div>
+          </a>
+
 
           <!-- Location -->
-          <div class="flex items-center justify-center lg:justify-start space-x-4 group">
-            <div class="w-12 h-12 bg-gradient-to-br from-cyan-400/20 to-blue-400/20 rounded-full flex items-center justify-center border border-cyan-400/30 group-hover:border-cyan-400/50 transition-all duration-300">
-              <i class="fas fa-map-marker-alt text-cyan-400 text-lg"></i>
+          <div
+            class="flex items-center gap-4 rounded-2xl border border-white/[0.05] bg-slate-900/50 p-4"
+          >
+            <div
+              class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-cyan-400/[0.08] text-cyan-400"
+            >
+              <i class="fas fa-map-marker-alt text-sm"></i>
             </div>
+
             <div>
-              <p class="text-gray-400 text-sm">Location</p>
-              <span class="text-white font-semibold">Kerala, India</span>
+              <p class="text-[10px] font-semibold uppercase tracking-wider text-slate-500">
+                Location
+              </p>
+
+              <p class="mt-1 text-sm font-medium text-slate-200">
+                Kerala, India
+              </p>
             </div>
           </div>
+
         </div>
       </div>
 
-      <!-- Social Media Links -->
-      <div class="text-center" data-aos="fade-up" data-aos-delay="400">
-        <div class="inline-block mb-6">
-          <h4 class="text-xl sm:text-2xl font-bold text-cyan-400 mb-4">Follow Me</h4>
-          <div class="w-12 h-1 bg-gradient-to-r from-cyan-400 to-blue-400 rounded-full mx-auto"></div>
+
+      <!-- =====================================================
+           SOCIAL
+      ====================================================== -->
+
+      <div
+        class="rounded-3xl border border-white/[0.07] bg-white/[0.025] p-6 backdrop-blur-sm sm:p-8"
+        data-aos="fade-up"
+        data-aos-delay="200"
+      >
+
+        <div class="mb-7 flex items-center gap-3">
+
+          <div
+            class="flex h-10 w-10 items-center justify-center rounded-xl border border-cyan-400/15 bg-cyan-400/[0.06]"
+          >
+            <i class="fas fa-share-alt text-cyan-400"></i>
+          </div>
+
+          <div>
+            <h3 class="text-lg font-semibold text-white">
+              Find Me Online
+            </h3>
+
+            <p class="text-xs text-slate-500">
+              Connect & follow
+            </p>
+          </div>
+
         </div>
 
-        <div class="grid grid-cols-3 gap-4 sm:gap-6 max-w-xs mx-auto">
+
+        <div class="grid grid-cols-3 gap-3">
+
           <!-- Facebook -->
-          <div class="group">
-            <a href="https://www.facebook.com/shanu.shajahan.336/"
-               target="_blank"
-               class="social-link flex flex-col items-center space-y-2 p-4 rounded-2xl bg-gradient-to-br from-slate-800/50 to-gray-800/50 backdrop-blur-sm border border-cyan-400/20 hover:border-cyan-400/40 transition-all duration-300 hover:-translate-y-2 hover:shadow-lg hover:shadow-cyan-400/20">
-              <div class="w-12 h-12 bg-gradient-to-br from-blue-600 to-blue-500 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                <i class="fab fa-facebook-f text-white text-lg"></i>
-              </div>
-              <span class="text-gray-400 text-xs group-hover:text-cyan-400 transition-colors duration-300">Facebook</span>
-            </a>
-          </div>
+          <a
+            href="https://www.facebook.com/shanu.shajahan.336/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Facebook"
+            class="group flex flex-col items-center justify-center rounded-2xl border border-white/[0.05] bg-slate-900/50 p-4 transition-all duration-300 hover:-translate-y-1 hover:border-blue-400/20 hover:bg-blue-400/[0.05]"
+          >
+            <div
+              class="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-500/10 text-blue-400 transition-all duration-300 group-hover:scale-110 group-hover:bg-blue-500/15"
+            >
+              <i class="fab fa-facebook-f text-lg"></i>
+            </div>
+
+            <span
+              class="mt-3 text-[11px] font-medium text-slate-500 transition-colors group-hover:text-blue-300"
+            >
+              Facebook
+            </span>
+          </a>
+
 
           <!-- LinkedIn -->
-          <div class="group">
-            <a href="https://www.linkedin.com/in/shanushajahan/"
-               target="_blank"
-               class="social-link flex flex-col items-center space-y-2 p-4 rounded-2xl bg-gradient-to-br from-slate-800/50 to-gray-800/50 backdrop-blur-sm border border-cyan-400/20 hover:border-cyan-400/40 transition-all duration-300 hover:-translate-y-2 hover:shadow-lg hover:shadow-cyan-400/20">
-              <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-400 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                <i class="fab fa-linkedin-in text-white text-lg"></i>
-              </div>
-              <span class="text-gray-400 text-xs group-hover:text-cyan-400 transition-colors duration-300">LinkedIn</span>
-            </a>
-          </div>
+          <a
+            href="https://www.linkedin.com/in/shanushajahan/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+            class="group flex flex-col items-center justify-center rounded-2xl border border-white/[0.05] bg-slate-900/50 p-4 transition-all duration-300 hover:-translate-y-1 hover:border-sky-400/20 hover:bg-sky-400/[0.05]"
+          >
+            <div
+              class="flex h-11 w-11 items-center justify-center rounded-xl bg-sky-500/10 text-sky-400 transition-all duration-300 group-hover:scale-110 group-hover:bg-sky-500/15"
+            >
+              <i class="fab fa-linkedin-in text-lg"></i>
+            </div>
+
+            <span
+              class="mt-3 text-[11px] font-medium text-slate-500 transition-colors group-hover:text-sky-300"
+            >
+              LinkedIn
+            </span>
+          </a>
+
 
           <!-- Instagram -->
-          <div class="group">
-            <a href="https://www.instagram.com/____shxnu/"
-               target="_blank"
-               class="social-link flex flex-col items-center space-y-2 p-4 rounded-2xl bg-gradient-to-br from-slate-800/50 to-gray-800/50 backdrop-blur-sm border border-cyan-400/20 hover:border-cyan-400/40 transition-all duration-300 hover:-translate-y-2 hover:shadow-lg hover:shadow-cyan-400/20">
-              <div class="w-12 h-12 bg-gradient-to-br from-pink-500 via-red-500 to-yellow-500 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                <i class="fab fa-instagram text-white text-lg"></i>
-              </div>
-              <span class="text-gray-400 text-xs group-hover:text-cyan-400 transition-colors duration-300">Instagram</span>
-            </a>
+          <a
+            href="https://www.instagram.com/____shxnu/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+            class="group flex flex-col items-center justify-center rounded-2xl border border-white/[0.05] bg-slate-900/50 p-4 transition-all duration-300 hover:-translate-y-1 hover:border-pink-400/20 hover:bg-pink-400/[0.05]"
+          >
+            <div
+              class="flex h-11 w-11 items-center justify-center rounded-xl bg-pink-500/10 text-pink-400 transition-all duration-300 group-hover:scale-110 group-hover:bg-pink-500/15"
+            >
+              <i class="fab fa-instagram text-lg"></i>
+            </div>
+
+            <span
+              class="mt-3 text-[11px] font-medium text-slate-500 transition-colors group-hover:text-pink-300"
+            >
+              Instagram
+            </span>
+          </a>
+
+        </div>
+
+
+        <!-- GitHub -->
+        <a
+          href="https://github.com/Shanushajahan707"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="group mt-4 flex items-center justify-between rounded-2xl border border-white/[0.05] bg-slate-900/50 p-4 transition-all duration-300 hover:border-white/[0.12] hover:bg-white/[0.04]"
+        >
+          <div class="flex items-center gap-3">
+
+            <div
+              class="flex h-10 w-10 items-center justify-center rounded-xl bg-white/[0.05] text-slate-300"
+            >
+              <i class="fab fa-github text-lg"></i>
+            </div>
+
+            <div>
+              <p class="text-sm font-semibold text-white">
+                GitHub
+              </p>
+
+              <p class="text-xs text-slate-500">
+                Explore my code
+              </p>
+            </div>
+
           </div>
-        </div>
 
-        <!-- AI Digital Self Button -->
-        <div class="mt-6 sm:mt-8">
-          <a href="https://sensay.io/shanu-shajahan"
-             target="_blank"
-             rel="noopener noreferrer"
-             class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold rounded-full hover:from-purple-400 hover:to-pink-400 transition-all duration-300 shadow-lg hover:shadow-purple-400/30 hover:-translate-y-1 transform">
-            <i class="fas fa-robot mr-3"></i>
-            <span class="hidden sm:inline">My AI Digital Self</span>
-            <span class="sm:hidden">AI Self</span>
-            <i class="fas fa-external-link-alt ml-3 text-sm"></i>
-          </a>
-        </div>
+          <i
+            class="fas fa-arrow-up-right-from-square text-xs text-slate-600 transition-all duration-300 group-hover:translate-x-0.5 group-hover:text-cyan-400"
+          ></i>
+        </a>
+
       </div>
 
-      <!-- Quick Actions -->
-      <div class="text-center lg:text-right" data-aos="fade-left" data-aos-delay="500">
-        <div class="inline-block mb-6">
-          <h4 class="text-xl sm:text-2xl font-bold text-cyan-400 mb-4">Quick Actions</h4>
-          <div class="w-12 h-1 bg-gradient-to-r from-cyan-400 to-blue-400 rounded-full"></div>
+
+      <!-- =====================================================
+           QUICK NAVIGATION
+      ====================================================== -->
+
+      <div
+        class="rounded-3xl border border-white/[0.07] bg-white/[0.025] p-6 backdrop-blur-sm sm:p-8"
+        data-aos="fade-left"
+        data-aos-delay="250"
+      >
+
+        <div class="mb-7 flex items-center gap-3">
+
+          <div
+            class="flex h-10 w-10 items-center justify-center rounded-xl border border-cyan-400/15 bg-cyan-400/[0.06]"
+          >
+            <i class="fas fa-compass text-cyan-400"></i>
+          </div>
+
+          <div>
+            <h3 class="text-lg font-semibold text-white">
+              Explore
+            </h3>
+
+            <p class="text-xs text-slate-500">
+              Navigate portfolio
+            </p>
+          </div>
+
         </div>
 
-        <div class="space-y-3 sm:space-y-4">
-          <a href="#about"
-             class="footer-link flex items-center justify-center lg:justify-end space-x-3 group p-3 rounded-xl bg-gradient-to-r from-slate-800/30 to-gray-800/30 backdrop-blur-sm border border-cyan-400/10 hover:border-cyan-400/30 transition-all duration-300 hover:bg-cyan-400/10">
-            <i class="fas fa-user text-cyan-400 group-hover:scale-110 transition-transform duration-300"></i>
-            <span class="text-white font-medium group-hover:text-cyan-400 transition-colors duration-300">About Me</span>
+
+        <div class="space-y-2">
+
+          <!-- About -->
+          <a
+            href="#about"
+            class="group flex items-center justify-between rounded-xl border border-transparent bg-slate-900/40 px-4 py-3 transition-all duration-300 hover:border-cyan-400/10 hover:bg-cyan-400/[0.04]"
+          >
+            <div class="flex items-center gap-3">
+
+              <i
+                class="fas fa-user w-4 text-center text-xs text-slate-500 transition-colors group-hover:text-cyan-400"
+              ></i>
+
+              <span
+                class="text-sm font-medium text-slate-300 transition-colors group-hover:text-white"
+              >
+                About Me
+              </span>
+
+            </div>
+
+            <i
+              class="fas fa-arrow-right text-[10px] text-slate-700 transition-all duration-300 group-hover:translate-x-1 group-hover:text-cyan-400"
+            ></i>
           </a>
 
-          <a href="#projects"
-             class="footer-link flex items-center justify-center lg:justify-end space-x-3 group p-3 rounded-xl bg-gradient-to-r from-slate-800/30 to-gray-800/30 backdrop-blur-sm border border-cyan-400/10 hover:border-cyan-400/30 transition-all duration-300 hover:bg-cyan-400/10">
-            <i class="fas fa-code text-cyan-400 group-hover:scale-110 transition-transform duration-300"></i>
-            <span class="text-white font-medium group-hover:text-cyan-400 transition-colors duration-300">My Projects</span>
+
+          <!-- Projects -->
+          <a
+            href="#projects"
+            class="group flex items-center justify-between rounded-xl border border-transparent bg-slate-900/40 px-4 py-3 transition-all duration-300 hover:border-cyan-400/10 hover:bg-cyan-400/[0.04]"
+          >
+            <div class="flex items-center gap-3">
+
+              <i
+                class="fas fa-code w-4 text-center text-xs text-slate-500 transition-colors group-hover:text-cyan-400"
+              ></i>
+
+              <span
+                class="text-sm font-medium text-slate-300 transition-colors group-hover:text-white"
+              >
+                Projects
+              </span>
+
+            </div>
+
+            <i
+              class="fas fa-arrow-right text-[10px] text-slate-700 transition-all duration-300 group-hover:translate-x-1 group-hover:text-cyan-400"
+            ></i>
           </a>
 
-          <a href="#skills"
-             class="footer-link flex items-center justify-center lg:justify-end space-x-3 group p-3 rounded-xl bg-gradient-to-r from-slate-800/30 to-gray-800/30 backdrop-blur-sm border border-cyan-400/10 hover:border-cyan-400/30 transition-all duration-300 hover:bg-cyan-400/10">
-            <i class="fas fa-cog text-cyan-400 group-hover:scale-110 transition-transform duration-300"></i>
-            <span class="text-white font-medium group-hover:text-cyan-400 transition-colors duration-300">My Skills</span>
+
+          <!-- Skills -->
+          <a
+            href="#skills"
+            class="group flex items-center justify-between rounded-xl border border-transparent bg-slate-900/40 px-4 py-3 transition-all duration-300 hover:border-cyan-400/10 hover:bg-cyan-400/[0.04]"
+          >
+            <div class="flex items-center gap-3">
+
+              <i
+                class="fas fa-layer-group w-4 text-center text-xs text-slate-500 transition-colors group-hover:text-cyan-400"
+              ></i>
+
+              <span
+                class="text-sm font-medium text-slate-300 transition-colors group-hover:text-white"
+              >
+                Skills
+              </span>
+
+            </div>
+
+            <i
+              class="fas fa-arrow-right text-[10px] text-slate-700 transition-all duration-300 group-hover:translate-x-1 group-hover:text-cyan-400"
+            ></i>
           </a>
 
-          <a href="#contact"
-             class="footer-link flex items-center justify-center lg:justify-end space-x-3 group p-3 rounded-xl bg-gradient-to-r from-cyan-400/20 to-blue-400/20 backdrop-blur-sm border border-cyan-400/30 hover:border-cyan-400/50 transition-all duration-300 hover:bg-cyan-400/30">
-            <i class="fas fa-paper-plane text-cyan-400 group-hover:scale-110 transition-transform duration-300"></i>
-            <span class="text-white font-semibold group-hover:text-cyan-400 transition-colors duration-300">Get In Touch</span>
+
+          <!-- Contact -->
+          <a
+            href="#contact"
+            class="group flex items-center justify-between rounded-xl border border-cyan-400/10 bg-cyan-400/[0.04] px-4 py-3 transition-all duration-300 hover:border-cyan-400/20 hover:bg-cyan-400/[0.07]"
+          >
+            <div class="flex items-center gap-3">
+
+              <i
+                class="fas fa-paper-plane w-4 text-center text-xs text-cyan-400"
+              ></i>
+
+              <span
+                class="text-sm font-semibold text-white"
+              >
+                Get In Touch
+              </span>
+
+            </div>
+
+            <i
+              class="fas fa-arrow-right text-[10px] text-cyan-400 transition-transform duration-300 group-hover:translate-x-1"
+            ></i>
           </a>
+
         </div>
+
       </div>
+
     </div>
 
-    <!-- Footer Bottom -->
-    <div class="relative border-t border-gray-700/50 pt-8 sm:pt-12">
-      <div class="text-center">
+
+    <!-- =======================================================
+         FOOTER BOTTOM
+    ======================================================== -->
+
+    <div
+      class="mt-10 border-t border-white/[0.07] pt-7 sm:mt-12 sm:pt-8"
+    >
+
+      <div
+        class="flex flex-col gap-5 text-center sm:flex-row sm:items-center sm:justify-between sm:text-left"
+      >
+
         <!-- Copyright -->
-        <div class="mb-4 sm:mb-6">
-          <p class="text-cyan-400 font-semibold text-sm sm:text-base">
-            © {{ currentYear }} Shanu Shajahan. All rights reserved.
+        <div>
+          <p class="text-sm font-medium text-slate-400">
+            © {{ currentYear }}
+            <span class="text-slate-200">
+              Shanu Shajahan
+            </span>
           </p>
-          <p class="text-gray-500 text-xs sm:text-sm mt-2">
-            Built with ❤️ using Angular & Tailwind CSS
+
+          <p class="mt-1 text-xs text-slate-600">
+            Built with Angular & Tailwind CSS
           </p>
         </div>
 
-        <!-- Footer Links -->
-        <div class="flex flex-wrap justify-center gap-4 sm:gap-6 text-xs sm:text-sm">
-          <a href="#privacy" class="text-gray-400 hover:text-cyan-400 transition-colors duration-300">Privacy Policy</a>
-          <span class="text-gray-600">•</span>
-          <a href="#terms" class="text-gray-400 hover:text-cyan-400 transition-colors duration-300">Terms of Service</a>
-          <span class="text-gray-600">•</span>
-          <a href="#cookies" class="text-gray-400 hover:text-cyan-400 transition-colors duration-300">Cookie Policy</a>
+
+        <!-- Footer links -->
+        <div
+          class="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-xs sm:justify-end"
+        >
+
+          <a
+            href="#privacy"
+            class="text-slate-500 transition-colors hover:text-cyan-400"
+          >
+            Privacy
+          </a>
+
+          <span class="text-slate-700">•</span>
+
+          <a
+            href="#terms"
+            class="text-slate-500 transition-colors hover:text-cyan-400"
+          >
+            Terms
+          </a>
+
+          <span class="text-slate-700">•</span>
+
+          <a
+            href="#cookies"
+            class="text-slate-500 transition-colors hover:text-cyan-400"
+          >
+            Cookies
+          </a>
+
         </div>
 
-        <!-- Back to Top Button -->
-       
       </div>
+
+
+      <!-- Back to top -->
+      <div class="mt-6 flex justify-center sm:justify-end">
+
+        <a
+          href="#home"
+          aria-label="Back to top"
+          class="group flex h-10 w-10 items-center justify-center rounded-xl border border-white/[0.07] bg-white/[0.025] text-slate-500 transition-all duration-300 hover:-translate-y-1 hover:border-cyan-400/20 hover:bg-cyan-400/[0.05] hover:text-cyan-400"
+        >
+          <i
+            class="fas fa-arrow-up text-xs transition-transform duration-300 group-hover:-translate-y-0.5"
+          ></i>
+        </a>
+
+      </div>
+
     </div>
+
   </div>
 </footer>

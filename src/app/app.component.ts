@@ -1,54 +1,31 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, HostListener, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   standalone: false,
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   title = 'buildwithme';
 
   showScrollTop: boolean = false;
 
+  constructor(private cdr: ChangeDetectorRef) {}
+
   @HostListener('window:scroll', [])
   onWindowScroll() {
+    const wasVisible = this.showScrollTop;
     this.showScrollTop = window.scrollY > 300;
+
+    // Only trigger change detection if state changed
+    if (wasVisible !== this.showScrollTop) {
+      this.cdr.detectChanges();
+    }
   }
 
   scrollToTop(): void {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
-  
-ngOnInit() {
-  const cursor = document.getElementById('custom-cursor');
-
-  let mouseX = 0;
-  let mouseY = 0;
-  let currentX = 0;
-  let currentY = 0;
-  const speed = 0.1; // Lower = slower
-
-  document.addEventListener('mousemove', (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-  });
-
-  function animate() {
-    currentX += (mouseX - currentX) * speed;
-    currentY += (mouseY - currentY) * speed;
-
-    if (cursor) {
-      cursor.style.left = `${currentX}px`;
-      cursor.style.top = `${currentY}px`;
-    }
-
-    requestAnimationFrame(animate);
-  }
-
-  animate();
-}
-
-
-
 }
