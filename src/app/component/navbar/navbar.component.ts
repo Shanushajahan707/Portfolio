@@ -1,4 +1,4 @@
-import { Component, HostListener, OnInit, OnDestroy, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
+import { Component, HostListener, OnInit, OnDestroy, AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
 
 @Component({
   selector: 'app-navbar',
@@ -7,7 +7,7 @@ import { Component, HostListener, OnInit, OnDestroy, ChangeDetectionStrategy, Ch
   styleUrl: './navbar.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class NavbarComponent implements OnInit, OnDestroy {
+export class NavbarComponent implements OnInit, OnDestroy, AfterViewInit {
   isScrolled = false;
   isMobileMenuOpen = false;
   scrollProgress = 0;
@@ -19,8 +19,12 @@ export class NavbarComponent implements OnInit, OnDestroy {
   constructor(private cdr: ChangeDetectorRef) {}
 
   ngOnInit() {
-    this.setupSectionObserver();
     this.setupResizeListener();
+  }
+
+  ngAfterViewInit() {
+    // Wait until the sibling section components are rendered before observing them
+    setTimeout(() => this.setupSectionObserver(), 0);
   }
 
   ngOnDestroy() {
@@ -61,7 +65,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
         }
       });
     }, {
-      threshold: 0.3,
+      threshold: 0,
       rootMargin: '-10% 0px -70% 0px'
     });
 
@@ -137,7 +141,8 @@ export class NavbarComponent implements OnInit, OnDestroy {
   }
 
   // Smooth scroll to section
-  scrollToSection(sectionId: string) {
+  scrollToSection(sectionId: string, event?: Event) {
+    event?.preventDefault();
     const element = document.getElementById(sectionId.replace('#', ''));
     if (element) {
       const navbarHeight = 80; // Account for fixed navbar
