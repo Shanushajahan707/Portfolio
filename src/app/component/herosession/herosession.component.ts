@@ -8,5 +8,7 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HerosessionComponent {
-  pdflocation:string="Resume.pdf"
+  // Google Drive resume — direct-download endpoint so the CV downloads immediately
+  pdflocation =
+    'https://drive.google.com/uc?export=download&id=1wpDiUympcofGGL97KuIFTMwAqFSJzCSt';
 }

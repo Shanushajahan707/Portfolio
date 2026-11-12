@@ -137,7 +137,7 @@
     class="flex items-center gap-2 whitespace-nowrap text-base sm:gap-3 sm:text-xl md:text-2xl"
   >
     <span class="shrink-0 font-light text-gray-400">
-      I build
+      I am a
     </span>
 
     <span
@@ -325,7 +325,11 @@
 
 
         <!-- CV Button -->
-        <a href="{{pdflocation}}" download class="
+        <a
+          [href]="pdflocation"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="
             cta-button
             group
             inline-flex
@@ -349,7 +353,7 @@
             focus:ring-cyan-400/50
             focus:ring-offset-2
             focus:ring-offset-slate-950
-          " aria-label="Download my CV" title="Download CV">
+          " aria-label="Download CV" title="Download CV">
 
           <span>Download CV</span>
 
