@@ -1,59 +1,158 @@
-# Portfolio
+# Personal Portfolio — Shanu Shajahan
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.5.
+A modern, responsive personal portfolio built with **Angular 19**, **Tailwind CSS**, and **AOS** scroll animations. It showcases my work as a MEAN Stack Developer — including live projects, technical skills, and ways to get in touch.
 
-## Development server
+---
 
-To start a local development server, run:
+## ✨ Features
+
+- **Hero section** with animated typing role, tech stack highlights, social links, and CV download
+- **About section** with profile image, background, and quick-info cards
+- **Projects showcase** with live demo/source links, technology tags, and hover interactions
+- **Skills section** with animated proficiency bars, categorized stacks, and summary stats
+- **Contact footer** with email CTA and social profiles
+- **Sticky navbar** with smooth scrolling, active-section awareness, and a mobile menu
+- **Scroll-to-top button** that appears after scrolling
+- **Fully responsive** layout with a dark, cinematic theme and cyan accents
+- **Accessibility-minded** markup with ARIA labels, focus rings, and reduced-motion-friendly transitions
+
+---
+
+## 🛠️ Tech Stack
+
+| Category | Technologies |
+| --- | --- |
+| Framework | Angular 19 (NgModule architecture) |
+| Language | TypeScript, HTML, CSS |
+| Styling | Tailwind CSS 4, PostCSS, Autoprefixer |
+| Animations | AOS (Animate On Scroll) |
+| Icons | Font Awesome 6 |
+| Fonts | Google Fonts — Delius Unicase |
+| Testing | Karma + Jasmine |
+
+---
+
+## 📁 Project Structure
+
+```text
+portfolio/
+├── public/                     # Static assets (images, CV, favicon)
+│   └── Resume.pdf              # CV served by the hero section
+├── src/
+│   ├── app/
+│   │   ├── component/
+│   │   │   ├── navbar/         # Sticky navigation + mobile menu
+│   │   │   ├── herosession/    # Hero / landing section
+│   │   │   ├── about/          # About me section
+│   │   │   ├── myprojects/     # Project cards (data lives in .ts)
+│   │   │   ├── skills/         # Skill categories + proficiency bars
+│   │   │   └── footer/         # Contact CTA + social links
+│   │   ├── app.component.*     # Root shell + scroll-to-top button
+│   │   ├── app.module.ts       # App module
+│   │   └── app-routing.module.ts
+│   ├── index.html              # HTML shell, fonts, AOS setup
+│   ├── main.ts                 # Bootstrap entry point
+│   └── styles.css              # Global styles + Tailwind import
+├── angular.json
+├── tailwind.config.ts
+└── package.json
+```
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- **Node.js** 18.19+ or 20.11+
+- **npm** 9+
+- Angular CLI 19 (optional, but recommended)
+
+### Installation
 
 ```bash
+git clone https://github.com/Shanushajahan707/portfolio.git
+cd portfolio
+npm install
+```
+
+### Development server
+
+```bash
+npm start
+# or
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Open [http://localhost:4200](http://localhost:4200). The app reloads automatically when source files change.
 
-## Code scaffolding
+---
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## 🏗️ Building
 
 ```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
+npm run build
+# or
 ng build
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+The production build is written to `dist/portfolio/` with output hashing and optimization enabled.
 
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+To preview the production build locally:
 
 ```bash
+npx http-server dist/portfolio/browser
+```
+
+---
+
+## 🧪 Running Tests
+
+```bash
+npm test
+# or
 ng test
 ```
 
-## Running end-to-end tests
+Unit tests run with Karma + Jasmine in Chrome.
 
-For end-to-end (e2e) testing, run:
+---
 
-```bash
-ng e2e
-```
+## ✏️ Customization
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+Most content is data-driven and easy to update:
 
-## Additional Resources
+- **Projects** — edit the `projects` array in `src/app/component/myprojects/myprojects.component.ts`
+- **Skills** — edit the `skills` array in `src/app/component/skills/skills.component.ts`
+- **Hero text, roles, and social links** — `src/app/component/herosession/herosession.component.html`
+- **About copy and quick info** — `src/app/component/about/about.component.html`
+- **Contact details and socials** — `src/app/component/footer/footer.component.html` and `src/app/component/navbar/navbar.component.html`
+- **CV download** — replace `public/Resume.pdf` and update `pdflocation` in `src/app/component/herosession/herosession.component.ts`
+- **Theme colors** — `tailwind.config.ts` and the utility classes in the component templates
+- **Fonts** — `src/index.html`
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+---
+
+## ☁️ Deployment
+
+The build output is a static site and can be hosted anywhere. Common options:
+
+- **Vercel** — framework preset: Angular, output directory: `dist/portfolio/browser`
+- **Netlify** — build command: `npm run build`, publish directory: `dist/portfolio/browser`
+- **GitHub Pages / Render / Cloudflare Pages** — serve the same build output
+
+Make sure the host rewrites unknown routes to `index.html` if you add client-side routing.
+
+---
+
+## 📬 Contact
+
+- **Email:** [shanushajahan707@gmail.com](mailto:shanushajahan707@gmail.com)
+- **GitHub:** [@Shanushajahan707](https://github.com/Shanushajahan707)
+- **LinkedIn:** [shanushajahan](https://www.linkedin.com/in/shanushajahan/)
+
+---
+
+## 📄 License
+
+This project is a personal portfolio and is shared for reference and inspiration. Please don't republish the personal content, images, or CV as your own.
