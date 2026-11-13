@@ -1,418 +1,203 @@
-<section id="home" class="hero-section relative flex min-h-screen w-full items-center overflow-hidden bg-slate-950">
-
+<section
+  id="home"
+  class="hero-section relative flex min-h-screen w-full items-center overflow-hidden bg-night"
+>
   <!-- ========================================================= -->
   <!-- BACKGROUND -->
   <!-- ========================================================= -->
 
-  <div class="
-      hero-background
-      absolute inset-0
-      bg-cover bg-center bg-no-repeat
-      scale-[1.01]
-    " aria-hidden="true"></div>
+  <div class="hero-background absolute inset-0" aria-hidden="true"></div>
 
-  <!-- Dark cinematic overlay -->
-  <div class="
-      absolute inset-0
-      bg-gradient-to-r
-      from-slate-950
-      via-slate-950/90
-      via-45%
-      to-slate-950/35
-    " aria-hidden="true"></div>
+  <!-- Cinematic readability overlay -->
+  <div
+    class="absolute inset-0 bg-gradient-to-r from-night via-night/95 via-55% to-night/35"
+    aria-hidden="true"
+  ></div>
 
-  <!-- Bottom fade -->
-  <div class="
-      absolute inset-x-0 bottom-0
-      h-40
-      bg-gradient-to-t
-      from-slate-950
-      to-transparent
-    " aria-hidden="true"></div>
+  <!-- Mobile readability wash -->
+  <div class="absolute inset-0 bg-night/45 sm:hidden" aria-hidden="true"></div>
 
-  <!-- Ambient cyan glow -->
-  <div class="
-      pointer-events-none
-      absolute
-      left-[8%] top-[35%]
-      h-72 w-72
-      rounded-full
-      bg-cyan-400/[0.05]
-      blur-[40px]
-    " aria-hidden="true"></div>
+  <!-- Ambient aurora -->
+  <div class="aurora-field opacity-80" aria-hidden="true"></div>
 
+  <!-- Top and bottom fades -->
+  <div
+    class="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-night/85 to-transparent"
+    aria-hidden="true"
+  ></div>
+
+  <div
+    class="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t from-night to-transparent"
+    aria-hidden="true"
+  ></div>
 
   <!-- ========================================================= -->
   <!-- CONTENT -->
   <!-- ========================================================= -->
 
-  <div class="
-      hero-content
-      relative z-10
-      mx-auto w-full max-w-7xl
-      px-5
-      sm:px-6
-      lg:px-8
-    ">
-
-    <div class="
-        hero-text-container
-        max-w-3xl
-        pt-20
-        sm:pt-24
-        lg:pt-16
-      ">
-
-  
-
-      <!-- ===================================================== -->
-      <!-- GREETING -->
-      <!-- ===================================================== -->
-
-      <div class="mb-3" data-aos="fade-right" data-aos-duration="500">
-        <p class="
-            text-sm
-            font-medium
-            uppercase
-            tracking-[0.28em]
-            text-gray-400
-            sm:text-base
-          ">
-          Hello, I'm
-        </p>
-      </div>
-
-
-      <!-- ===================================================== -->
-      <!-- NAME -->
-      <!-- ===================================================== -->
-
-      <div class="mb-6" data-aos="fade-right" data-aos-duration="600" data-aos-delay="100">
-
-        <h1 class="
-            text-[3.4rem]
-            font-bold
-            leading-[0.95]
-            tracking-[-0.045em]
-            text-white
-            sm:text-6xl
-            md:text-7xl
-            lg:text-[5.8rem]
-            xl:text-[6.5rem]
-          ">
-          Shanu
-
-          <span class="
-              mt-2
-              block
-              bg-gradient-to-r
-              from-cyan-300
-              via-cyan-400
-              to-blue-400
-              bg-clip-text
-              text-transparent
-            ">
-            Shajahan<span class="text-cyan-400">.</span>
-          </span>
-        </h1>
-
-      </div>
-
-
-      <!-- ===================================================== -->
-      <!-- ROLE -->
-      <!-- ===================================================== -->
-
-     <!-- =====================================================
-     ROLE
-====================================================== -->
-
-<div
-  class="mb-6"
-  data-aos="fade-right"
-  data-aos-duration="500"
-  data-aos-delay="200"
->
   <div
-    class="flex items-center gap-2 whitespace-nowrap text-base sm:gap-3 sm:text-xl md:text-2xl"
+    class="hero-content relative z-10 mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8"
   >
-    <span class="shrink-0 font-light text-gray-400">
-      I am a
-    </span>
+    <div class="hero-text-container max-w-3xl pt-24 sm:pt-28 lg:pt-16">
+      <!-- Greeting -->
+      <p
+        class="eyebrow mb-5"
+        data-aos="fade-right"
+        data-aos-duration="500"
+      >
+        Hello, I'm
+      </p>
 
-    <span
-      class="typing-text min-w-0 shrink-0 font-semibold text-cyan-400"
-    >
-      Fullstack Developer
-    </span>
-  </div>
-</div>
+      <!-- Name -->
+      <h1
+        class="hero-name mb-6 font-display text-[3.5rem] font-semibold leading-[0.92] tracking-[-0.055em] text-ink sm:text-6xl md:text-7xl lg:text-[5.6rem] xl:text-[6.4rem]"
+        data-aos="fade-right"
+        data-aos-duration="600"
+        data-aos-delay="100"
+      >
+        <span class="block">Shanu</span>
+        <span class="mt-1 block">
+          <span class="text-aurora">Shajahan</span><span
+            class="text-accent-amber"
+            aria-hidden="true"
+            >.</span
+          >
+        </span>
+      </h1>
 
-      <!-- ===================================================== -->
-      <!-- DESCRIPTION -->
-      <!-- ===================================================== -->
+      <!-- Role -->
+      <div
+        class="mb-6 flex flex-wrap items-center gap-2 text-base sm:gap-3 sm:text-lg"
+        data-aos="fade-right"
+        data-aos-duration="500"
+        data-aos-delay="200"
+      >
+        <span class="font-light text-muted">I am a</span>
+        <span
+          class="typing-text min-w-0 shrink-0 font-mono text-base font-medium text-accent-teal sm:text-lg"
+        >
+          Fullstack Developer
+        </span>
+      </div>
 
-      <div class="mb-8 max-w-2xl" data-aos="fade-right" data-aos-duration="500" data-aos-delay="300">
-
-        <p class="
-            text-base
-            font-light
-            leading-7
-            text-gray-400
-            sm:text-lg
-            sm:leading-8
-            md:text-xl
-          ">
+      <!-- Description -->
+      <div
+        class="mb-8 max-w-2xl"
+        data-aos="fade-right"
+        data-aos-duration="500"
+        data-aos-delay="300"
+      >
+        <p
+          class="text-base font-light leading-7 text-muted sm:text-lg sm:leading-8"
+        >
           I build modern, scalable web experiences with a focus on
-          <span class="font-medium text-gray-200">
-            clean architecture
-          </span>,
+          <span class="font-medium text-ink">clean architecture</span>,
           thoughtful UX, and reliable engineering.
         </p>
-
       </div>
 
-
-      <!-- ===================================================== -->
-      <!-- TECHNOLOGY STACK -->
-      <!-- ===================================================== -->
-
-      <div class="mb-9 flex flex-wrap gap-2" data-aos="fade-up" data-aos-duration="500" data-aos-delay="400">
-
-        <span class="
-            rounded-lg
-            border border-cyan-400/10
-            bg-cyan-400/[0.05]
-            px-3 py-1.5
-            text-xs
-            font-medium
-            text-cyan-300
-          ">
-          Angular
-        </span>
-
-        <span class="
-            rounded-lg
-            border border-white/[0.07]
-            bg-white/[0.025]
-            px-3 py-1.5
-            text-xs
-            font-medium
-            text-gray-400
-          ">
-          Node.js
-        </span>
-
-        <span class="
-            rounded-lg
-            border border-white/[0.07]
-            bg-white/[0.025]
-            px-3 py-1.5
-            text-xs
-            font-medium
-            text-gray-400
-          ">
-          TypeScript
-        </span>
-
-        <span class="
-            rounded-lg
-            border border-white/[0.07]
-            bg-white/[0.025]
-            px-3 py-1.5
-            text-xs
-            font-medium
-            text-gray-400
-          ">
-          MongoDB
-        </span>
-
+      <!-- Technology stack -->
+      <div
+        class="mb-9 flex flex-wrap gap-2"
+        data-aos="fade-up"
+        data-aos-duration="500"
+        data-aos-delay="400"
+      >
+        <span class="tag tag-accent">Angular</span>
+        <span class="tag">Node.js</span>
+        <span class="tag">TypeScript</span>
+        <span class="tag">MongoDB</span>
       </div>
 
-
-      <!-- ===================================================== -->
-      <!-- ACTIONS -->
-      <!-- ===================================================== -->
-
-      <div class="
-          hero-actions
-          flex flex-col
-          gap-5
-          sm:flex-row
-          sm:items-center
-        " data-aos="fade-up" data-aos-duration="500" data-aos-delay="500">
-
-        <!-- Social Links -->
-        <div class="social-links flex items-center gap-2" role="group" aria-label="Social media links">
-
-          <!-- GitHub -->
-          <a href="https://github.com/Shanushajahan707" target="_blank" rel="noopener noreferrer" class="
-              social-link
-              flex h-11 w-11
-              items-center justify-center
-              rounded-xl
-              border border-white/[0.08]
-              bg-white/[0.035]
-              text-gray-400
-              backdrop-blur-sm
-              transition-all duration-300
-              hover:-translate-y-1
-              hover:border-white/[0.15]
-              hover:bg-white/[0.08]
-              hover:text-white
-              focus:outline-none
-              focus:ring-2
-              focus:ring-cyan-400/40
-            " aria-label="Visit my GitHub profile" title="GitHub">
+      <!-- Actions -->
+      <div
+        class="hero-actions flex flex-col gap-5 sm:flex-row sm:items-center"
+        data-aos="fade-up"
+        data-aos-duration="500"
+        data-aos-delay="500"
+      >
+        <div
+          class="social-links flex items-center gap-2"
+          role="group"
+          aria-label="Social media links"
+        >
+          <a
+            href="https://github.com/Shanushajahan707"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="social-link flex h-11 w-11 items-center justify-center rounded-xl"
+            aria-label="Visit my GitHub profile"
+            title="GitHub"
+          >
             <i class="fab fa-github text-base" aria-hidden="true"></i>
           </a>
 
-
-          <!-- LinkedIn -->
-          <a href="https://www.linkedin.com/in/shanushajahan/" target="_blank" rel="noopener noreferrer" class="
-              social-link
-              flex h-11 w-11
-              items-center justify-center
-              rounded-xl
-              border border-white/[0.08]
-              bg-white/[0.035]
-              text-gray-400
-              backdrop-blur-sm
-              transition-all duration-300
-              hover:-translate-y-1
-              hover:border-blue-400/20
-              hover:bg-blue-400/[0.08]
-              hover:text-blue-400
-              focus:outline-none
-              focus:ring-2
-              focus:ring-blue-400/40
-            " aria-label="Connect with me on LinkedIn" title="LinkedIn">
+          <a
+            href="https://www.linkedin.com/in/shanushajahan/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="social-link flex h-11 w-11 items-center justify-center rounded-xl"
+            aria-label="Connect with me on LinkedIn"
+            title="LinkedIn"
+          >
             <i class="fab fa-linkedin-in text-base" aria-hidden="true"></i>
           </a>
 
-
-          <!-- Email -->
-          <a href="mailto:shanushajahan707@gmail.com" class="
-              social-link
-              flex h-11 w-11
-              items-center justify-center
-              rounded-xl
-              border border-white/[0.08]
-              bg-white/[0.035]
-              text-gray-400
-              backdrop-blur-sm
-              transition-all duration-300
-              hover:-translate-y-1
-              hover:border-cyan-400/20
-              hover:bg-cyan-400/[0.08]
-              hover:text-cyan-400
-              focus:outline-none
-              focus:ring-2
-              focus:ring-cyan-400/40
-            " aria-label="Send me an email" title="Email">
+          <a
+            href="mailto:shanushajahan707@gmail.com"
+            class="social-link flex h-11 w-11 items-center justify-center rounded-xl"
+            aria-label="Send me an email"
+            title="Email"
+          >
             <i class="fas fa-envelope text-sm" aria-hidden="true"></i>
           </a>
-
         </div>
 
+        <span
+          class="hidden h-8 w-px bg-hairline sm:block"
+          aria-hidden="true"
+        ></span>
 
-        <!-- Divider -->
-        <div class="
-            hidden h-7 w-px
-            bg-white/[0.08]
-            sm:block
-          " aria-hidden="true"></div>
-
-
-        <!-- CV Button -->
         <a
           [href]="pdflocation"
           target="_blank"
           rel="noopener noreferrer"
-          class="
-            cta-button
-            group
-            inline-flex
-            h-12
-            items-center
-            justify-center
-            gap-3
-            rounded-xl
-            bg-cyan-400
-            px-5
-            text-sm
-            font-semibold
-            text-slate-950
-            shadow-[0_10px_35px_rgba(34,211,238,0.15)]
-            transition-all duration-300
-            hover:-translate-y-1
-            hover:bg-cyan-300
-            hover:shadow-[0_15px_45px_rgba(34,211,238,0.25)]
-            focus:outline-none
-            focus:ring-2
-            focus:ring-cyan-400/50
-            focus:ring-offset-2
-            focus:ring-offset-slate-950
-          " aria-label="Download CV" title="Download CV">
-
+          class="cta-button btn btn-primary group"
+          aria-label="Download CV"
+          title="Download CV"
+        >
+          <i class="fas fa-download text-xs" aria-hidden="true"></i>
           <span>Download CV</span>
-
-          <i class="
-              fas fa-arrow-down
-              text-xs
-              transition-transform duration-300
-              group-hover:translate-y-0.5
-            " aria-hidden="true"></i>
-
+          <i
+            class="fas fa-arrow-down text-[10px] transition-transform duration-300 group-hover:translate-y-0.5"
+            aria-hidden="true"
+          ></i>
         </a>
-
       </div>
-
     </div>
   </div>
-
 
   <!-- ========================================================= -->
   <!-- SCROLL INDICATOR -->
   <!-- ========================================================= -->
 
-  <div class="
-      absolute
-      bottom-8
-      left-1/2
-      hidden
-      -translate-x-1/2
-      flex-col
-      items-center
-      gap-2
-      text-gray-500
-      sm:flex
-    " data-aos="fade-up" data-aos-duration="600" data-aos-delay="800">
-
-    <span class="
-        text-[9px]
-        font-medium
-        uppercase
-        tracking-[0.3em]
-      ">
+  <div
+    class="absolute bottom-8 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-3 sm:flex"
+    data-aos="fade-up"
+    data-aos-duration="600"
+    data-aos-delay="800"
+  >
+    <span
+      class="font-mono text-[9px] font-medium uppercase tracking-[0.3em] text-muted/80"
+    >
       Scroll
     </span>
 
-    <div class="
-        flex h-9 w-5
-        justify-center
-        rounded-full
-        border border-white/10
-        p-1
-      ">
-      <span class="
-          h-1.5 w-1
-          animate-bounce
-          rounded-full
-          bg-cyan-400/70
-        "></span>
-    </div>
-
+    <span
+      class="flex h-9 w-5 justify-center rounded-full border border-hairline p-1.5"
+      aria-hidden="true"
+    >
+      <span class="h-1.5 w-1 animate-bounce rounded-full bg-accent-teal/80"></span>
+    </span>
   </div>
-
 </section>

@@ -16,6 +16,7 @@ export class SkillsComponent implements AfterViewInit {
   skills = [
     {
       label: 'Languages',
+      icon: 'fa-code',
       percentage: 90,
       technologies:
         'JavaScript, TypeScript, HTML, CSS, PHP, C, C++, Java',
@@ -26,6 +27,7 @@ export class SkillsComponent implements AfterViewInit {
 
     {
       label: 'Frameworks & Libraries',
+      icon: 'fa-layer-group',
       percentage: 90,
       technologies:
         'Angular, Node.js, Express, Laravel, Tailwind CSS',
@@ -36,6 +38,7 @@ export class SkillsComponent implements AfterViewInit {
 
     {
       label: 'Databases',
+      icon: 'fa-database',
       percentage: 80,
       technologies:
         'MongoDB, MySQL',
@@ -46,6 +49,7 @@ export class SkillsComponent implements AfterViewInit {
 
     {
       label: 'Cloud & Storage',
+      icon: 'fa-cloud',
       percentage: 75,
       technologies:
         'Cloudinary, MinIO, MongoDB Atlas',
@@ -56,6 +60,7 @@ export class SkillsComponent implements AfterViewInit {
 
     {
       label: 'DevOps & Tools',
+      icon: 'fa-terminal',
       percentage: 80,
       technologies:
         'Git, GitHub, Render, Vercel, AWS (Basic), Docker, Android Studio',
@@ -66,6 +71,7 @@ export class SkillsComponent implements AfterViewInit {
 
     {
       label: 'Architecture & Concepts',
+      icon: 'fa-diagram-project',
       percentage: 75,
       technologies:
         'WebRTC, Clean Architecture, MVC, Repository Pattern, WebSocket',
@@ -76,6 +82,7 @@ export class SkillsComponent implements AfterViewInit {
 
     {
       label: 'Design',
+      icon: 'fa-pen-ruler',
       percentage: 70,
       technologies:
         'Figma (Intermediate)',
@@ -86,6 +93,7 @@ export class SkillsComponent implements AfterViewInit {
 
     {
       label: 'Additional Technologies',
+      icon: 'fa-cubes',
       percentage: 70,
       technologies:
         'React (Intermediate)',

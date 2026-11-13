@@ -11,9 +11,9 @@
 <button
   type="button"
   aria-label="Scroll to top"
-  class="scroll-top fixed bottom-6 right-6 z-50 p-3 rounded-full bg-[rgb(0,238,255)] text-black shadow-lg hover:bg-[rgb(0,180,220)] transition duration-300"
+  class="scroll-top fixed bottom-6 right-6 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-accent-teal text-night shadow-[0_14px_34px_-12px_rgba(34,211,238,0.6)] transition duration-300 hover:-translate-y-1 hover:bg-[#67e8f9] focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-teal/60 focus-visible:ring-offset-2 focus-visible:ring-offset-night"
   [class.visible]="showScrollTop"
   (click)="scrollToTop()"
 >
-  <i class="fas fa-arrow-up text-lg"></i>
+  <i class="fas fa-arrow-up text-sm" aria-hidden="true"></i>
 </button>

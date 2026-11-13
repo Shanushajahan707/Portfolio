@@ -75,6 +75,9 @@ export class NavbarComponent implements OnInit, OnDestroy, AfterViewInit {
         this.sectionObserver!.observe(element);
       }
     });
+
+    // Ensure the initial section is reflected before the first scroll event.
+    this.updateActiveNavLink();
   }
 
   private setupResizeListener() {
@@ -103,8 +106,10 @@ export class NavbarComponent implements OnInit, OnDestroy, AfterViewInit {
       const href = link.getAttribute('href');
       if (href === `#${this.currentSection}`) {
         link.classList.add('active');
+        link.setAttribute('aria-current', 'page');
       } else {
         link.classList.remove('active');
+        link.removeAttribute('aria-current');
       }
     });
   }

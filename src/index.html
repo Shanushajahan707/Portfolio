@@ -2,14 +2,20 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Portfolio</title>
+    <title>Shanu Shajahan — Full-Stack Developer</title>
     <base href="/" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" type="image/x-icon" href="https://img.freepik.com/premium-vector/developer-portfolio-favicon-icon-colored-shapes-gradient_1076610-59052.jpg" />
+    <meta name="theme-color" content="#080D1A" />
+    <meta
+      name="description"
+      content="Shanu Shajahan — MEAN stack developer building modern, scalable web applications with Angular, Node.js, Express, MongoDB, and TypeScript."
+    />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Delius+Unicase:wght@400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Sora:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
     <link
@@ -20,24 +26,6 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
     />
-
-    <style>
-      .delius-unicase-regular {
-        font-family: "Delius Unicase", cursive;
-        font-weight: 400;
-        font-style: normal;
-      }
-
-      .delius-unicase-bold {
-        font-family: "Delius Unicase", cursive;
-        font-weight: 700;
-        font-style: normal;
-      }
-
-      body {
-        font-family: "Delius Unicase", cursive;
-      }
-    </style>
   </head>
   <body>
     <app-root></app-root>
@@ -45,10 +33,11 @@
     <script>
       AOS.init({
         duration: 600,
-        easing: 'ease-out',
+        easing: "ease-out",
         once: true,
         offset: 50,
-        delay: 0
+        delay: 0,
+        disable: window.matchMedia("(prefers-reduced-motion: reduce)").matches,
       });
     </script>
   </body>

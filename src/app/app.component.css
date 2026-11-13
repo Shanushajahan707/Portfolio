@@ -1,47 +1,30 @@
 .main {
-    position: sticky;
-    top: 0;
-    width: 100%;
-    z-index: 40;
-    /* Removed background and shadow as navbar now handles this */
-}
-
-/* Enhanced cursor styles */
-#custom-cursor {
-  position: fixed;
+  position: sticky;
   top: 0;
-  left: 0;
-  width: 20px;
-  height: 20px;
-  background: radial-gradient(circle, rgba(6, 182, 212, 0.8) 0%, rgba(6, 182, 212, 0.4) 70%, transparent 100%);
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 9999;
-  transform: translate(-50%, -50%);
-  transition: all 0.15s ease-out;
-  backdrop-filter: blur(1px);
-  box-shadow: 0 0 10px rgba(6, 182, 212, 0.2);
+  width: 100%;
+  z-index: 40;
 }
 
-/* Scroll to top button enhancements */
+/* Scroll-to-top control */
 .scroll-top {
   opacity: 0;
-  transform: scale(0) rotate(180deg);
+  transform: translateY(12px) scale(0.9);
   pointer-events: none;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  backdrop-filter: blur(5px);
-  border: 1px solid rgba(6, 182, 212, 0.3);
+  transition:
+    opacity 0.3s var(--ease-out),
+    transform 0.3s var(--ease-out),
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .scroll-top.visible {
   opacity: 1;
   pointer-events: auto;
-  transform: scale(1) rotate(0deg);
+  transform: translateY(0) scale(1);
 }
 
-.scroll-top:hover {
-  transform: scale(1.1) rotate(0deg);
-  box-shadow: 0 0 25px rgba(6, 182, 212, 0.5);
+.scroll-top.visible:hover {
+  transform: translateY(-2px) scale(1.03);
 }
 
 .scroll-top i {
@@ -51,49 +34,3 @@
 .scroll-top:hover i {
   transform: translateY(-2px);
 }
-
-/* Page transition animations */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-app-herosession,
-app-about,
-app-myprojects,
-app-skills,
-app-footer {
-  animation: fadeInUp 0.8s ease-out;
-}
-
-/* Smooth page loading */
-* {
-  scroll-behavior: smooth;
-}
-
-/* Custom scrollbar for the entire app */
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: rgba(15, 23, 42, 0.3);
-}
-
-::-webkit-scrollbar-thumb {
-  background: rgba(6, 182, 212, 0.6);
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: rgba(6, 182, 212, 0.8);
-}
-
-
-

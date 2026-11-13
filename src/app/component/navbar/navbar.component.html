@@ -1,621 +1,226 @@
 <nav
-  class="navbar fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-out"
-  [ngClass]="{
-    'navbar-scrolled': isScrolled
-  }"
+  class="navbar fixed inset-x-0 top-0 z-50"
+  [ngClass]="{ 'navbar-scrolled': isScrolled }"
   aria-label="Main navigation"
 >
-  <!-- Ambient background -->
-  <div class="pointer-events-none absolute inset-0 overflow-hidden">
-    <div
-      class="absolute -top-20 left-[20%] h-40 w-40 rounded-full bg-cyan-400/[0.04] blur-xl"
-    ></div>
+  <div
+    class="relative mx-auto flex h-20 w-full max-w-7xl items-center justify-between px-5 sm:px-6 lg:px-8"
+  >
+    <!-- ==================== BRAND ==================== -->
+    <a
+      href="#home"
+      (click)="scrollToSection('#home', $event)"
+      class="group flex shrink-0 items-center gap-3"
+      aria-label="Go to homepage"
+    >
+      <span
+        class="relative flex h-10 w-10 items-center justify-center overflow-hidden rounded-xl border border-accent-teal/25 bg-accent-teal/[0.07] transition-all duration-300 group-hover:-translate-y-0.5 group-hover:border-accent-teal/45 group-hover:bg-accent-teal/[0.11]"
+      >
+        <span
+          class="absolute inset-0 bg-gradient-to-br from-accent-teal/10 to-accent-violet/10 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+          aria-hidden="true"
+        ></span>
+        <i
+          class="fas fa-code relative z-10 text-sm text-accent-teal transition-transform duration-300 group-hover:scale-110"
+          aria-hidden="true"
+        ></i>
+      </span>
 
-    <div
-      class="absolute -top-20 right-[20%] h-40 w-40 rounded-full bg-blue-500/[0.04] blur-xl"
-    ></div>
-  </div>
+      <span
+        class="font-display text-lg font-semibold tracking-tight text-ink sm:text-xl"
+      >
+        Port<span class="text-accent-teal">Folio</span>
+      </span>
+    </a>
 
-  <!-- Navbar content -->
-  <div class="relative w-full px-3 sm:px-4 md:px-6 lg:mx-auto lg:max-w-7xl lg:px-8">
-    <div class="flex h-[76px] items-center justify-between w-full">
-
-      <!-- ==================== LOGO ==================== -->
-      <div class="flex-shrink-0">
+    <!-- ==================== DESKTOP NAV ==================== -->
+    <div class="hidden items-center lg:flex">
+      <div
+        class="flex items-center gap-1 rounded-full border border-hairline/80 bg-night-soft/55 p-1 backdrop-blur-xl"
+      >
         <a
           href="#home"
           (click)="scrollToSection('#home', $event)"
-          class="group flex cursor-pointer items-center gap-2 sm:gap-3"
-          aria-label="Go to homepage"
+          class="nav-link flex items-center gap-2 rounded-full px-4 py-2.5 text-sm font-medium"
         >
-          <!-- Logo mark -->
-          <div
-            class="
-              relative flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center
-              overflow-hidden rounded-xl
-              border border-cyan-400/20
-              bg-white/[0.04]
-              shadow-[0_0_30px_rgba(34,211,238,0.08)]
-              transition-all duration-300
-              group-hover:border-cyan-400/40
-              group-hover:bg-cyan-400/[0.08]
-              group-hover:shadow-[0_0_35px_rgba(34,211,238,0.15)]
-              group-hover:-translate-y-0.5
-            "
-          >
-            <div
-              class="
-                absolute inset-0
-                bg-gradient-to-br
-                from-cyan-400/10
-                to-blue-500/10
-                opacity-0
-                transition-opacity duration-300
-                group-hover:opacity-100
-              "
-            ></div>
+          <i class="fas fa-home text-[11px]" aria-hidden="true"></i>
+          <span>Home</span>
+        </a>
 
-            <i
-              class="
-                fas fa-code
-                relative z-10
-                text-xs sm:text-sm text-cyan-400
-                transition-transform duration-300
-                group-hover:scale-110
-              "
-            ></i>
-          </div>
+        <a
+          href="#about"
+          (click)="scrollToSection('#about', $event)"
+          class="nav-link flex items-center gap-2 rounded-full px-4 py-2.5 text-sm font-medium"
+        >
+          <i class="fas fa-user text-[11px]" aria-hidden="true"></i>
+          <span>About</span>
+        </a>
 
-          <!-- Brand -->
-          <div class="flex items-baseline">
-            <span
-              class="
-                text-lg sm:text-xl font-semibold tracking-tight text-white
-                transition-colors duration-300
-                group-hover:text-cyan-50
-              "
-            >
-              Port
-            </span>
+        <a
+          href="#projects"
+          (click)="scrollToSection('#projects', $event)"
+          class="nav-link flex items-center gap-2 rounded-full px-4 py-2.5 text-sm font-medium"
+        >
+          <i class="fas fa-layer-group text-[11px]" aria-hidden="true"></i>
+          <span>Projects</span>
+        </a>
 
-            <span
-              class="
-                text-lg sm:text-xl font-semibold tracking-tight text-cyan-400
-                transition-colors duration-300
-                group-hover:text-cyan-300
-              "
-            >
-              Folio
-            </span>
-          </div>
+        <a
+          href="#skills"
+          (click)="scrollToSection('#skills', $event)"
+          class="nav-link flex items-center gap-2 rounded-full px-4 py-2.5 text-sm font-medium"
+        >
+          <i class="fas fa-code text-[11px]" aria-hidden="true"></i>
+          <span>Skills</span>
         </a>
       </div>
+    </div>
 
-
-      <!-- ==================== DESKTOP NAV ==================== -->
-      <div class="hidden items-center lg:flex">
-
-        <div
-          class="
-            flex items-center gap-1
-            rounded-2xl
-            border border-white/[0.06]
-            bg-white/[0.025]
-            p-1
-            backdrop-blur-sm
-          "
-        >
-
-          <!-- Home -->
-          <a
-            href="#home"
-            (click)="scrollToSection('#home', $event)"
-            class="
-              nav-link group relative
-              flex items-center gap-2
-              rounded-xl
-              px-4 py-2.5
-              text-sm font-medium
-              text-gray-400
-              transition-all duration-300
-              hover:bg-white/[0.05]
-              hover:text-white
-            "
-          >
-            <i
-              class="
-                fas fa-home text-[11px]
-                text-gray-500
-                transition-colors duration-300
-                group-hover:text-cyan-400
-              "
-            ></i>
-
-            <span>Home</span>
-
-            <span
-              class="
-                absolute bottom-1 left-1/2
-                h-0.5 w-0
-                -translate-x-1/2
-                rounded-full
-                bg-cyan-400
-                transition-all duration-300
-                group-hover:w-5
-              "
-            ></span>
-          </a>
-
-
-          <!-- About -->
-          <a
-            href="#about"
-            (click)="scrollToSection('#about', $event)"
-            class="
-              nav-link group relative
-              flex items-center gap-2
-              rounded-xl
-              px-4 py-2.5
-              text-sm font-medium
-              text-gray-400
-              transition-all duration-300
-              hover:bg-white/[0.05]
-              hover:text-white
-            "
-          >
-            <i
-              class="
-                fas fa-user text-[11px]
-                text-gray-500
-                transition-colors duration-300
-                group-hover:text-cyan-400
-              "
-            ></i>
-
-            <span>About</span>
-
-            <span
-              class="
-                absolute bottom-1 left-1/2
-                h-0.5 w-0
-                -translate-x-1/2
-                rounded-full
-                bg-cyan-400
-                transition-all duration-300
-                group-hover:w-5
-              "
-            ></span>
-          </a>
-
-
-          <!-- Projects -->
-          <a
-            href="#projects"
-            (click)="scrollToSection('#projects', $event)"
-            class="
-              nav-link group relative
-              flex items-center gap-2
-              rounded-xl
-              px-4 py-2.5
-              text-sm font-medium
-              text-gray-400
-              transition-all duration-300
-              hover:bg-white/[0.05]
-              hover:text-white
-            "
-          >
-            <i
-              class="
-                fas fa-layer-group text-[11px]
-                text-gray-500
-                transition-colors duration-300
-                group-hover:text-cyan-400
-              "
-            ></i>
-
-            <span>Projects</span>
-
-            <span
-              class="
-                absolute bottom-1 left-1/2
-                h-0.5 w-0
-                -translate-x-1/2
-                rounded-full
-                bg-cyan-400
-                transition-all duration-300
-                group-hover:w-5
-              "
-            ></span>
-          </a>
-
-
-          <!-- Skills -->
-          <a
-            href="#skills"
-            (click)="scrollToSection('#skills', $event)"
-            class="
-              nav-link group relative
-              flex items-center gap-2
-              rounded-xl
-              px-4 py-2.5
-              text-sm font-medium
-              text-gray-400
-              transition-all duration-300
-              hover:bg-white/[0.05]
-              hover:text-white
-            "
-          >
-            <i
-              class="
-                fas fa-code text-[11px]
-                text-gray-500
-                transition-colors duration-300
-                group-hover:text-cyan-400
-              "
-            ></i>
-
-            <span>Skills</span>
-
-            <span
-              class="
-                absolute bottom-1 left-1/2
-                h-0.5 w-0
-                -translate-x-1/2
-                rounded-full
-                bg-cyan-400
-                transition-all duration-300
-                group-hover:w-5
-              "
-            ></span>
-          </a>
-
-        </div>
-      </div>
-
-
-      <!-- ==================== MOBILE BUTTON ==================== -->
-      <div class="lg:hidden flex-shrink-0">
-
-        <button
-          type="button"
-          (click)="toggleMobileMenu()"
-          class="
-            group relative
-            flex h-10 w-10 sm:h-11 sm:w-11
-            items-center justify-center
-            rounded-xl
-            border border-white/[0.08]
-            bg-white/[0.04]
-            text-gray-400
-            backdrop-blur-sm
-            transition-all duration-300
-            hover:border-cyan-400/30
-            hover:bg-cyan-400/[0.06]
-            hover:text-cyan-400
-            focus:outline-none
-            focus:ring-2
-            focus:ring-cyan-400/40
-          "
-          [attr.aria-expanded]="isMobileMenuOpen"
-          aria-controls="mobile-navigation"
-          aria-label="Toggle navigation menu"
-        >
-
-          <div class="relative h-5 w-5">
-
-            <span
-              class="
-                absolute left-0 top-1
-                h-[1.5px] w-5
-                rounded-full bg-current
-                transition-all duration-300
-              "
-              [ngClass]="{
-                'top-1/2 rotate-45': isMobileMenuOpen
-              }"
-            ></span>
-
-            <span
-              class="
-                absolute left-0 top-1/2
-                h-[1.5px] w-5
-                -translate-y-1/2
-                rounded-full bg-current
-                transition-all duration-300
-              "
-              [ngClass]="{
-                'scale-0 opacity-0': isMobileMenuOpen
-              }"
-            ></span>
-
-            <span
-              class="
-                absolute bottom-1 left-0
-                h-[1.5px] w-5
-                rounded-full bg-current
-                transition-all duration-300
-              "
-              [ngClass]="{
-                'bottom-1/2 -rotate-45': isMobileMenuOpen
-              }"
-            ></span>
-
-          </div>
-        </button>
-
-      </div>
-
+    <!-- ==================== MOBILE TOGGLE ==================== -->
+    <div class="flex shrink-0 lg:hidden">
+      <button
+        type="button"
+        (click)="toggleMobileMenu()"
+        class="mobile-menu-button group relative flex h-11 w-11 items-center justify-center rounded-xl border border-hairline bg-surface/40 text-muted backdrop-blur-xl transition-all duration-300 hover:border-accent-teal/30 hover:bg-accent-teal/[0.06] hover:text-accent-teal focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-teal/50"
+        [attr.aria-expanded]="isMobileMenuOpen"
+        aria-controls="mobile-navigation"
+        aria-label="Toggle navigation menu"
+      >
+        <span class="relative h-5 w-5" aria-hidden="true">
+          <span
+            class="absolute left-0 top-1 h-[1.5px] w-5 rounded-full bg-current transition-all duration-300"
+            [ngClass]="{ 'top-1/2 rotate-45': isMobileMenuOpen }"
+          ></span>
+          <span
+            class="absolute left-0 top-1/2 h-[1.5px] w-5 -translate-y-1/2 rounded-full bg-current transition-all duration-300"
+            [ngClass]="{ 'scale-0 opacity-0': isMobileMenuOpen }"
+          ></span>
+          <span
+            class="absolute bottom-1 left-0 h-[1.5px] w-5 rounded-full bg-current transition-all duration-300"
+            [ngClass]="{ 'bottom-1/2 -rotate-45': isMobileMenuOpen }"
+          ></span>
+        </span>
+      </button>
     </div>
   </div>
-
 
   <!-- ==================== MOBILE MENU ==================== -->
   <div
     id="mobile-navigation"
-    class="
-      lg:hidden
-      overflow-hidden
-      transition-all duration-500 ease-out
-    "
-    [ngClass]="{
-      'max-h-[500px] opacity-100': isMobileMenuOpen,
-      'max-h-0 opacity-0': !isMobileMenuOpen
-    }"
+    class="mobile-menu lg:hidden"
+    [class.mobile-menu-open]="isMobileMenuOpen"
   >
-
     <div
-      class="
-        border-t border-white/[0.06]
-        bg-gray-950/90
-        px-3 sm:px-4 md:px-6 pb-6 pt-4
-        shadow-2xl
-        backdrop-blur-sm
-        w-full
-      "
+      class="border-t border-hairline/80 bg-night/95 px-5 pb-6 pt-4 backdrop-blur-2xl sm:px-6"
     >
-
-      <div class="w-full space-y-1">
-
-        <!-- Home -->
+      <div class="space-y-1">
         <a
           href="#home"
           (click)="scrollToSection('#home', $event)"
-          class="
-            group flex cursor-pointer
-            items-center gap-3 sm:gap-4
-            rounded-2xl
-            border border-transparent
-            px-3 sm:px-4 py-3 sm:py-3.5
-            text-gray-300
-            transition-all duration-300
-            hover:border-cyan-400/10
-            hover:bg-cyan-400/[0.05]
-            hover:text-white
-          "
+          class="mobile-nav-link group flex items-center gap-3 rounded-2xl px-3 py-3"
         >
-          <div
-            class="
-              flex h-8 w-8 sm:h-9 sm:w-9 shrink-0
-              items-center justify-center
-              rounded-xl
-              bg-cyan-400/[0.08]
-              text-cyan-400
-              transition-transform duration-300
-              group-hover:scale-105
-            "
-          >
-            <i class="fas fa-home text-[10px] sm:text-xs"></i>
-          </div>
-
-          <div>
-            <div class="text-sm font-medium">Home</div>
-            <div class="mt-0.5 text-xs text-gray-500">
-              Welcome
-            </div>
-          </div>
+          <span class="icon-tile h-9 w-9 rounded-xl">
+            <i class="fas fa-home text-xs" aria-hidden="true"></i>
+          </span>
+          <span class="min-w-0">
+            <span class="mobile-link-title block text-sm font-medium text-ink">
+              Home
+            </span>
+            <span class="mt-0.5 block text-xs text-muted/70">Welcome</span>
+          </span>
         </a>
 
-
-        <!-- About -->
         <a
           href="#about"
           (click)="scrollToSection('#about', $event)"
-          class="
-            group flex cursor-pointer
-            items-center gap-3 sm:gap-4
-            rounded-2xl
-            border border-transparent
-            px-3 sm:px-4 py-3 sm:py-3.5
-            text-gray-300
-            transition-all duration-300
-            hover:border-cyan-400/10
-            hover:bg-cyan-400/[0.05]
-            hover:text-white
-          "
+          class="mobile-nav-link group flex items-center gap-3 rounded-2xl px-3 py-3"
         >
-          <div
-            class="
-              flex h-8 w-8 sm:h-9 sm:w-9 shrink-0
-              items-center justify-center
-              rounded-xl
-              bg-cyan-400/[0.08]
-              text-cyan-400
-              transition-transform duration-300
-              group-hover:scale-105
-            "
-          >
-            <i class="fas fa-user text-[10px] sm:text-xs"></i>
-          </div>
-
-          <div>
-            <div class="text-sm font-medium">About</div>
-            <div class="mt-0.5 text-xs text-gray-500">
-              My story
-            </div>
-          </div>
+          <span class="icon-tile h-9 w-9 rounded-xl">
+            <i class="fas fa-user text-xs" aria-hidden="true"></i>
+          </span>
+          <span class="min-w-0">
+            <span class="mobile-link-title block text-sm font-medium text-ink">
+              About
+            </span>
+            <span class="mt-0.5 block text-xs text-muted/70">My story</span>
+          </span>
         </a>
 
-
-        <!-- Projects -->
         <a
           href="#projects"
           (click)="scrollToSection('#projects', $event)"
-          class="
-            group flex cursor-pointer
-            items-center gap-3 sm:gap-4
-            rounded-2xl
-            border border-transparent
-            px-3 sm:px-4 py-3 sm:py-3.5
-            text-gray-300
-            transition-all duration-300
-            hover:border-cyan-400/10
-            hover:bg-cyan-400/[0.05]
-            hover:text-white
-          "
+          class="mobile-nav-link group flex items-center gap-3 rounded-2xl px-3 py-3"
         >
-          <div
-            class="
-              flex h-8 w-8 sm:h-9 sm:w-9 shrink-0
-              items-center justify-center
-              rounded-xl
-              bg-cyan-400/[0.08]
-              text-cyan-400
-              transition-transform duration-300
-              group-hover:scale-105
-            "
-          >
-            <i class="fas fa-layer-group text-[10px] sm:text-xs"></i>
-          </div>
-
-          <div>
-            <div class="text-sm font-medium">Projects</div>
-            <div class="mt-0.5 text-xs text-gray-500">
+          <span class="icon-tile h-9 w-9 rounded-xl">
+            <i class="fas fa-layer-group text-xs" aria-hidden="true"></i>
+          </span>
+          <span class="min-w-0">
+            <span class="mobile-link-title block text-sm font-medium text-ink">
+              Projects
+            </span>
+            <span class="mt-0.5 block text-xs text-muted/70">
               Selected work
-            </div>
-          </div>
+            </span>
+          </span>
         </a>
 
-
-        <!-- Skills -->
         <a
           href="#skills"
           (click)="scrollToSection('#skills', $event)"
-          class="
-            group flex cursor-pointer
-            items-center gap-3 sm:gap-4
-            rounded-2xl
-            border border-transparent
-            px-3 sm:px-4 py-3 sm:py-3.5
-            text-gray-300
-            transition-all duration-300
-            hover:border-cyan-400/10
-            hover:bg-cyan-400/[0.05]
-            hover:text-white
-          "
+          class="mobile-nav-link group flex items-center gap-3 rounded-2xl px-3 py-3"
         >
-          <div
-            class="
-              flex h-8 w-8 sm:h-9 sm:w-9 shrink-0
-              items-center justify-center
-              rounded-xl
-              bg-cyan-400/[0.08]
-              text-cyan-400
-              transition-transform duration-300
-              group-hover:scale-105
-            "
-          >
-            <i class="fas fa-code text-[10px] sm:text-xs"></i>
-          </div>
-
-          <div>
-            <div class="text-sm font-medium">Skills</div>
-            <div class="mt-0.5 text-xs text-gray-500">
+          <span class="icon-tile h-9 w-9 rounded-xl">
+            <i class="fas fa-code text-xs" aria-hidden="true"></i>
+          </span>
+          <span class="min-w-0">
+            <span class="mobile-link-title block text-sm font-medium text-ink">
+              Skills
+            </span>
+            <span class="mt-0.5 block text-xs text-muted/70">
               Technologies
-            </div>
-          </div>
+            </span>
+          </span>
         </a>
+      </div>
 
+      <div class="mt-4 border-t border-hairline/70 pt-5">
+        <p
+          class="mb-3 px-1 font-mono text-[10px] font-medium uppercase tracking-[0.2em] text-muted/80"
+        >
+          Connect
+        </p>
 
-        <!-- Social links -->
-        <div class="mt-4 border-t border-white/[0.06] pt-5">
+        <div class="flex gap-2">
+          <a
+            href="https://www.facebook.com/shanu.shajahan.336/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Facebook"
+            class="icon-tile h-10 w-10 hover:border-accent-teal/30 hover:bg-accent-teal/[0.07] hover:text-accent-teal"
+          >
+            <i class="fab fa-facebook-f text-sm" aria-hidden="true"></i>
+          </a>
 
-          <div class="mb-3 px-1 text-[11px] font-medium uppercase tracking-[0.2em] text-gray-600">
-            Connect
-          </div>
+          <a
+            href="https://www.linkedin.com/in/shanushajahan/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+            class="icon-tile h-10 w-10 hover:border-accent-teal/30 hover:bg-accent-teal/[0.07] hover:text-accent-teal"
+          >
+            <i class="fab fa-linkedin-in text-sm" aria-hidden="true"></i>
+          </a>
 
-          <div class="flex gap-2">
-
-            <!-- Facebook -->
-            <a
-              href="https://www.facebook.com/shanu.shajahan.336/"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Facebook"
-              class="
-                flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center
-                rounded-xl
-                border border-white/[0.06]
-                bg-white/[0.03]
-                text-gray-400
-                transition-all duration-300
-                hover:border-blue-400/30
-                hover:bg-blue-400/[0.08]
-                hover:text-blue-400
-                hover:-translate-y-0.5
-              "
-            >
-              <i class="fab fa-facebook-f text-xs sm:text-sm"></i>
-            </a>
-
-
-            <!-- LinkedIn -->
-            <a
-              href="https://www.linkedin.com/in/shanushajahan/"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="LinkedIn"
-              class="
-                flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center
-                rounded-xl
-                border border-white/[0.06]
-                bg-white/[0.03]
-                text-gray-400
-                transition-all duration-300
-                hover:border-blue-400/30
-                hover:bg-blue-400/[0.08]
-                hover:text-blue-400
-                hover:-translate-y-0.5
-              "
-            >
-              <i class="fab fa-linkedin-in text-xs sm:text-sm"></i>
-            </a>
-
-
-            <!-- Instagram -->
-            <a
-              href="https://www.instagram.com/____shxnu/"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Instagram"
-              class="
-                flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center
-                rounded-xl
-                border border-white/[0.06]
-                bg-white/[0.03]
-                text-gray-400
-                transition-all duration-300
-                hover:border-pink-400/30
-                hover:bg-pink-400/[0.08]
-                hover:text-pink-400
-                hover:-translate-y-0.5
-              "
-            >
-              <i class="fab fa-instagram text-xs sm:text-sm"></i>
-            </a>
-
-          </div>
+          <a
+            href="https://www.instagram.com/____shxnu/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+            class="icon-tile h-10 w-10 hover:border-accent-violet/30 hover:bg-accent-violet/[0.08] hover:text-accent-violet"
+          >
+            <i class="fab fa-instagram text-sm" aria-hidden="true"></i>
+          </a>
         </div>
-
       </div>
     </div>
   </div>

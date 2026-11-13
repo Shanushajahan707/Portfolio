@@ -1,570 +1,206 @@
 <section
   id="about"
-  class="
-    relative w-full overflow-hidden
-    bg-slate-950
-    px-5 py-20
-    sm:px-6 sm:py-24
-    lg:px-8 lg:py-28
-  "
+  class="section-shell section-about px-5 py-[var(--section-y)] sm:px-6 lg:px-8"
 >
-
   <!-- ========================================================= -->
-  <!-- BACKGROUND -->
+  <!-- AMBIENT BACKGROUND -->
   <!-- ========================================================= -->
 
-  <div
-    class="pointer-events-none absolute inset-0"
-    aria-hidden="true"
-  >
-
-    <div
-      class="
-        absolute
-        -left-32 top-1/4
-        h-96 w-96
-        rounded-full
-        bg-cyan-400/[0.045]
-        blur-[40px]
-      "
-    ></div>
-
-    <div
-      class="
-        absolute
-        -right-40 bottom-0
-        h-[32rem] w-[32rem]
-        rounded-full
-        bg-blue-500/[0.04]
-        blur-[40px]
-      "
-    ></div>
-
-  </div>
-
+  <div class="aurora-field" aria-hidden="true"></div>
+  <div class="grid-overlay absolute inset-0" aria-hidden="true"></div>
 
   <!-- ========================================================= -->
   <!-- MAIN CONTAINER -->
   <!-- ========================================================= -->
 
   <div
-    class="
-      relative z-10
-      mx-auto
-      flex max-w-7xl
-      flex-col
-      items-center
-      gap-12
-      lg:flex-row
-      lg:items-center
-      lg:gap-20
-    "
+    class="relative z-10 mx-auto flex max-w-7xl flex-col items-center gap-14 lg:flex-row lg:items-center lg:gap-20"
   >
-
-
     <!-- ======================================================= -->
     <!-- IMAGE -->
     <!-- ======================================================= -->
 
     <div
-      class="
-        relative
-        flex
-        w-full
-        justify-center
-        lg:w-[40%]
-        lg:justify-start
-      "
+      class="relative flex w-full justify-center lg:w-[42%] lg:justify-start"
       data-aos="fade-right"
       data-aos-duration="600"
     >
-
-      <!-- Decorative glow -->
-      <div
-        class="
-          pointer-events-none
-          absolute
-          left-1/2 top-1/2
-          h-64 w-64
-          -translate-x-1/2
-          -translate-y-1/2
-          rounded-full
-          bg-cyan-400/[0.08]
-          blur-[30px]
-          sm:h-80 sm:w-80
-        "
-        aria-hidden="true"
-      ></div>
-
-
-      <!-- Image frame -->
       <div class="about-image relative">
-
-        <!-- Offset border -->
+        <!-- Soft aurora halo -->
         <div
-          class="
-            absolute
-            -inset-2
-            rounded-[2rem]
-            border
-            border-cyan-400/[0.12]
-          "
+          class="pointer-events-none absolute -inset-8 rounded-[3rem] bg-gradient-to-br from-accent-teal/10 via-transparent to-accent-violet/10 blur-2xl"
           aria-hidden="true"
         ></div>
 
-        <!-- Main image container -->
+        <!-- Offset frame -->
         <div
-          class="
-            relative
-            overflow-hidden
-            rounded-[1.75rem]
-            border border-white/[0.08]
-            bg-white/[0.03]
-            p-2
-            shadow-2xl
+          class="absolute -inset-2.5 rounded-[2rem] border border-accent-teal/[0.12]"
+          aria-hidden="true"
+        ></div>
 
-          "
+        <!-- Image frame -->
+        <div
+          class="relative overflow-hidden rounded-[1.75rem] border border-hairline bg-surface/35 p-2 shadow-[0_28px_60px_-36px_rgba(0,0,0,0.95)] backdrop-blur-sm"
         >
-
           <img
             src="/bg.remove.png"
             alt="Shanu Shajahan - MEAN Stack Developer"
             loading="lazy"
             decoding="async"
-            class="
-              h-64 w-64
-              rounded-2xl
-              object-cover
-              object-center
-              sm:h-72 sm:w-72
-              md:h-80 md:w-80
-              lg:h-[23rem] lg:w-[23rem]
-              xl:h-[25rem] xl:w-[25rem]
-              animate-floating
-            "
+            class="animate-floating h-64 w-64 rounded-[1.25rem] object-cover object-center sm:h-72 sm:w-72 md:h-80 md:w-80 lg:h-[22rem] lg:w-[22rem] xl:h-[24rem] xl:w-[24rem]"
           />
 
-          <!-- Image gradient -->
           <div
-            class="
-              pointer-events-none
-              absolute inset-2
-              rounded-2xl
-              bg-gradient-to-t
-              from-slate-950/20
-              via-transparent
-              to-transparent
-            "
+            class="pointer-events-none absolute inset-2 rounded-[1.25rem] bg-gradient-to-t from-night/30 via-transparent to-transparent"
+            aria-hidden="true"
           ></div>
-
         </div>
 
-
-        <!-- Small floating label -->
+        <!-- Availability label -->
         <div
-          class="
-            absolute
-            -bottom-5
-            left-1/2
-            -translate-x-1/2
-            whitespace-nowrap
-            rounded-2xl
-            border border-white/[0.08]
-            bg-slate-900/80
-            px-4 py-2.5
-            shadow-xl
-            backdrop-blur-sm
-            sm:left-auto
-            sm:right-0
-            sm:translate-x-0
-          "
+          class="absolute -bottom-5 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-2xl border border-hairline bg-night/85 px-4 py-2.5 shadow-xl backdrop-blur-md sm:left-auto sm:right-0 sm:translate-x-0"
         >
-
           <div class="flex items-center gap-2">
-
             <span
-              class="
-                h-2 w-2
-                rounded-full
-                bg-emerald-400
-                shadow-[0_0_10px_rgba(52,211,153,0.5)]
-              "
+              class="h-2 w-2 rounded-full bg-accent-teal shadow-[0_0_0_4px_rgba(34,211,238,0.1)]"
+              aria-hidden="true"
             ></span>
-
-            <span
-              class="
-                text-xs
-                font-medium
-                text-gray-300
-              "
-            >
+            <span class="text-xs font-medium text-muted">
               Building with code
             </span>
-
           </div>
-
         </div>
-
       </div>
-
     </div>
-
 
     <!-- ======================================================= -->
     <!-- CONTENT -->
     <!-- ======================================================= -->
 
     <div
-      class="
-        w-full
-        lg:w-[60%]
-      "
+      class="w-full lg:w-[58%]"
       data-aos="fade-left"
       data-aos-duration="600"
     >
+      <p class="eyebrow mb-5">About me</p>
 
-      <!-- Section label -->
-      <div class="mb-4">
-
-        <span
-          class="
-            text-xs
-            font-semibold
-            uppercase
-            tracking-[0.25em]
-            text-cyan-400
-          "
-        >
-          About me
-        </span>
-
-      </div>
-
-
-      <!-- Heading -->
       <h2
-        class="
-          mb-4
-          text-3xl
-          font-bold
-          tracking-tight
-          text-white
-          sm:text-4xl
-          md:text-5xl
-          lg:text-[3.25rem]
-          lg:leading-tight
-        "
+        class="section-heading mb-5 text-3xl sm:text-4xl md:text-5xl lg:text-[3.35rem]"
       >
         Turning ideas into
-        <span
-          class="
-            bg-gradient-to-r
-            from-cyan-300
-            to-blue-400
-            bg-clip-text
-            text-transparent
-          "
-        >
-          real products.
-        </span>
+        <span class="text-aurora-soft">real products.</span>
       </h2>
 
-
-      <!-- Subtitle -->
-      <div
-        class="
-          mb-7
-          flex
-          items-center
-          gap-3
-        "
-      >
-
-        <span
-          class="
-            h-px w-8
-            bg-cyan-400
-          "
-        ></span>
-
-        <span
-          class="
-            text-sm
-            font-medium
-            text-gray-400
-            sm:text-base
-          "
-        >
+      <div class="mb-7 flex items-center gap-3">
+        <span class="h-px w-8 bg-accent-teal" aria-hidden="true"></span>
+        <span class="text-sm font-medium text-muted sm:text-base">
           MEAN Stack Developer
         </span>
-
       </div>
-
 
       <!-- Description -->
       <div
-        class="
-          max-w-2xl
-          space-y-4
-        "
+        class="max-w-2xl space-y-4"
         data-aos="fade-up"
         data-aos-duration="900"
         data-aos-delay="200"
       >
-
-        <p
-          class="
-            text-base
-            font-light
-            leading-7
-            text-gray-400
-            sm:text-lg
-            sm:leading-8
-          "
-        >
+        <p class="text-base font-light leading-7 text-muted sm:text-lg sm:leading-8">
           Hi, I'm
-          <strong class="font-medium text-gray-200">
-            Shanu Shajahan
-          </strong>,
+          <strong class="font-medium text-ink">Shanu Shajahan</strong>,
           a passionate MEAN Stack Developer with a diploma in
           Computer Engineering.
         </p>
 
-        <p
-          class="
-            text-base
-            font-light
-            leading-7
-            text-gray-400
-            sm:text-lg
-            sm:leading-8
-          "
-        >
+        <p class="text-base font-light leading-7 text-muted sm:text-lg sm:leading-8">
           I build scalable web applications using
-          <strong class="font-medium text-gray-200">
+          <strong class="font-medium text-ink">
             Angular, Node.js, Express, MongoDB, and TypeScript
           </strong>,
           with hands-on experience in WebRTC, WebSockets, and
           Clean Architecture.
         </p>
 
-        <p
-          class="
-            text-base
-            font-light
-            leading-7
-            text-gray-400
-            sm:text-lg
-            sm:leading-8
-          "
-        >
+        <p class="text-base font-light leading-7 text-muted sm:text-lg sm:leading-8">
           My projects include a live streaming platform,
           e-commerce platform, and authentication systems,
           where I focus on creating reliable experiences with
           clean and maintainable code.
         </p>
-
       </div>
-
 
       <!-- ===================================================== -->
       <!-- QUICK INFO -->
       <!-- ===================================================== -->
 
       <div
-        class="
-          mt-8
-          grid
-          grid-cols-2
-          gap-3
-          sm:grid-cols-4
-        "
+        class="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-4"
         data-aos="fade-up"
         data-aos-duration="800"
         data-aos-delay="300"
       >
-
-        <!-- Item -->
-        <div
-          class="
-            rounded-2xl
-            border border-white/[0.06]
-            bg-white/[0.025]
-            p-4
-            transition-all duration-300
-            hover:border-cyan-400/20
-            hover:bg-cyan-400/[0.03]
-          "
-        >
-          <div
-            class="
-              mb-1
-              text-xs
-              uppercase
-              tracking-wider
-              text-gray-600
-            "
-          >
-            Stack
+        <div class="surface surface-hover rounded-2xl p-4">
+          <div class="mb-3 flex items-center gap-2">
+            <span class="icon-tile h-8 w-8 rounded-lg text-[11px]">
+              <i class="fas fa-layer-group" aria-hidden="true"></i>
+            </span>
+            <span class="font-mono text-[9px] uppercase tracking-[0.16em] text-muted/80">
+              Stack
+            </span>
           </div>
-
-          <div class="text-sm font-medium text-gray-200">
-            MEAN
-          </div>
+          <div class="text-sm font-medium text-ink">MEAN</div>
         </div>
 
-
-        <!-- Item -->
-        <div
-          class="
-            rounded-2xl
-            border border-white/[0.06]
-            bg-white/[0.025]
-            p-4
-            transition-all duration-300
-            hover:border-cyan-400/20
-            hover:bg-cyan-400/[0.03]
-          "
-        >
-          <div
-            class="
-              mb-1
-              text-xs
-              uppercase
-              tracking-wider
-              text-gray-600
-            "
-          >
-            Focus
+        <div class="surface surface-hover rounded-2xl p-4">
+          <div class="mb-3 flex items-center gap-2">
+            <span class="icon-tile h-8 w-8 rounded-lg text-[11px]">
+              <i class="fas fa-window-maximize" aria-hidden="true"></i>
+            </span>
+            <span class="font-mono text-[9px] uppercase tracking-[0.16em] text-muted/80">
+              Focus
+            </span>
           </div>
-
-          <div class="text-sm font-medium text-gray-200">
-            Web Apps
-          </div>
+          <div class="text-sm font-medium text-ink">Web Apps</div>
         </div>
 
-
-        <!-- Item -->
-        <div
-          class="
-            rounded-2xl
-            border border-white/[0.06]
-            bg-white/[0.025]
-            p-4
-            transition-all duration-300
-            hover:border-cyan-400/20
-            hover:bg-cyan-400/[0.03]
-          "
-        >
-          <div
-            class="
-              mb-1
-              text-xs
-              uppercase
-              tracking-wider
-              text-gray-600
-            "
-          >
-            Architecture
+        <div class="surface surface-hover rounded-2xl p-4">
+          <div class="mb-3 flex items-center gap-2">
+            <span class="icon-tile h-8 w-8 rounded-lg text-[11px]">
+              <i class="fas fa-diagram-project" aria-hidden="true"></i>
+            </span>
+            <span class="font-mono text-[9px] uppercase tracking-[0.16em] text-muted/80">
+              Architecture
+            </span>
           </div>
-
-          <div class="text-sm font-medium text-gray-200">
-            Clean Code
-          </div>
+          <div class="text-sm font-medium text-ink">Clean Code</div>
         </div>
 
-
-        <!-- Item -->
-        <div
-          class="
-            rounded-2xl
-            border border-white/[0.06]
-            bg-white/[0.025]
-            p-4
-            transition-all duration-300
-            hover:border-cyan-400/20
-            hover:bg-cyan-400/[0.03]
-          "
-        >
-          <div
-            class="
-              mb-1
-              text-xs
-              uppercase
-              tracking-wider
-              text-gray-600
-            "
-          >
-            Passion
+        <div class="surface surface-hover rounded-2xl p-4">
+          <div class="mb-3 flex items-center gap-2">
+            <span class="icon-tile icon-tile-amber h-8 w-8 rounded-lg text-[11px]">
+              <i class="fas fa-lightbulb" aria-hidden="true"></i>
+            </span>
+            <span class="font-mono text-[9px] uppercase tracking-[0.16em] text-muted/80">
+              Passion
+            </span>
           </div>
-
-          <div class="text-sm font-medium text-gray-200">
-            Problem Solving
-          </div>
+          <div class="text-sm font-medium text-ink">Problem Solving</div>
         </div>
-
       </div>
-
 
       <!-- ===================================================== -->
       <!-- ACTION -->
       <!-- ===================================================== -->
 
-      <div
-        class="mt-9"
-        data-aos="fade-up"
-        data-aos-duration="800"
-        data-aos-delay="400"
-      >
-
-        <a
-          href="#projects"
-          class="
-            group
-            inline-flex
-            h-12
-            items-center
-            justify-center
-            gap-3
-            rounded-xl
-            bg-cyan-400
-            px-6
-            text-sm
-            font-semibold
-            text-slate-950
-            shadow-[0_10px_35px_rgba(34,211,238,0.12)]
-            transition-all duration-300
-            hover:-translate-y-1
-            hover:bg-cyan-300
-            hover:shadow-[0_15px_45px_rgba(34,211,238,0.22)]
-            focus:outline-none
-            focus:ring-2
-            focus:ring-cyan-400/50
-            focus:ring-offset-2
-            focus:ring-offset-slate-950
-          "
-        >
-
-          <span>
-            Explore my work
-          </span>
-
+      <div class="mt-9" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
+        <a href="#projects" class="btn btn-ghost group">
+          <span>Explore my work</span>
           <i
-            class="
-              fas fa-arrow-right
-              text-xs
-              transition-transform duration-300
-              group-hover:translate-x-1
-            "
+            class="fas fa-arrow-right text-xs transition-transform duration-300 group-hover:translate-x-1"
             aria-hidden="true"
           ></i>
-
         </a>
-
       </div>
-
     </div>
-
   </div>
-
 </section>

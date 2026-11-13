@@ -1,45 +1,19 @@
 <footer
   id="footer"
-  class="relative overflow-hidden bg-slate-950 px-5 pb-8 pt-20 sm:px-6 sm:pt-24 lg:px-8 lg:pt-28"
+  class="section-shell section-footer px-5 pb-8 pt-[var(--section-y)] sm:px-6 lg:px-8"
 >
   <!-- =========================================================
        BACKGROUND
   ========================================================== -->
 
-  <div class="pointer-events-none absolute inset-0 overflow-hidden">
-
-    <!-- Ambient glows -->
-    <div
-      class="absolute -left-40 top-20 h-[28rem] w-[28rem] rounded-full bg-cyan-500/[0.05] blur-[40px]"
-    ></div>
-
-    <div
-      class="absolute -right-40 bottom-10 h-[32rem] w-[32rem] rounded-full bg-blue-500/[0.05] blur-[40px]"
-    ></div>
-
-    <!-- Subtle grid -->
-    <div
-      class="absolute inset-0 opacity-[0.025]"
-      style="
-        background-image:
-          linear-gradient(rgba(255,255,255,.8) 1px, transparent 1px),
-          linear-gradient(90deg, rgba(255,255,255,.8) 1px, transparent 1px);
-        background-size: 48px 48px;
-      "
-    ></div>
-
-    <!-- Bottom fade -->
-    <div
-      class="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-slate-950 to-transparent"
-    ></div>
-  </div>
+  <div class="aurora-field" aria-hidden="true"></div>
+  <div class="grid-overlay absolute inset-0" aria-hidden="true"></div>
 
   <!-- =========================================================
        MAIN CONTENT
   ========================================================== -->
 
   <div class="relative z-10 mx-auto max-w-7xl">
-
     <!-- =======================================================
          CTA HEADER
     ======================================================== -->
@@ -50,499 +24,391 @@
       data-aos="fade-up"
       data-aos-duration="500"
     >
+      <span class="eyebrow-pill mb-5">Get In Touch</span>
 
-      <!-- Eyebrow -->
-      <div class="mb-5">
-        <span
-          class="inline-flex items-center gap-2 rounded-full border border-cyan-400/15 bg-cyan-400/[0.06] px-4 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-cyan-300"
-        >
-          <span class="relative flex h-2 w-2">
-            <span
-              class="absolute inline-flex h-full w-full animate-ping rounded-full bg-cyan-400 opacity-60"
-            ></span>
-
-            <span
-              class="relative inline-flex h-2 w-2 rounded-full bg-cyan-400"
-            ></span>
-          </span>
-
-          Get In Touch
-        </span>
-      </div>
-
-      <!-- Heading -->
-      <h2
-        class="text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl"
-      >
+      <h2 class="section-heading text-4xl sm:text-5xl lg:text-6xl">
         Let's build something
-        <span
-          class="bg-gradient-to-r from-cyan-300 via-sky-400 to-blue-500 bg-clip-text text-transparent"
-        >
-          meaningful.
-        </span>
+        <span class="text-aurora-soft">meaningful.</span>
       </h2>
 
       <p
-        class="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-400 sm:text-lg sm:leading-8"
+        class="mx-auto mt-5 max-w-2xl text-base leading-7 text-muted sm:text-lg sm:leading-8"
       >
         Have an idea, project, or opportunity in mind?
         I'm always open to connecting, discussing ideas, and building
         useful digital products.
       </p>
 
-      <!-- Primary CTA -->
-      <div class="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-
+      <div
+        class="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row"
+      >
         <a
           href="mailto:shanushajahan707@gmail.com"
-          class="group inline-flex items-center justify-center gap-3 rounded-xl bg-cyan-400 px-6 py-3.5 text-sm font-bold text-slate-950 shadow-lg shadow-cyan-500/10 transition-all duration-300 hover:-translate-y-1 hover:bg-cyan-300 hover:shadow-cyan-400/20"
+          class="btn btn-primary group w-full sm:w-auto"
         >
-          <i class="fas fa-envelope text-sm"></i>
-
+          <i class="fas fa-envelope text-sm" aria-hidden="true"></i>
           Email Me
-
           <i
             class="fas fa-arrow-right text-xs transition-transform duration-300 group-hover:translate-x-1"
+            aria-hidden="true"
           ></i>
         </a>
 
-        <a
-          href="#projects"
-          class="inline-flex items-center justify-center gap-3 rounded-xl border border-white/[0.08] bg-white/[0.03] px-6 py-3.5 text-sm font-semibold text-white backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-cyan-400/20 hover:bg-white/[0.05]"
-        >
-          <i class="fas fa-code text-cyan-400"></i>
+        <a href="#projects" class="btn btn-secondary group w-full sm:w-auto">
+          <i class="fas fa-code text-accent-teal" aria-hidden="true"></i>
           View My Work
         </a>
-
       </div>
     </div>
-
 
     <!-- =======================================================
          MAIN FOOTER GRID
     ======================================================== -->
 
     <div
-      class="grid grid-cols-1 gap-6 lg:grid-cols-3"
+      class="grid grid-cols-1 gap-5 lg:grid-cols-3"
       data-aos="fade-up"
       data-aos-duration="600"
       data-aos-delay="100"
     >
-
       <!-- =====================================================
            CONTACT
       ====================================================== -->
 
       <div
-        class="rounded-3xl border border-white/[0.07] bg-white/[0.025] p-6 backdrop-blur-sm sm:p-8"
+        class="surface h-full rounded-3xl p-6 sm:p-7"
         data-aos="fade-right"
         data-aos-delay="150"
       >
+        <div class="mb-7 flex items-center gap-3">
+          <span class="icon-tile h-11 w-11">
+            <i class="fas fa-address-card" aria-hidden="true"></i>
+          </span>
 
-        <div class="mb-7">
-          <div class="flex items-center gap-3">
-
-            <div
-              class="flex h-10 w-10 items-center justify-center rounded-xl border border-cyan-400/15 bg-cyan-400/[0.06]"
-            >
-              <i class="fas fa-address-card text-cyan-400"></i>
-            </div>
-
-            <div>
-              <h3 class="text-lg font-semibold text-white">
-                Contact
-              </h3>
-
-              <p class="text-xs text-slate-500">
-                Let's connect
-              </p>
-            </div>
-
+          <div>
+            <h3 class="font-display text-lg font-semibold text-ink">
+              Contact
+            </h3>
+            <p class="mt-0.5 text-xs text-muted/80">Let's connect</p>
           </div>
         </div>
 
-
         <div class="space-y-3">
-
-          <!-- Phone -->
           <a
             href="tel:+917592909874"
-            class="group flex items-center gap-4 rounded-2xl border border-white/[0.05] bg-slate-900/50 p-4 transition-all duration-300 hover:border-cyan-400/15 hover:bg-cyan-400/[0.04]"
+            class="group flex items-center gap-4 rounded-2xl border border-hairline/70 bg-night-soft/40 p-4 transition-all duration-300 hover:border-accent-teal/20 hover:bg-surface/40"
           >
-            <div
-              class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-cyan-400/[0.08] text-cyan-400"
-            >
-              <i class="fas fa-phone-alt text-sm"></i>
-            </div>
+            <span class="icon-tile h-10 w-10 rounded-xl">
+              <i class="fas fa-phone-alt text-sm" aria-hidden="true"></i>
+            </span>
 
-            <div class="min-w-0">
-              <p class="text-[10px] font-semibold uppercase tracking-wider text-slate-500">
+            <span class="min-w-0">
+              <span
+                class="block font-mono text-[9px] font-semibold uppercase tracking-[0.18em] text-muted/80"
+              >
                 Phone
-              </p>
-
-              <p
-                class="mt-1 truncate text-sm font-medium text-slate-200 transition-colors group-hover:text-cyan-300"
+              </span>
+              <span
+                class="mt-1 block truncate text-sm font-medium text-ink/90 transition-colors group-hover:text-accent-teal"
               >
                 +91 7592909874
-              </p>
-            </div>
+              </span>
+            </span>
           </a>
 
-
-          <!-- Email -->
           <a
             href="mailto:shanushajahan707@gmail.com"
-            class="group flex items-center gap-4 rounded-2xl border border-white/[0.05] bg-slate-900/50 p-4 transition-all duration-300 hover:border-cyan-400/15 hover:bg-cyan-400/[0.04]"
+            class="group flex items-center gap-4 rounded-2xl border border-hairline/70 bg-night-soft/40 p-4 transition-all duration-300 hover:border-accent-teal/20 hover:bg-surface/40"
           >
-            <div
-              class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-cyan-400/[0.08] text-cyan-400"
-            >
-              <i class="fas fa-envelope text-sm"></i>
-            </div>
+            <span class="icon-tile h-10 w-10 rounded-xl">
+              <i class="fas fa-envelope text-sm" aria-hidden="true"></i>
+            </span>
 
-            <div class="min-w-0">
-              <p class="text-[10px] font-semibold uppercase tracking-wider text-slate-500">
+            <span class="min-w-0">
+              <span
+                class="block font-mono text-[9px] font-semibold uppercase tracking-[0.18em] text-muted/80"
+              >
                 Email
-              </p>
-
-              <p
-                class="mt-1 truncate text-sm font-medium text-slate-200 transition-colors group-hover:text-cyan-300"
+              </span>
+              <span
+                class="mt-1 block break-all text-sm font-medium text-ink/90 transition-colors group-hover:text-accent-teal"
               >
                 shanushajahan707&#64;gmail.com
-              </p>
-            </div>
+              </span>
+            </span>
           </a>
 
-
-          <!-- Location -->
           <div
-            class="flex items-center gap-4 rounded-2xl border border-white/[0.05] bg-slate-900/50 p-4"
+            class="flex items-center gap-4 rounded-2xl border border-hairline/70 bg-night-soft/40 p-4"
           >
-            <div
-              class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-cyan-400/[0.08] text-cyan-400"
-            >
-              <i class="fas fa-map-marker-alt text-sm"></i>
-            </div>
+            <span class="icon-tile icon-tile-amber h-10 w-10 rounded-xl">
+              <i class="fas fa-map-marker-alt text-sm" aria-hidden="true"></i>
+            </span>
 
             <div>
-              <p class="text-[10px] font-semibold uppercase tracking-wider text-slate-500">
+              <p
+                class="font-mono text-[9px] font-semibold uppercase tracking-[0.18em] text-muted/80"
+              >
                 Location
               </p>
-
-              <p class="mt-1 text-sm font-medium text-slate-200">
+              <p class="mt-1 text-sm font-medium text-ink/90">
                 Kerala, India
               </p>
             </div>
           </div>
-
         </div>
       </div>
-
 
       <!-- =====================================================
            SOCIAL
       ====================================================== -->
 
       <div
-        class="rounded-3xl border border-white/[0.07] bg-white/[0.025] p-6 backdrop-blur-sm sm:p-8"
+        class="surface h-full rounded-3xl p-6 sm:p-7"
         data-aos="fade-up"
         data-aos-delay="200"
       >
-
         <div class="mb-7 flex items-center gap-3">
-
-          <div
-            class="flex h-10 w-10 items-center justify-center rounded-xl border border-cyan-400/15 bg-cyan-400/[0.06]"
-          >
-            <i class="fas fa-share-alt text-cyan-400"></i>
-          </div>
+          <span class="icon-tile icon-tile-violet h-11 w-11">
+            <i class="fas fa-share-nodes" aria-hidden="true"></i>
+          </span>
 
           <div>
-            <h3 class="text-lg font-semibold text-white">
+            <h3 class="font-display text-lg font-semibold text-ink">
               Find Me Online
             </h3>
-
-            <p class="text-xs text-slate-500">
-              Connect & follow
-            </p>
+            <p class="mt-0.5 text-xs text-muted/80">Connect &amp; follow</p>
           </div>
-
         </div>
 
-
         <div class="grid grid-cols-3 gap-3">
-
-          <!-- Facebook -->
           <a
             href="https://www.facebook.com/shanu.shajahan.336/"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Facebook"
-            class="group flex flex-col items-center justify-center rounded-2xl border border-white/[0.05] bg-slate-900/50 p-4 transition-all duration-300 hover:-translate-y-1 hover:border-blue-400/20 hover:bg-blue-400/[0.05]"
+            class="group flex flex-col items-center justify-center rounded-2xl border border-hairline/70 bg-night-soft/40 p-4 transition-all duration-300 hover:-translate-y-1 hover:border-accent-teal/20 hover:bg-accent-teal/[0.04]"
           >
-            <div
-              class="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-500/10 text-blue-400 transition-all duration-300 group-hover:scale-110 group-hover:bg-blue-500/15"
-            >
-              <i class="fab fa-facebook-f text-lg"></i>
-            </div>
-
             <span
-              class="mt-3 text-[11px] font-medium text-slate-500 transition-colors group-hover:text-blue-300"
+              class="flex h-11 w-11 items-center justify-center rounded-xl bg-surface/60 text-muted transition-all duration-300 group-hover:scale-105 group-hover:bg-accent-teal/10 group-hover:text-accent-teal"
+            >
+              <i class="fab fa-facebook-f text-lg" aria-hidden="true"></i>
+            </span>
+            <span
+              class="mt-3 text-[11px] font-medium text-muted/80 transition-colors group-hover:text-accent-teal"
             >
               Facebook
             </span>
           </a>
 
-
-          <!-- LinkedIn -->
           <a
             href="https://www.linkedin.com/in/shanushajahan/"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"
-            class="group flex flex-col items-center justify-center rounded-2xl border border-white/[0.05] bg-slate-900/50 p-4 transition-all duration-300 hover:-translate-y-1 hover:border-sky-400/20 hover:bg-sky-400/[0.05]"
+            class="group flex flex-col items-center justify-center rounded-2xl border border-hairline/70 bg-night-soft/40 p-4 transition-all duration-300 hover:-translate-y-1 hover:border-accent-teal/20 hover:bg-accent-teal/[0.04]"
           >
-            <div
-              class="flex h-11 w-11 items-center justify-center rounded-xl bg-sky-500/10 text-sky-400 transition-all duration-300 group-hover:scale-110 group-hover:bg-sky-500/15"
-            >
-              <i class="fab fa-linkedin-in text-lg"></i>
-            </div>
-
             <span
-              class="mt-3 text-[11px] font-medium text-slate-500 transition-colors group-hover:text-sky-300"
+              class="flex h-11 w-11 items-center justify-center rounded-xl bg-surface/60 text-muted transition-all duration-300 group-hover:scale-105 group-hover:bg-accent-teal/10 group-hover:text-accent-teal"
+            >
+              <i class="fab fa-linkedin-in text-lg" aria-hidden="true"></i>
+            </span>
+            <span
+              class="mt-3 text-[11px] font-medium text-muted/80 transition-colors group-hover:text-accent-teal"
             >
               LinkedIn
             </span>
           </a>
 
-
-          <!-- Instagram -->
           <a
             href="https://www.instagram.com/____shxnu/"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Instagram"
-            class="group flex flex-col items-center justify-center rounded-2xl border border-white/[0.05] bg-slate-900/50 p-4 transition-all duration-300 hover:-translate-y-1 hover:border-pink-400/20 hover:bg-pink-400/[0.05]"
+            class="group flex flex-col items-center justify-center rounded-2xl border border-hairline/70 bg-night-soft/40 p-4 transition-all duration-300 hover:-translate-y-1 hover:border-accent-violet/25 hover:bg-accent-violet/[0.05]"
           >
-            <div
-              class="flex h-11 w-11 items-center justify-center rounded-xl bg-pink-500/10 text-pink-400 transition-all duration-300 group-hover:scale-110 group-hover:bg-pink-500/15"
-            >
-              <i class="fab fa-instagram text-lg"></i>
-            </div>
-
             <span
-              class="mt-3 text-[11px] font-medium text-slate-500 transition-colors group-hover:text-pink-300"
+              class="flex h-11 w-11 items-center justify-center rounded-xl bg-surface/60 text-muted transition-all duration-300 group-hover:scale-105 group-hover:bg-accent-violet/10 group-hover:text-[#c4b5fd]"
+            >
+              <i class="fab fa-instagram text-lg" aria-hidden="true"></i>
+            </span>
+            <span
+              class="mt-3 text-[11px] font-medium text-muted/80 transition-colors group-hover:text-[#c4b5fd]"
             >
               Instagram
             </span>
           </a>
-
         </div>
 
-
-        <!-- GitHub -->
         <a
           href="https://github.com/Shanushajahan707"
           target="_blank"
           rel="noopener noreferrer"
-          class="group mt-4 flex items-center justify-between rounded-2xl border border-white/[0.05] bg-slate-900/50 p-4 transition-all duration-300 hover:border-white/[0.12] hover:bg-white/[0.04]"
+          class="group mt-4 flex items-center justify-between rounded-2xl border border-hairline/70 bg-night-soft/40 p-4 transition-all duration-300 hover:border-accent-teal/20 hover:bg-surface/40"
         >
-          <div class="flex items-center gap-3">
-
-            <div
-              class="flex h-10 w-10 items-center justify-center rounded-xl bg-white/[0.05] text-slate-300"
+          <span class="flex items-center gap-3">
+            <span
+              class="flex h-10 w-10 items-center justify-center rounded-xl bg-surface/60 text-muted transition-colors duration-300 group-hover:text-ink"
             >
-              <i class="fab fa-github text-lg"></i>
-            </div>
+              <i class="fab fa-github text-lg" aria-hidden="true"></i>
+            </span>
 
-            <div>
-              <p class="text-sm font-semibold text-white">
+            <span>
+              <span class="block text-sm font-semibold text-ink">
                 GitHub
-              </p>
-
-              <p class="text-xs text-slate-500">
+              </span>
+              <span class="mt-0.5 block text-xs text-muted/80">
                 Explore my code
-              </p>
-            </div>
-
-          </div>
+              </span>
+            </span>
+          </span>
 
           <i
-            class="fas fa-arrow-up-right-from-square text-xs text-slate-600 transition-all duration-300 group-hover:translate-x-0.5 group-hover:text-cyan-400"
+            class="fas fa-arrow-up-right-from-square text-xs text-muted/70 transition-all duration-300 group-hover:translate-x-0.5 group-hover:text-accent-teal"
+            aria-hidden="true"
           ></i>
         </a>
-
       </div>
-
 
       <!-- =====================================================
            QUICK NAVIGATION
       ====================================================== -->
 
       <div
-        class="rounded-3xl border border-white/[0.07] bg-white/[0.025] p-6 backdrop-blur-sm sm:p-8"
+        class="surface h-full rounded-3xl p-6 sm:p-7"
         data-aos="fade-left"
         data-aos-delay="250"
       >
-
         <div class="mb-7 flex items-center gap-3">
-
-          <div
-            class="flex h-10 w-10 items-center justify-center rounded-xl border border-cyan-400/15 bg-cyan-400/[0.06]"
-          >
-            <i class="fas fa-compass text-cyan-400"></i>
-          </div>
+          <span class="icon-tile h-11 w-11">
+            <i class="fas fa-compass" aria-hidden="true"></i>
+          </span>
 
           <div>
-            <h3 class="text-lg font-semibold text-white">
+            <h3 class="font-display text-lg font-semibold text-ink">
               Explore
             </h3>
-
-            <p class="text-xs text-slate-500">
-              Navigate portfolio
-            </p>
+            <p class="mt-0.5 text-xs text-muted/80">Navigate portfolio</p>
           </div>
-
         </div>
 
-
         <div class="space-y-2">
-
-          <!-- About -->
           <a
             href="#about"
-            class="group flex items-center justify-between rounded-xl border border-transparent bg-slate-900/40 px-4 py-3 transition-all duration-300 hover:border-cyan-400/10 hover:bg-cyan-400/[0.04]"
+            class="group flex items-center justify-between rounded-xl border border-transparent bg-night-soft/40 px-4 py-3 transition-all duration-300 hover:border-accent-teal/[0.12] hover:bg-accent-teal/[0.04]"
           >
-            <div class="flex items-center gap-3">
-
+            <span class="flex items-center gap-3">
               <i
-                class="fas fa-user w-4 text-center text-xs text-slate-500 transition-colors group-hover:text-cyan-400"
+                class="fas fa-user w-4 text-center text-xs text-muted/80 transition-colors group-hover:text-accent-teal"
+                aria-hidden="true"
               ></i>
-
               <span
-                class="text-sm font-medium text-slate-300 transition-colors group-hover:text-white"
+                class="text-sm font-medium text-muted transition-colors group-hover:text-ink"
               >
                 About Me
               </span>
-
-            </div>
-
+            </span>
             <i
-              class="fas fa-arrow-right text-[10px] text-slate-700 transition-all duration-300 group-hover:translate-x-1 group-hover:text-cyan-400"
+              class="fas fa-arrow-right text-[10px] text-muted/35 transition-all duration-300 group-hover:translate-x-1 group-hover:text-accent-teal"
+              aria-hidden="true"
             ></i>
           </a>
 
-
-          <!-- Projects -->
           <a
             href="#projects"
-            class="group flex items-center justify-between rounded-xl border border-transparent bg-slate-900/40 px-4 py-3 transition-all duration-300 hover:border-cyan-400/10 hover:bg-cyan-400/[0.04]"
+            class="group flex items-center justify-between rounded-xl border border-transparent bg-night-soft/40 px-4 py-3 transition-all duration-300 hover:border-accent-teal/[0.12] hover:bg-accent-teal/[0.04]"
           >
-            <div class="flex items-center gap-3">
-
+            <span class="flex items-center gap-3">
               <i
-                class="fas fa-code w-4 text-center text-xs text-slate-500 transition-colors group-hover:text-cyan-400"
+                class="fas fa-code w-4 text-center text-xs text-muted/80 transition-colors group-hover:text-accent-teal"
+                aria-hidden="true"
               ></i>
-
               <span
-                class="text-sm font-medium text-slate-300 transition-colors group-hover:text-white"
+                class="text-sm font-medium text-muted transition-colors group-hover:text-ink"
               >
                 Projects
               </span>
-
-            </div>
-
+            </span>
             <i
-              class="fas fa-arrow-right text-[10px] text-slate-700 transition-all duration-300 group-hover:translate-x-1 group-hover:text-cyan-400"
+              class="fas fa-arrow-right text-[10px] text-muted/35 transition-all duration-300 group-hover:translate-x-1 group-hover:text-accent-teal"
+              aria-hidden="true"
             ></i>
           </a>
 
-
-          <!-- Skills -->
           <a
             href="#skills"
-            class="group flex items-center justify-between rounded-xl border border-transparent bg-slate-900/40 px-4 py-3 transition-all duration-300 hover:border-cyan-400/10 hover:bg-cyan-400/[0.04]"
+            class="group flex items-center justify-between rounded-xl border border-transparent bg-night-soft/40 px-4 py-3 transition-all duration-300 hover:border-accent-teal/[0.12] hover:bg-accent-teal/[0.04]"
           >
-            <div class="flex items-center gap-3">
-
+            <span class="flex items-center gap-3">
               <i
-                class="fas fa-layer-group w-4 text-center text-xs text-slate-500 transition-colors group-hover:text-cyan-400"
+                class="fas fa-layer-group w-4 text-center text-xs text-muted/80 transition-colors group-hover:text-accent-teal"
+                aria-hidden="true"
               ></i>
-
               <span
-                class="text-sm font-medium text-slate-300 transition-colors group-hover:text-white"
+                class="text-sm font-medium text-muted transition-colors group-hover:text-ink"
               >
                 Skills
               </span>
-
-            </div>
-
+            </span>
             <i
-              class="fas fa-arrow-right text-[10px] text-slate-700 transition-all duration-300 group-hover:translate-x-1 group-hover:text-cyan-400"
+              class="fas fa-arrow-right text-[10px] text-muted/35 transition-all duration-300 group-hover:translate-x-1 group-hover:text-accent-teal"
+              aria-hidden="true"
             ></i>
           </a>
 
-
-          <!-- Contact -->
           <a
             href="#contact"
-            class="group flex items-center justify-between rounded-xl border border-cyan-400/10 bg-cyan-400/[0.04] px-4 py-3 transition-all duration-300 hover:border-cyan-400/20 hover:bg-cyan-400/[0.07]"
+            class="group flex items-center justify-between rounded-xl border border-accent-teal/[0.12] bg-accent-teal/[0.045] px-4 py-3 transition-all duration-300 hover:border-accent-teal/25 hover:bg-accent-teal/[0.075]"
           >
-            <div class="flex items-center gap-3">
-
+            <span class="flex items-center gap-3">
               <i
-                class="fas fa-paper-plane w-4 text-center text-xs text-cyan-400"
+                class="fas fa-paper-plane w-4 text-center text-xs text-accent-teal"
+                aria-hidden="true"
               ></i>
-
-              <span
-                class="text-sm font-semibold text-white"
-              >
+              <span class="text-sm font-semibold text-ink">
                 Get In Touch
               </span>
-
-            </div>
-
+            </span>
             <i
-              class="fas fa-arrow-right text-[10px] text-cyan-400 transition-transform duration-300 group-hover:translate-x-1"
+              class="fas fa-arrow-right text-[10px] text-accent-teal transition-transform duration-300 group-hover:translate-x-1"
+              aria-hidden="true"
             ></i>
           </a>
-
         </div>
-
       </div>
-
     </div>
-
 
     <!-- =======================================================
          FOOTER BOTTOM
     ======================================================== -->
 
-    <div
-      class="mt-10 border-t border-white/[0.07] pt-7 sm:mt-12 sm:pt-8"
-    >
-
+    <div class="mt-10 border-t border-hairline/70 pt-7 sm:mt-12 sm:pt-8">
       <div
         class="flex flex-col gap-5 text-center sm:flex-row sm:items-center sm:justify-between sm:text-left"
       >
-
-        <!-- Copyright -->
         <div>
-          <p class="text-sm font-medium text-slate-400">
+          <p class="text-sm font-medium text-muted">
             © {{ currentYear }}
-            <span class="text-slate-200">
-              Shanu Shajahan
-            </span>
+            <span class="text-ink">Shanu Shajahan</span>
           </p>
 
-          <p class="mt-1 text-xs text-slate-600">
-            Built with Angular & Tailwind CSS
+          <p class="mt-1 font-mono text-[10px] uppercase tracking-[0.12em] text-muted/70">
+            Built with Angular &amp; Tailwind CSS
           </p>
         </div>
 
+        <button
+          type="button"
+          (click)="scrollToTop()"
+          class="btn btn-ghost btn-sm group self-center sm:self-auto"
+        >
+          Back to top
+          <i
+            class="fas fa-arrow-up text-[10px] transition-transform duration-300 group-hover:-translate-y-0.5"
+            aria-hidden="true"
+          ></i>
+        </button>
       </div>
-
     </div>
-
   </div>
 </footer>
